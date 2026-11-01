@@ -32,3 +32,13 @@ end wall (door side), the render draws that ledge as solid wall:
 | C − 4 in shelf (back wall to shelf face) | 65.5 | 65.7 | +0.2 |
 | D + 4 in shelf (door wall to shelf face) | 53.5 | 53.3 | -0.2 |
 All four within 0.5 in -> no tape errors flagged. Pending user confirmation of shelf position/depth.
+
+## Update 2 — shelf location confirmed: shower wall 1 (back-wall end)
+Shelf: floor to ~chest height (~4 ft, not tape-measured), 4 in deep, at the back-wall end of the shower;
+wall above it sits 4 in further back. 69.5 in was taped above the shelf (full shower length).
+Reading: wall above the shelf is flush with the bathroom back wall; the shelf sticks 4 in into the shower.
+- Tape is self-consistent: C 69.5 + D 49.5 = 119 = back wall -> door wall total (plan also 119).
+- Render places shower end wall (wall 2) at 65.7 in from back wall, i.e. ~3.8 in off -> local render
+  inaccuracy (it matches the shower's floor-level length 69.5 - 4 = 65.5). Use tape values for that wall.
+- Scale (from the 102 / 119 totals) is unaffected. A and B agree within 0.4 in (to shower glass).
+Result: no tape errors flagged. Remaining open item: living area 1,287 vs listed 1,400 sq ft (-8%).
