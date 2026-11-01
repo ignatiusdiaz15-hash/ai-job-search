@@ -21,3 +21,14 @@ Split points disagree with drawn walls by ~4 in (see bath_tape_vs_plan.png):
 
 Area check (outside faces of exterior walls): living 1,287 sq ft (±2%), garage 392 sq ft,
 living+garage 1,679. Listed 1,400–1,401 -> living is 8% below; unresolved.
+
+## Update — built-in 4 in shower shelf (user, after draft)
+User reports a ~4 in built-in shelf inside the shower. Interpreting it as a ledge across the shower's
+end wall (door side), the render draws that ledge as solid wall:
+| | Tape | Plan | Diff |
+|---|---|---|---|
+| A to shower glass | 66 | 65.6 | -0.4 |
+| B glass to far wall | 36 | 36.4 | +0.4 |
+| C − 4 in shelf (back wall to shelf face) | 65.5 | 65.7 | +0.2 |
+| D + 4 in shelf (door wall to shelf face) | 53.5 | 53.3 | -0.2 |
+All four within 0.5 in -> no tape errors flagged. Pending user confirmation of shelf position/depth.
