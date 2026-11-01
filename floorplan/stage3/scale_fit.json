@@ -1,0 +1,44 @@
+{
+ "u0": 466.4254407727377,
+ "v_vp": -4790.733972517849,
+ "Sh": 4258.435904891256,
+ "Sv": 24205267.211224813,
+ "edges": {
+  "yA": 418.5674095147779,
+  "xL": 51.861913597532954,
+  "xD": 128.30351169044286,
+  "xR": 178.83944692335743,
+  "yClo": 345.4605263157895,
+  "yTop": 287.6520740877712
+ },
+ "table": [
+  {
+   "id": "A",
+   "desc": "Back wall, side wall to shower edge",
+   "tape_in": 66.0,
+   "pred_in": 62.49,
+   "diff_in": -3.51
+  },
+  {
+   "id": "B",
+   "desc": "Back wall across shower recess",
+   "tape_in": 36.0,
+   "pred_in": 41.31,
+   "diff_in": 5.31
+  },
+  {
+   "id": "C",
+   "desc": "Shower depth, back wall to closet-wall face",
+   "tape_in": 69.5,
+   "pred_in": 66.14,
+   "diff_in": -3.36
+  },
+  {
+   "id": "D",
+   "desc": "Wall D, shower corner to door wall",
+   "tape_in": 49.5,
+   "pred_in": 53.65,
+   "diff_in": 4.15
+  }
+ ]
+}
