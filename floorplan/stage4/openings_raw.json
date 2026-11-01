@@ -1,0 +1,178 @@
+[
+ {
+  "room": "R5",
+  "side": "T",
+  "start": 192.5,
+  "end": 251.8,
+  "width": 59.2,
+  "full_side": false
+ },
+ {
+  "room": "R5",
+  "side": "T",
+  "start": 282.0,
+  "end": 322.2,
+  "width": 40.2,
+  "full_side": false
+ },
+ {
+  "room": "R6",
+  "side": "L",
+  "start": 30.0,
+  "end": 80.0,
+  "width": 50.0,
+  "full_side": false
+ },
+ {
+  "room": "R6",
+  "side": "R",
+  "start": 91.8,
+  "end": 135.0,
+  "width": 43.2,
+  "full_side": false
+ },
+ {
+  "room": "R6",
+  "side": "R",
+  "start": 142.5,
+  "end": 156.5,
+  "width": 14.0,
+  "full_side": false
+ },
+ {
+  "room": "R6",
+  "side": "R",
+  "start": 158.2,
+  "end": 176.0,
+  "width": 17.8,
+  "full_side": false
+ },
+ {
+  "room": "R6",
+  "side": "R",
+  "start": 177.8,
+  "end": 209.8,
+  "width": 32.0,
+  "full_side": false
+ },
+ {
+  "room": "R6",
+  "side": "R",
+  "start": 211.5,
+  "end": 271.2,
+  "width": 59.8,
+  "full_side": false
+ },
+ {
+  "room": "R6",
+  "side": "B",
+  "start": 169.2,
+  "end": 188.2,
+  "width": 19.0,
+  "full_side": false
+ },
+ {
+  "room": "R6",
+  "side": "B",
+  "start": 192.2,
+  "end": 265.8,
+  "width": 73.5,
+  "full_side": false
+ },
+ {
+  "room": "R6",
+  "side": "B",
+  "start": 289.5,
+  "end": 308.5,
+  "width": 19.0,
+  "full_side": false
+ },
+ {
+  "room": "R6",
+  "side": "B",
+  "start": 326.5,
+  "end": 342.0,
+  "width": 15.5,
+  "full_side": false
+ },
+ {
+  "room": "R6e",
+  "side": "R",
+  "start": 30.0,
+  "end": 80.0,
+  "width": 50.0,
+  "full_side": false
+ },
+ {
+  "room": "R6h",
+  "side": "L",
+  "start": 91.2,
+  "end": 209.8,
+  "width": 118.5,
+  "full_side": false
+ },
+ {
+  "room": "R6h",
+  "side": "L",
+  "start": 211.5,
+  "end": 271.2,
+  "width": 59.8,
+  "full_side": false
+ },
+ {
+  "room": "R6h",
+  "side": "R",
+  "start": 168.0,
+  "end": 204.0,
+  "width": 36.0,
+  "full_side": false
+ },
+ {
+  "room": "R6h",
+  "side": "B",
+  "start": 342.0,
+  "end": 365.8,
+  "width": 23.8,
+  "full_side": true
+ },
+ {
+  "room": "R8v",
+  "side": "L",
+  "start": 181.2,
+  "end": 230.0,
+  "width": 48.8,
+  "full_side": false
+ },
+ {
+  "room": "R10",
+  "side": "R",
+  "start": 353.8,
+  "end": 394.2,
+  "width": 40.5,
+  "full_side": false
+ },
+ {
+  "room": "R10b",
+  "side": "L",
+  "start": 356.0,
+  "end": 394.2,
+  "width": 38.2,
+  "full_side": true
+ },
+ {
+  "room": "G",
+  "side": "L",
+  "start": 403.2,
+  "end": 439.8,
+  "width": 36.5,
+  "full_side": false
+ },
+ {
+  "room": "G",
+  "side": "B",
+  "start": 180.8,
+  "end": 354.8,
+  "width": 174.0,
+  "full_side": false
+ }
+]

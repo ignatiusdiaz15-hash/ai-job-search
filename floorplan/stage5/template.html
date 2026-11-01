@@ -1,0 +1,417 @@
+<title>Bancoora Floor Plan</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: drafting-table app — header + tabs, toolbar, plan canvas beside a room panel (stacks on phones). */
+:root{
+  --paper:#f4f6f5; --sheet:#ffffff; --ink:#1c2a33; --ink-2:#4d5d68; --rule:#d5dcdf; --blue:#2c5d8f; --blue-soft:#e3ecf5;
+  --hi:#23865a; --med:#b97a06; --lo:#c33d36; --open:#138a8a; --clear:#7a4fb5; --tool:#d4560f; --furn:#1f6fd1;
+  --font-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif; --font-body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace; --r:6px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#11181d; --sheet:#182229; --ink:#e3eaee; --ink-2:#9fb0ba; --rule:#2c3a43; --blue:#7fb1e3; --blue-soft:#1d2f40;
+  --hi:#4cc28a; --med:#e3a93a; --lo:#f0756d; --open:#3cc6c6; --clear:#b391e8; --tool:#ff8a4a; --furn:#5aa2ff; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#11181d; --sheet:#182229; --ink:#e3eaee; --ink-2:#9fb0ba; --rule:#2c3a43; --blue:#7fb1e3; --blue-soft:#1d2f40;
+  --hi:#4cc28a; --med:#e3a93a; --lo:#f0756d; --open:#3cc6c6; --clear:#b391e8; --tool:#ff8a4a; --furn:#5aa2ff; color-scheme:dark}
+html,body{height:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.45}
+.wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:12px 24px;display:flex;flex-direction:column;gap:12px;min-height:100%;box-sizing:border-box}
+header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:8px 20px;border-bottom:2px solid var(--ink);padding-bottom:8px}
+h1{font-family:var(--font-display);font-weight:700;font-size:30px;letter-spacing:.02em;margin:0;line-height:1;text-wrap:balance}
+.sub{font-family:var(--font-mono);font-size:12px;color:var(--ink-2)}
+nav{display:flex;gap:4px}
+nav a{font-family:var(--font-display);font-weight:600;font-size:17px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);text-decoration:none;padding:4px 12px;border-radius:var(--r) var(--r) 0 0}
+nav a[aria-current="page"]{background:var(--ink);color:var(--paper)}
+nav a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
+.grp{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.grp>.lbl{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.08em;font-size:13px;color:var(--ink-2);margin-right:2px}
+button{font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--ink);background:var(--sheet);border:1px solid var(--rule);border-radius:var(--r);padding:6px 10px;cursor:pointer;min-height:34px}
+button:hover{border-color:var(--blue)}
+button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:var(--sheet)}
+.seg{display:inline-flex}.seg button{border-radius:0}.seg button:first-child{border-radius:var(--r) 0 0 var(--r)}.seg button:last-child{border-radius:0 var(--r) var(--r) 0}.seg button+button{border-left:0}
+.readout{font-family:var(--font-mono);font-size:13px;background:var(--blue-soft);color:var(--ink);padding:5px 10px;border-radius:var(--r)}
+.main{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:12px;flex:1;min-height:0}
+.mapbox{position:relative;background:var(--sheet);border:1px solid var(--rule);border-radius:var(--r);overflow:hidden;min-height:520px;height:calc(100vh - 190px);touch-action:none}
+#map{width:100%;height:100%;display:block;cursor:grab;user-select:none;-webkit-user-select:none}
+#map.measuring{cursor:crosshair}
+.mapbox .hint{position:absolute;left:10px;bottom:10px;font-size:12px;color:var(--ink-2);background:color-mix(in srgb,var(--sheet) 85%,transparent);padding:3px 8px;border-radius:4px;pointer-events:none}
+.zoom{position:absolute;right:10px;top:10px;display:flex;flex-direction:column;gap:4px}
+.zoom button{width:36px;padding:0;font-size:18px}
+aside{display:flex;flex-direction:column;gap:12px;min-width:0;max-height:calc(100vh - 190px);overflow:auto}
+.card{background:var(--sheet);border:1px solid var(--rule);border-radius:var(--r);padding:12px}
+.card h2{font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 8px}
+.tot{display:grid;grid-template-columns:1fr auto;gap:2px 10px;font-size:14px}
+.tot b{font-family:var(--font-mono);font-weight:500;text-align:right;font-variant-numeric:tabular-nums}
+.legend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:13px}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.rooms{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.rooms button{all:unset;box-sizing:border-box;width:100%;display:grid;grid-template-columns:10px 1fr auto;gap:8px;align-items:center;padding:6px 6px;border-bottom:1px solid var(--rule);cursor:pointer;font-size:14px}
+.rooms button:hover,.rooms button[aria-current="true"]{background:var(--blue-soft)}
+.rooms .dot{width:10px;height:10px;border-radius:50%}
+.rooms .num{font-family:var(--font-mono);font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums;text-align:right}
+.detail dl{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;margin:0;font-size:14px}
+.detail dt{color:var(--ink-2)}.detail dd{margin:0;font-family:var(--font-mono);font-size:13px}
+.pill{display:inline-block;font-family:var(--font-display);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:12px;padding:1px 8px;border-radius:99px;color:var(--sheet)}
+.pill.high{background:var(--hi)}.pill.medium{background:var(--med)}.pill.low{background:var(--lo)}
+.small{font-size:13px;color:var(--ink-2)}
+.furn form{display:grid;grid-template-columns:1fr 1fr auto;gap:6px;align-items:end}
+.furn label{display:flex;flex-direction:column;font-size:12px;color:var(--ink-2);gap:2px;min-width:0}
+.furn input{width:100%;box-sizing:border-box;font-family:var(--font-mono);font-size:14px;padding:6px;border:1px solid var(--rule);border-radius:var(--r);background:var(--paper);color:var(--ink);min-width:0}
+.fitmsg{font-size:14px;margin-top:8px}
+.fitmsg.ok{color:var(--hi)}.fitmsg.bad{color:var(--lo)}
+.page{display:flex;flex-direction:column;gap:14px;max-width:1100px}
+.page h2{font-family:var(--font-display);font-size:24px;letter-spacing:.04em;margin:6px 0 0;text-wrap:balance}
+.page p{max-width:70ch;margin:0}
+.tablebox{overflow-x:auto;background:var(--sheet);border:1px solid var(--rule);border-radius:var(--r)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.06em;font-size:13px;color:var(--ink-2);background:var(--paper);position:sticky;top:0}
+td.n{font-family:var(--font-mono);font-size:13px;white-space:nowrap;font-variant-numeric:tabular-nums}
+tr.sect td{background:var(--blue-soft);font-family:var(--font-display);font-weight:700;letter-spacing:.05em;text-transform:uppercase;font-size:14px}
+tr.chg td.best{color:var(--tool);font-weight:600}
+.corr{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.corr .card h3{font-size:16px;margin:0 0 4px}
+.corr .card p{font-size:14px}
+textarea{width:100%;box-sizing:border-box;min-height:140px;font-family:var(--font-mono);font-size:12px;background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:var(--r)}
+ul.verify{margin:0;padding-left:20px;columns:2 300px;font-size:14px}
+svg text{font-family:var(--font-mono);paint-order:stroke;stroke:var(--sheet);stroke-width:3px;stroke-linejoin:round}
+svg .lab-room{font-family:var(--font-display);font-weight:700}
+.zlo .lab-dim,.zlo .lab-fx,.zlo .lab-sub{display:none}
+.zmid .lab-fx{display:none}
+@media (max-width:860px){
+  .main{grid-template-columns:minmax(0,1fr)}
+  .mapbox{height:62vh;min-height:360px}
+  aside{max-height:none}
+}
+@media print{
+  nav,.toolbar,.zoom,.hint,aside .furn,.noprint{display:none!important}
+  .main{grid-template-columns:1fr}.mapbox{height:9.2in;border:0}
+  aside{max-height:none;overflow:visible}
+  .page{max-width:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <div>
+    <h1>The Bancoora · Measured Plan</h1>
+    <div class="sub">Ellery at Lake Sherwood · 3 bd / 2 ba · listed 1,400–1,401 sq ft · scale from your bathroom tape</div>
+  </div>
+  <nav aria-label="Pages">
+    <a href="#plan" data-page="plan">Plan</a>
+    <a href="#dream-sheet" data-page="dream-sheet">Dream sheet</a>
+    <a href="#notes" data-page="notes">Notes</a>
+  </nav>
+</header>
+
+<section id="pg-plan" class="pagewrap" style="display:flex;flex-direction:column;gap:12px;flex:1;min-height:0">
+  <div class="toolbar">
+    <div class="grp"><span class="lbl">Show</span>
+      <div class="seg" role="group" aria-label="Filter">
+        <button id="f-walls" aria-pressed="false">Walls only</button><button id="f-fix" aria-pressed="false">Fixtures only</button><button id="f-both" aria-pressed="true">Both</button>
+      </div>
+      <button id="t-doors" aria-pressed="true">Door swings</button>
+    </div>
+    <div class="grp"><span class="lbl">Image</span>
+      <div class="seg" role="group" aria-label="Image">
+        <button id="v-orig" aria-pressed="true">Your plan</button><button id="v-str" aria-pressed="false">Straightened</button>
+      </div>
+    </div>
+    <div class="grp"><span class="lbl">Tools</span>
+      <button id="t-measure" aria-pressed="false">Measure</button>
+      <button id="b-csv">Copy CSV</button>
+      <button id="b-dl" class="offline-only" hidden>Download CSV</button>
+      <button id="b-print" class="offline-only" hidden>Print / Save PDF</button>
+      <button id="b-off" hidden>Download offline copy</button>
+    </div>
+    <span id="readout" class="readout" aria-live="polite">Tap a room, or use Measure</span>
+  </div>
+  <div class="main">
+    <div class="mapbox" id="mapbox">
+      <svg id="map" aria-label="Floor plan with measurements"><g id="world"><image id="bg"/><g id="ov"/><g id="furn"/><g id="meas"/></g></svg>
+      <div class="zoom"><button id="z-in" aria-label="Zoom in">+</button><button id="z-out" aria-label="Zoom out">−</button><button id="z-fit" aria-label="Fit plan" style="font-size:13px">Fit</button></div>
+      <div class="hint">Drag to pan · scroll or pinch to zoom</div>
+    </div>
+    <aside>
+      <div class="card"><h2>Totals</h2><div class="tot" id="totals"></div></div>
+      <div class="card"><h2>Legend</h2><div class="legend" id="legend"></div></div>
+      <div class="card detail" id="detail"><h2>Room</h2><p class="small">Tap a room on the plan or in the list.</p></div>
+      <div class="card furn"><h2>Furniture fit</h2>
+        <form id="furnform">
+          <label for="fw">Width<input id="fw" value="84" inputmode="decimal" aria-describedby="fhelp"></label>
+          <label for="fd">Depth<input id="fd" value="36" inputmode="decimal"></label>
+          <button type="submit">Add</button>
+        </form>
+        <p class="small" id="fhelp">Inches, or like 7' 2". Drag the box to move it.</p>
+        <div class="grp noprint" style="margin-top:6px"><button id="fr-l" type="button">↺ 15°</button><button id="fr-90" type="button">Turn 90°</button><button id="fr-r" type="button">↻ 15°</button><button id="fr-del" type="button">Remove</button></div>
+        <div class="fitmsg" id="fitmsg" aria-live="polite"></div>
+      </div>
+      <div class="card"><h2>Rooms</h2><ul class="rooms" id="roomlist"></ul></div>
+    </aside>
+  </div>
+</section>
+
+<section id="pg-dream-sheet" class="page" hidden>
+  <h2>Dream sheet: best estimates</h2>
+  <p>What I believe the real dimensions are, after weighing your tape measurements, the drawing, and standard building sizes. Orange values differ from what the drawing shows. Ranges are where the true value most likely falls.</p>
+  <div class="corr" id="corrections"></div>
+  <div class="tablebox"><table id="dreamtable"><thead><tr><th>Item</th><th>Drawing says (in)</th><th>Best estimate</th><th>Likely range</th><th>Why</th><th>Confidence</th></tr></thead><tbody></tbody></table></div>
+</section>
+
+<section id="pg-notes" class="page" hidden>
+  <h2>Scale and accuracy</h2>
+  <div id="notes-scale"></div>
+  <h2>Check these with a tape measure</h2>
+  <ul class="verify" id="verify"></ul>
+  <h2>All measurements</h2>
+  <p class="small">Every measurement, organized by room and type. Copy it into a spreadsheet.</p>
+  <div class="grp noprint"><button id="b-csv2">Copy CSV</button><button id="b-dl2" class="offline-only" hidden>Download CSV</button></div>
+  <textarea id="csvtext" readonly aria-label="CSV of all measurements"></textarea>
+</section>
+</div>
+
+<script type="application/json" id="d-data">__DATA__</script>
+<script type="application/json" id="d-dream">__DREAM__</script>
+<script type="application/json" id="d-views">__VIEWS__</script>
+<script id="main">
+const OFFLINE=__OFFLINE__;
+// snapshot of the page source, taken before anything renders, used to build the offline copy
+const SNAP=(()=>{const parts=[];document.querySelectorAll('title,style,link[href*="fonts.g"],div.wrap,script#d-data,script#d-dream,script#d-views,script#main').forEach(n=>parts.push(n.outerHTML));return parts.join("\n")})();
+const IMG_ORIG="__IMGO__", IMG_STR="__IMGS__";
+const D=JSON.parse(document.getElementById('d-data').textContent);
+const DREAM=JSON.parse(document.getElementById('d-dream').textContent);
+const VIEWS=JSON.parse(document.getElementById('d-views').textContent);
+const $=s=>document.querySelector(s), NS='http://www.w3.org/2000/svg';
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const CONFC={high:'--hi',medium:'--med',low:'--lo'};
+function ftin(x){const s=x<0?'-':'';x=Math.abs(x);let f=Math.floor(x/12),i=Math.round((x-12*f)*10)/10;if(i>=12){f++;i-=12}return `${s}${f} ft ${i} in`}
+function fmt(x){return `${(Math.round(x*10)/10).toFixed(1)} in / ${ftin(x)}`}
+// ---------- geometry: frame inches <-> view coords ----------
+const H=D.meta.H_frame_to_img;
+function inv3(m){const[a,b,c]=m[0],[d,e,f]=m[1],[g,h,i]=m[2];const A=e*i-f*h,B=-(d*i-f*g),C=d*h-e*g,det=a*A+b*B+c*C;
+ return [[A/det,-(b*i-c*h)/det,(b*f-c*e)/det],[B/det,(a*i-c*g)/det,-(a*f-c*d)/det],[C/det,-(a*h-b*g)/det,(a*e-b*d)/det]]}
+const Hi=inv3(H);
+function ap(m,x,y){const w=m[2][0]*x+m[2][1]*y+m[2][2];return[(m[0][0]*x+m[0][1]*y+m[0][2])/w,(m[1][0]*x+m[1][1]*y+m[1][2])/w]}
+let mode='orig';
+const P=(x,y)=>mode==='orig'?ap(H,x,y):[x,y];
+const Pinv=(u,v)=>mode==='orig'?ap(Hi,u,v):[u,v];
+function bgRect(){if(mode==='orig')return{x:0,y:0,w:750,h:750};const s=VIEWS.straight;return{x:s.x0,y:s.y0,w:s.x1-s.x0,h:s.y1-s.y0}}
+const unitScale=()=>mode==='orig'?1.25:1; // view units per inch (approx) for sizing
+// ---------- svg helpers ----------
+function el(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e}
+function poly(pts,attrs,parent){return el('polygon',{points:pts.map(p=>P(...p).join(',')).join(' '),...attrs},parent)}
+function pline(pts,attrs,parent){return el('polyline',{points:pts.map(p=>P(...p).join(',')).join(' '),fill:'none',...attrs},parent)}
+function text(x,y,str,cls,attrs,parent){const[u,v]=P(x,y);const t=el('text',{x:u,y:v,class:cls,'text-anchor':'middle','dominant-baseline':'middle',...attrs},parent);t.textContent=str;return t}
+// ---------- state ----------
+let filter='both', showDoors=true, measuring=false, selRoom=null;
+const svg=$('#map'), world=$('#world'), ov=$('#ov'), gF=$('#furn'), gM=$('#meas');
+let tx=0,ty=0,k=1;
+function applyT(){world.setAttribute('transform',`translate(${tx},${ty}) scale(${k})`);
+ const px=k/unitScale(); // screen px per inch
+ ov.style.fontSize=(12/k)+'px'; gM.style.fontSize=(13/k)+'px'; gF.style.fontSize=(12/k)+'px';
+ svg.classList.toggle('zlo',px<1.4); svg.classList.toggle('zmid',px>=1.4&&px<2.6)}
+function fit(b){const r=svg.getBoundingClientRect();const pad=16;
+ k=Math.min((r.width-2*pad)/b.w,(r.height-2*pad)/b.h);tx=pad+(r.width-2*pad-b.w*k)/2-b.x*k;ty=pad+(r.height-2*pad-b.h*k)/2-b.y*k;applyT()}
+function fitInches(x0,y0,x1,y1,margin=30){const pts=[[x0-margin,y0-margin],[x1+margin,y0-margin],[x1+margin,y1+margin],[x0-margin,y1+margin]].map(p=>P(...p));
+ const xs=pts.map(p=>p[0]),ys=pts.map(p=>p[1]);fit({x:Math.min(...xs),y:Math.min(...ys),w:Math.max(...xs)-Math.min(...xs),h:Math.max(...ys)-Math.min(...ys)})}
+function fitAll(){fitInches(-5,-5,545,680,8)}
+// ---------- overlay ----------
+function color(c){return css(CONFC[c]||'--blue')}
+function draw(){
+ ov.replaceChildren();
+ const bg=$('#bg'), b=bgRect();
+ bg.setAttribute('href',mode==='orig'?IMG_ORIG:IMG_STR);bg.setAttribute('x',b.x);bg.setAttribute('y',b.y);bg.setAttribute('width',b.w);bg.setAttribute('height',b.h);
+ const gRooms=el('g',{},ov), gWalls=el('g',{'pointer-events':'none'},ov), gFx=el('g',{'pointer-events':'none'},ov), gDoors=el('g',{'pointer-events':'none'},ov), gLab=el('g',{'pointer-events':'none'},ov);
+ const showW=filter!=='fix', showF=filter!=='walls';
+ for(const r of D.rooms){
+  const c=color(r.confidence), sel=selRoom===r.id;
+  const p=poly([[r.x0,r.y0],[r.x1,r.y0],[r.x1,r.y1],[r.x0,r.y1]],{fill:c,'fill-opacity':sel?0.22:0.07,stroke:c,'stroke-width':sel?3:1.6,'vector-effect':'non-scaling-stroke','stroke-dasharray':r.id==='P'?'6 4':'none',style:'cursor:pointer'},gRooms);
+  p.addEventListener('click',e=>{if(measuring||dragging)return;selectRoom(r.id,false)});
+  const cx=(r.x0+r.x1)/2, cy=(r.y0+r.y1)/2, small=r.w_in<30||r.d_in<30;
+  text(cx,cy-(small?0:7),SHORT[r.id]||r.name,'lab-room',{fill:css('--ink'),'font-size':small?'1em':'1.15em'},gLab);
+  if(!small){text(cx,cy+7,`${r.w_ft} × ${r.d_ft}`,'lab-sub',{fill:css('--ink-2')},gLab);text(cx,cy+19,`${r.sqft} sq ft`,'lab-sub',{fill:c},gLab)}
+  if(showW&&!small){ // dimension lines inside room: width near north wall, depth near west wall
+   const o=7;
+   dim([r.x0,r.y0+o],[r.x1,r.y0+o],r.w_in,c,gWalls);
+   dim([r.x0+o,r.y0],[r.x0+o,r.y1],r.d_in,c,gWalls,true);
+  }
+ }
+ if(showW) for(const it of D.items.filter(i=>i.type==='opening')){
+  const g=it.geom; pline([g.a,g.b],{stroke:css('--open'),'stroke-width':5,'stroke-linecap':'round','vector-effect':'non-scaling-stroke','stroke-opacity':0.85},gWalls);
+  const m=[(g.a[0]+g.b[0])/2,(g.a[1]+g.b[1])/2]; text(m[0],m[1]-(g.a[1]===g.b[1]?8:0),`${it.value_in}"`,'lab-dim',{fill:css('--open')},gLab);
+ }
+ if(showF){
+  for(const f of D.fixtures){
+   const c=color(f.confidence);
+   poly([[f.x0,f.y0],[f.x1,f.y0],[f.x1,f.y1],[f.x0,f.y1]],{fill:c,'fill-opacity':0.12,stroke:c,'stroke-width':1.6,'stroke-dasharray':'4 3','vector-effect':'non-scaling-stroke'},gFx);
+   text((f.x0+f.x1)/2,f.y0+5,`${f.w_in}×${f.d_in}`,'lab-fx',{fill:c},gLab);
+  }
+  for(const it of D.items.filter(i=>i.type==='clearance')){
+   const g=it.geom; pline([g.a,g.b],{stroke:css('--clear'),'stroke-width':2,'stroke-dasharray':'2 3','vector-effect':'non-scaling-stroke'},gFx);
+   for(const q of [g.a,g.b]){const[u,v]=P(...q);el('circle',{cx:u,cy:v,r:2.2/ (k||1)+0.6,fill:css('--clear')},gFx)}
+   const m=[(g.a[0]+g.b[0])/2,(g.a[1]+g.b[1])/2]; text(m[0],m[1]-5,`${it.value_in}"`,'lab-fx',{fill:css('--clear')},gLab);
+  }
+ }
+ if(showDoors) for(const d of D.doors){
+  const[hx,hy]=d.hinge,w=d.assumed_width_in; let closed,open;
+  if(d.axis==='h'){closed=[hx+d.dir*w,hy];open=[hx,hy+d.swing*w]}else{closed=[hx,hy+d.dir*w];open=[hx+d.swing*w,hy]}
+  const a0=Math.atan2(closed[1]-hy,closed[0]-hx),a1=Math.atan2(open[1]-hy,open[0]-hx);let da=a1-a0;while(da>Math.PI)da-=2*Math.PI;while(da<-Math.PI)da+=2*Math.PI;
+  const arc=[];for(let i=0;i<=24;i++){const a=a0+da*i/24;arc.push([hx+w*Math.cos(a),hy+w*Math.sin(a)])}
+  pline([[hx,hy],...arc,[hx,hy]],{stroke:css('--lo'),'stroke-width':1.3,'stroke-dasharray':'5 3',fill:css('--lo'),'fill-opacity':0.06,'vector-effect':'non-scaling-stroke'},gDoors);
+  pline([[hx,hy],open],{stroke:css('--lo'),'stroke-width':2.2,'vector-effect':'non-scaling-stroke'},gDoors);
+ }
+ drawFurn(); applyT();
+}
+function dim(a,b,val,c,parent,vert){
+ pline([a,b],{stroke:c,'stroke-width':1,'vector-effect':'non-scaling-stroke','stroke-opacity':0.75},parent);
+ for(const q of [a,b]){const t=vert?[[q[0]-3,q[1]],[q[0]+3,q[1]]]:[[q[0],q[1]-3],[q[0],q[1]+3]];pline(t,{stroke:c,'stroke-width':1,'vector-effect':'non-scaling-stroke'},parent)}
+ const m=[(a[0]+b[0])/2,(a[1]+b[1])/2];const t=text(m[0],m[1],`${val}"`,'lab-dim',{fill:c},parent);
+ if(vert){const[u,v]=P(...m);t.setAttribute('transform',`rotate(-90 ${u} ${v})`)}
+}
+// ---------- room list & detail ----------
+const roomById=Object.fromEntries(D.rooms.map(r=>[r.id,r]));
+const SHORT={R1:'Primary bed',R2:'Primary bath',R2s:'Shower',R3:'Walk-in',R3b:'Linen',R4:'Laundry',R5:'Kitchen',R6:'Living / dining',R6e:'Foyer',R6h:'TV wall',R7:'Bedroom 2',R7c:'Closet',R8:'Bath 2',R8v:'Vestibule',R9:'Bedroom 3',R10:'Pantry hall',R10b:'Storage',G:'Garage',P:'Patio'};
+function buildList(){const ul=$('#roomlist');ul.replaceChildren();
+ for(const r of D.rooms){const li=document.createElement('li');const b=document.createElement('button');b.dataset.id=r.id;
+  b.innerHTML=`<span class="dot" style="background:var(${CONFC[r.confidence]})"></span><span>${r.name}</span><span class="num">${r.sqft} ft²</span>`;
+  b.addEventListener('click',()=>selectRoom(r.id,true));li.appendChild(b);ul.appendChild(li)}}
+function selectRoom(id,zoom){selRoom=id;const r=roomById[id];
+ document.querySelectorAll('#roomlist button').forEach(b=>b.setAttribute('aria-current',b.dataset.id===id?'true':'false'));
+ const items=D.items.filter(i=>i.room===id&&i.type!=='wall');
+ const walls=D.items.filter(i=>i.room===id&&i.type==='wall');
+ const rows=items.map(i=>`<dt>${i.label.replace(r.name+' - ','')}</dt><dd>${i.value_in}" ±${i.err_in} <span class="pill ${i.confidence}">${i.confidence}</span></dd>`).join('');
+ $('#detail').innerHTML=`<h2>${r.name}</h2><dl>
+  <dt>Width (E–W)</dt><dd>${fmt(r.w_in)}</dd><dt>Depth (N–S)</dt><dd>${fmt(r.d_in)}</dd>
+  <dt>Area</dt><dd>${r.sqft} sq ft ±${r.sqft_err}</dd><dt>Confidence</dt><dd><span class="pill ${r.confidence}">${r.confidence}</span> ±${walls[0]?walls[0].err_in:''}" on ${Math.round(Math.max(r.w_in,r.d_in))}"</dd>${rows}</dl>
+  ${r.notes&&r.notes.length?`<p class="small" style="margin:8px 0 0">${r.notes.join('; ')}.</p>`:''}`;
+ $('#readout').textContent=`${r.name}: ${ftin(r.w_in)} × ${ftin(r.d_in)} · ${r.sqft} sq ft`;
+ if(zoom)fitInches(r.x0,r.y0,r.x1,r.y1,24); draw()}
+// ---------- totals, legend ----------
+function buildSide(){const t=D.totals;
+ $('#totals').innerHTML=`<span>Rooms, inside walls</span><b>${t.interior_rooms_sqft} sq ft</b>
+  <span>Living area to outside of walls</span><b>${t.footprint_living_sqft} ±${t.footprint_err_sqft}</b>
+  <span>Listed</span><b>${t.listed_sqft}</b><span>Garage (inside)</span><b>${t.garage_sqft} sq ft</b><span>Patio</span><b>${t.patio_sqft} sq ft</b>`;
+ const L=[['--hi','High confidence'],['--med','Medium'],['--lo','Low / assumed'],['--open','Opening'],['--clear','Clearance'],['--furn','Your furniture'],['--tool','Measure tool']];
+ $('#legend').innerHTML=L.map(([c,n])=>`<span><span class="sw" style="background:var(${c})"></span>${n}</span>`).join('')}
+// ---------- pan / zoom ----------
+const pts=new Map(); let dragging=false, panStart=null, pinch=null, furnDrag=null;
+function toWorld(cx,cy){const r=svg.getBoundingClientRect();return[(cx-r.left-tx)/k,(cy-r.top-ty)/k]}
+function zoomAt(cx,cy,f){const r=svg.getBoundingClientRect();const x=cx-r.left,y=cy-r.top;tx=x-(x-tx)*f;ty=y-(y-ty)*f;k*=f;applyT()}
+svg.addEventListener('wheel',e=>{e.preventDefault();zoomAt(e.clientX,e.clientY,Math.exp(-e.deltaY*0.0015))},{passive:false});
+svg.addEventListener('pointerdown',e=>{svg.setPointerCapture(e.pointerId);pts.set(e.pointerId,[e.clientX,e.clientY]);
+ if(pts.size===2){const[a,b]=[...pts.values()];pinch={d:Math.hypot(a[0]-b[0],a[1]-b[1]),cx:(a[0]+b[0])/2,cy:(a[1]+b[1])/2};furnDrag=null;panStart=null;return}
+ const hit=e.target.closest&&e.target.closest('[data-furn]');
+ if(hit&&!measuring){const f=furn.find(z=>z.id===hit.dataset.furn);activeF=f.id;const[u,v]=toWorld(e.clientX,e.clientY);const[ix,iy]=Pinv(u,v);furnDrag={f,ox:f.x-ix,oy:f.y-iy};drawFurn();return}
+ panStart={x:e.clientX,y:e.clientY,tx,ty};dragging=false});
+svg.addEventListener('pointermove',e=>{if(!pts.has(e.pointerId))return;pts.set(e.pointerId,[e.clientX,e.clientY]);
+ if(pinch&&pts.size===2){const[a,b]=[...pts.values()];const d=Math.hypot(a[0]-b[0],a[1]-b[1]);const cx=(a[0]+b[0])/2,cy=(a[1]+b[1])/2;
+  tx+=cx-pinch.cx;ty+=cy-pinch.cy;zoomAt(cx,cy,d/pinch.d);pinch={d,cx,cy};return}
+ if(furnDrag){const[u,v]=toWorld(e.clientX,e.clientY);const[ix,iy]=Pinv(u,v);furnDrag.f.x=ix+furnDrag.ox;furnDrag.f.y=iy+furnDrag.oy;drawFurn();return}
+ if(panStart){const dx=e.clientX-panStart.x,dy=e.clientY-panStart.y;if(Math.abs(dx)+Math.abs(dy)>4)dragging=true;if(dragging){tx=panStart.tx+dx;ty=panStart.ty+dy;applyT()}}});
+function endPtr(e){const wasDrag=dragging;pts.delete(e.pointerId);if(pts.size<2)pinch=null;
+ if(pts.size===0){if(measuring&&!wasDrag&&panStart&&!furnDrag){const[u,v]=toWorld(e.clientX,e.clientY);addMeasure(Pinv(u,v))}
+  panStart=null;furnDrag=null;setTimeout(()=>dragging=false,0)}}
+svg.addEventListener('pointerup',endPtr);svg.addEventListener('pointercancel',endPtr);
+$('#z-in').onclick=()=>{const r=svg.getBoundingClientRect();zoomAt(r.left+r.width/2,r.top+r.height/2,1.4)};
+$('#z-out').onclick=()=>{const r=svg.getBoundingClientRect();zoomAt(r.left+r.width/2,r.top+r.height/2,1/1.4)};
+$('#z-fit').onclick=fitAll;
+// ---------- measure tool ----------
+let mpts=[];
+function addMeasure(p){if(mpts.length>=2)mpts=[];mpts.push(p);drawMeasure()}
+function drawMeasure(){gM.replaceChildren();const c=css('--tool');
+ for(const q of mpts){const[u,v]=P(...q);el('circle',{cx:u,cy:v,r:4/k,fill:c,stroke:css('--sheet'),'stroke-width':1.5/k},gM)}
+ if(mpts.length===2){const[a,b]=mpts;pline([a,b],{stroke:c,'stroke-width':2.5,'vector-effect':'non-scaling-stroke'},gM);
+  const d=Math.hypot(b[0]-a[0],b[1]-a[1]);text((a[0]+b[0])/2,(a[1]+b[1])/2-6,`${d.toFixed(1)}" · ${ftin(d)}`,'',{fill:c,'font-weight':'600'},gM);
+  $('#readout').textContent=`Measured: ${fmt(d)} (±${(d*0.02+1).toFixed(1)} in)`}
+ else if(mpts.length===1)$('#readout').textContent='Tap the second point'}
+$('#t-measure').onclick=()=>{measuring=!measuring;$('#t-measure').setAttribute('aria-pressed',measuring);svg.classList.toggle('measuring',measuring);
+ mpts=[];drawMeasure();$('#readout').textContent=measuring?'Tap the first point':'Measure off'};
+// ---------- furniture ----------
+let furn=[], activeF=null, fid=0;
+function parseLen(s){s=String(s).trim().toLowerCase();if(!s)return NaN;
+ const m=s.match(/^(\d+(?:\.\d+)?)\s*(?:'|ft|feet)\s*(?:(\d+(?:\.\d+)?)\s*(?:"|in|inches)?)?$/);if(m)return parseFloat(m[1])*12+(m[2]?parseFloat(m[2]):0);
+ const n=s.match(/^(\d+(?:\.\d+)?)\s*(?:"|in|inches)?$/);return n?parseFloat(n[1]):NaN}
+$('#furnform').addEventListener('submit',e=>{e.preventDefault();const w=parseLen($('#fw').value),d=parseLen($('#fd').value);
+ if(!(w>0&&d>0)){$('#fitmsg').className='fitmsg bad';$('#fitmsg').textContent='Enter width and depth, e.g. 84 or 7\' 2"';return}
+ const r=svg.getBoundingClientRect();const[u,v]=toWorld(r.left+r.width/2,r.top+r.height/2);const[x,y]=Pinv(u,v);
+ const f={id:'f'+(++fid),x,y,w,d,a:0};furn.push(f);activeF=f.id;drawFurn()});
+function corners(f){const c=Math.cos(f.a*Math.PI/180),s=Math.sin(f.a*Math.PI/180);
+ return [[-f.w/2,-f.d/2],[f.w/2,-f.d/2],[f.w/2,f.d/2],[-f.w/2,f.d/2]].map(([x,y])=>[f.x+x*c-y*s,f.y+x*s+y*c])}
+function drawFurn(){gF.replaceChildren();const c=css('--furn');
+ for(const f of furn){const cs=corners(f);const g=el('g',{'data-furn':f.id,style:'cursor:move'},gF);
+  poly(cs,{fill:c,'fill-opacity':f.id===activeF?0.3:0.18,stroke:c,'stroke-width':f.id===activeF?3:2,'vector-effect':'non-scaling-stroke'},g);
+  pline([cs[0],cs[1]],{stroke:c,'stroke-width':5,'vector-effect':'non-scaling-stroke'},g);
+  text(f.x,f.y,`${ftin(f.w)} × ${ftin(f.d)}`,'',{fill:c,'font-weight':'600','pointer-events':'none'},g)}
+ fitCheck()}
+function fitCheck(){const f=furn.find(z=>z.id===activeF);const m=$('#fitmsg');if(!f){m.textContent='';return}
+ const room=D.rooms.find(r=>r.id!=='P'&&f.x>=r.x0&&f.x<=r.x1&&f.y>=r.y0&&f.y<=r.y1);
+ if(!room){m.className='fitmsg bad';m.textContent='Center is outside every room.';return}
+ let minc=Infinity;for(const[x,y]of corners(f)){minc=Math.min(minc,x-room.x0,room.x1-x,y-room.y0,room.y1-y)}
+ if(minc>=0){m.className='fitmsg ok';m.textContent=`Fits in ${room.name}: ${minc.toFixed(1)} in to the nearest wall. Check doors, fixtures and swings too.`}
+ else{m.className='fitmsg bad';m.textContent=`Too big here: crosses a ${room.name} wall by ${(-minc).toFixed(1)} in.`}}
+const rot=d=>{const f=furn.find(z=>z.id===activeF);if(f){f.a=(f.a+d+360)%360;drawFurn()}};
+$('#fr-l').onclick=()=>rot(-15);$('#fr-r').onclick=()=>rot(15);$('#fr-90').onclick=()=>rot(90);
+$('#fr-del').onclick=()=>{furn=furn.filter(z=>z.id!==activeF);activeF=furn.length?furn[furn.length-1].id:null;drawFurn()};
+// ---------- toggles ----------
+function setFilter(f){filter=f;for(const[id,v]of[['#f-walls','walls'],['#f-fix','fix'],['#f-both','both']])$(id).setAttribute('aria-pressed',f===v);draw()}
+$('#f-walls').onclick=()=>setFilter('walls');$('#f-fix').onclick=()=>setFilter('fix');$('#f-both').onclick=()=>setFilter('both');
+$('#t-doors').onclick=()=>{showDoors=!showDoors;$('#t-doors').setAttribute('aria-pressed',showDoors);draw()};
+function setMode(m){mode=m;$('#v-orig').setAttribute('aria-pressed',m==='orig');$('#v-str').setAttribute('aria-pressed',m==='straight');draw();drawMeasure();if(selRoom){const r=roomById[selRoom];fitInches(r.x0,r.y0,r.x1,r.y1,24)}else fitAll()}
+$('#v-orig').onclick=()=>setMode('orig');$('#v-str').onclick=()=>setMode('straight');
+// ---------- CSV ----------
+const TYPE_ORDER={room:0,wall:1,opening:2,door:3,fixture:4,clearance:5};
+function csv(){const q=s=>`"${String(s).replace(/"/g,'""')}"`;const rows=[['room_id','room','type','id','label','inches','feet_inches','plus_minus_in','confidence','verify_with_tape']];
+ for(const r of D.rooms){rows.push([r.id,r.name,'room',r.id,'Width (E-W)',r.w_in,r.w_ft,'',r.confidence,r.confidence==='low']);rows.push([r.id,r.name,'room',r.id,'Depth (N-S)',r.d_in,r.d_ft,'',r.confidence,r.confidence==='low']);rows.push([r.id,r.name,'room',r.id,'Area (sq ft)',r.sqft,'',r.sqft_err,r.confidence,r.confidence==='low'])}
+ const its=[...D.items].sort((a,b)=>a.room.localeCompare(b.room)||TYPE_ORDER[a.type]-TYPE_ORDER[b.type]);
+ for(const i of its)rows.push([i.room,roomById[i.room]?.name||'',i.type,i.id,i.label,i.value_in,i.ft_in,i.err_in,i.confidence,i.verify]);
+ return rows.map(r=>r.map(q).join(',')).join('\n')}
+function copyCSV(btn){const s=csv();$('#csvtext').value=s;const done=()=>{btn.textContent='Copied';setTimeout(()=>btn.textContent='Copy CSV',1600)};
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(s).then(done).catch(()=>{location.hash='#notes';const t=$('#csvtext');t.focus();t.select()})}
+ else{location.hash='#notes';const t=$('#csvtext');t.focus();t.select()}}
+function dlCSV(){const b=new Blob([csv()],{type:'text/csv'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='bancoora_measurements.csv';document.body.appendChild(a);a.click();a.remove()}
+$('#b-csv').onclick=e=>copyCSV(e.currentTarget);$('#b-csv2').onclick=e=>copyCSV(e.currentTarget);
+function offlineDoc(){return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>body{margin:0}[hidden]{display:none!important}</style></head><body>'+SNAP.replace('const OFFLINE=false;','const OFFLINE=true;')+'</body></html>'}
+if(!OFFLINE&&window.claude&&window.claude.use){window.claude.use('downloads').then(dl=>{if(!dl)return;
+ const save=(filename,data,btn)=>dl.save({filename,data}).then(()=>{const t=btn.textContent;btn.textContent='Saved';setTimeout(()=>btn.textContent=t,1600)}).catch(err=>{if(err&&['unavailable','not_granted','capability_disabled','capability_removed'].includes(err.code)){['#b-dl','#b-dl2','#b-off'].forEach(s=>$(s).hidden=true)}else if(err&&err.code!=='declined'){$('#readout').textContent='Download did not start ('+(err.code||'error')+'). Try again in a moment.'}});
+ ['#b-dl','#b-dl2'].forEach(s=>{$(s).hidden=false;$(s).onclick=e=>save('bancoora_measurements.csv',csv(),e.currentTarget)});
+ $('#b-off').hidden=false;$('#b-off').onclick=e=>save('bancoora_viewer.html',offlineDoc(),e.currentTarget)}).catch(()=>{})}
+if(OFFLINE){document.querySelectorAll('.offline-only').forEach(b=>b.hidden=false);$('#b-dl').onclick=dlCSV;$('#b-dl2').onclick=dlCSV;
+ $('#b-print').onclick=()=>{location.hash='#plan';selRoom=null;setFilter('both');setTimeout(()=>{fitAll();window.print()},150)}}
+// ---------- dream sheet & notes ----------
+function buildDream(){$('#corrections').innerHTML=DREAM.corrections.map(c=>`<div class="card"><h3>${c.title}</h3><p>${c.detail}</p></div>`).join('');
+ const tb=$('#dreamtable tbody');let g=null,h='';
+ for(const r of DREAM.rows){if(r.group!==g){g=r.group;h+=`<tr class="sect"><td colspan="6">${g}</td></tr>`}
+  const best=typeof r.best==='number'?`${r.best.toFixed(1)} in${r.best_ft?` / ${r.best_ft}`:''}`:r.best;
+  h+=`<tr class="${r.changed?'chg':''}"><td>${r.item}</td><td class="n">${r.measured}</td><td class="n best">${best}</td><td class="n">${r.range}</td><td>${r.basis}</td><td><span class="pill ${r.confidence}">${r.confidence}</span></td></tr>`}
+ tb.innerHTML=h}
+function buildNotes(){const m=D.meta,t=D.totals;
+ $('#notes-scale').innerHTML=`<div class="tablebox"><table><tbody>
+ <tr><td>Source image</td><td>Official Bancoora plan, elleryapartments.com, 750 × 750 px, 3D render viewed from a tilted camera</td></tr>
+ <tr><td>Scale anchor</td><td>Your primary-bath tape: 102 in side wall to shower far wall (66 + 36), 119 in back wall to door wall (69.5 + 49.5)</td></tr>
+ <tr><td>Scale in the primary bath</td><td class="n">1 px = ${m.scale.primary_bath_h_in_per_px} in across, ${m.scale.primary_bath_v_in_per_px} in up-down (whole plan: ${m.scale.range_in_per_px} in)</td></tr>
+ <tr><td>Error model</td><td class="n">High ${m.confidence_model.high} · Medium ${m.confidence_model.medium} · Low ${m.confidence_model.low}</td></tr>
+ <tr><td>Bathroom check</td><td>All four tape measurements agree with the plan within 0.4 in, once the 4 in shower shelf is accounted for. Only the shower end wall is drawn about 3.8 in off.</td></tr>
+ <tr><td>Area check</td><td>Living area to outside of walls ${t.footprint_living_sqft} ±${t.footprint_err_sqft} sq ft vs listed ${t.listed_sqft}. Garage ${t.garage_footprint_sqft} sq ft is not in the listing. The 8% gap is unexplained, so rooms outside the primary wing are rated medium.</td></tr>
+ <tr><td>Door widths</td><td>Not measurable: the render draws a solid header over each doorway. Swing arcs use standard sizes and are marked low confidence.</td></tr>
+ <tr><td>Fixtures</td><td>All fixtures are stock 3D symbols; sizes are what is drawn, not the real appliances. Rated low.</td></tr>
+ </tbody></table></div>`;
+ const v=D.items.filter(i=>i.verify);const seen=new Set();
+ $('#verify').innerHTML=[...v.map(i=>{const key=i.label.replace(/ - (width|depth) \((E-W|N-S)\)$/,'');if(seen.has(key))return'';seen.add(key);return`<li>${key}</li>`}),
+  '<li>Walk-in closet depth (may be ~45 in, not 49 in)</li>','<li>Laundry depth (may be ~69 in, not 65.5 in)</li>','<li>One long wall in the living room or bedroom 2, to settle the 8% area gap</li>'].join('');
+ $('#csvtext').value=csv()}
+// ---------- routing ----------
+function route(){const p=(location.hash||'#plan').slice(1);const page=['plan','dream-sheet','notes'].includes(p)?p:'plan';
+ for(const n of ['plan','dream-sheet','notes'])$('#pg-'+n).hidden=n!==page;
+ document.querySelectorAll('nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.page===page?'page':'false'));
+ if(page==='plan')requestAnimationFrame(()=>{if(!k||k===1)fitAll()})}
+window.addEventListener('hashchange',route);
+window.addEventListener('resize',()=>{if(!$('#pg-plan').hidden)applyT()});
+buildSide();buildList();buildDream();buildNotes();draw();route();requestAnimationFrame(fitAll);
+// sample furniture so the tool is visible at rest: an 84 x 36 in sofa in the living room
+(function(){const r=roomById['R6'];furn.push({id:'f0',x:(r.x0+r.x1)/2,y:r.y0+60,w:84,d:36,a:0});activeF='f0';drawFurn()})();
+</script>

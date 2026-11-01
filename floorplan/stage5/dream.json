@@ -1,0 +1,543 @@
+{
+ "rows": [
+  {
+   "group": "Primary bathroom",
+   "item": "Back wall, side wall to shower glass",
+   "measured": "65.6 (plan)",
+   "best": 66.0,
+   "best_ft": "5 ft 6 in",
+   "range": "64.5 - 67.5 in",
+   "basis": "Your tape (A). Plan agrees within 0.4 in.",
+   "confidence": "high",
+   "changed": false
+  },
+  {
+   "group": "Primary bathroom",
+   "item": "Shower width, glass to far wall",
+   "measured": "36.4 (plan)",
+   "best": 36.0,
+   "best_ft": "3 ft 0 in",
+   "range": "34.5 - 37.5 in",
+   "basis": "Your tape (B).",
+   "confidence": "high",
+   "changed": false
+  },
+  {
+   "group": "Primary bathroom",
+   "item": "Shower length, back wall to end wall (above shelf)",
+   "measured": "65.7 (plan)",
+   "best": 69.5,
+   "best_ft": "5 ft 9.5 in",
+   "range": "68 - 71 in",
+   "basis": "Your tape (C). Plan draws the end wall ~3.8 in short.",
+   "confidence": "high",
+   "changed": true
+  },
+  {
+   "group": "Primary bathroom",
+   "item": "Shower floor length (in front of 4 in shelf)",
+   "measured": "-",
+   "best": 65.5,
+   "best_ft": "5 ft 5.5 in",
+   "range": "63.5 - 67.5 in",
+   "basis": "69.5 minus the 4 in built-in shelf at the back end (shelf ~4 ft tall, not tape-measured).",
+   "confidence": "medium",
+   "changed": true
+  },
+  {
+   "group": "Primary bathroom",
+   "item": "Wall from door wall to shower corner",
+   "measured": "53.3 (plan)",
+   "best": 49.5,
+   "best_ft": "4 ft 1.5 in",
+   "range": "48 - 51 in",
+   "basis": "Your tape (D). Plan puts the corner ~3.8 in further from the door.",
+   "confidence": "high",
+   "changed": true
+  },
+  {
+   "group": "Primary bathroom",
+   "item": "Room depth, back wall to door wall",
+   "measured": "119.0 (plan)",
+   "best": 119.0,
+   "best_ft": "9 ft 11 in",
+   "range": "117.5 - 120.5 in",
+   "basis": "Tape C + D; plan agrees exactly.",
+   "confidence": "high",
+   "changed": false
+  },
+  {
+   "group": "Primary bathroom",
+   "item": "Main floor width, side wall to wall beside shower",
+   "measured": "61.0 (plan)",
+   "best": 61.0,
+   "best_ft": "5 ft 1 in",
+   "range": "59.6 - 62.4 in",
+   "basis": "Plan, inside faces. Not taped.",
+   "confidence": "high",
+   "changed": false
+  },
+  {
+   "group": "Primary walk-in closet",
+   "item": "Depth (door wall to shower/laundry wall)",
+   "measured": "49.0 (plan)",
+   "best": 45.2,
+   "best_ft": "3 ft 9.2 in",
+   "range": "43.5 - 49.5 in",
+   "basis": "If the shower end wall is 3.8 in off in the drawing and runs straight across (as drawn), the closet is that much shallower. Verify.",
+   "confidence": "medium",
+   "changed": true
+  },
+  {
+   "group": "Laundry",
+   "item": "Depth (closet wall to back wall)",
+   "measured": "65.5 (plan)",
+   "best": 69.3,
+   "best_ft": "5 ft 9.3 in",
+   "range": "65 - 71 in",
+   "basis": "Same wall as above: laundry gains what the closet loses. Verify.",
+   "confidence": "medium",
+   "changed": true
+  },
+  {
+   "group": "Primary bedroom",
+   "item": "width (E-W)",
+   "measured": "160.8 (plan)",
+   "best": 160.8,
+   "best_ft": "13 ft 4.8 in",
+   "range": "157.9 - 164.2 in",
+   "basis": "Plan value next to the tape-checked bathroom.",
+   "confidence": "high",
+   "changed": false
+  },
+  {
+   "group": "Primary bedroom",
+   "item": "depth (N-S)",
+   "measured": "166.2 (plan)",
+   "best": 166.2,
+   "best_ft": "13 ft 10.2 in",
+   "range": "163.2 - 169.7 in",
+   "basis": "Plan value next to the tape-checked bathroom.",
+   "confidence": "high",
+   "changed": false
+  },
+  {
+   "group": "Kitchen",
+   "item": "width (E-W)",
+   "measured": "129.8 (plan)",
+   "best": 129.8,
+   "best_ft": "10 ft 9.8 in",
+   "range": "127.4 - 136 in",
+   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "confidence": "medium",
+   "changed": false
+  },
+  {
+   "group": "Kitchen",
+   "item": "depth (N-S)",
+   "measured": "118.2 (plan)",
+   "best": 118.2,
+   "best_ft": "9 ft 10.2 in",
+   "range": "115.9 - 123.9 in",
+   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "confidence": "medium",
+   "changed": false
+  },
+  {
+   "group": "Living / dining",
+   "item": "width (E-W)",
+   "measured": "172.8 (plan)",
+   "best": 172.8,
+   "best_ft": "14 ft 4.8 in",
+   "range": "169.7 - 180.7 in",
+   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "confidence": "medium",
+   "changed": false
+  },
+  {
+   "group": "Living / dining",
+   "item": "depth (N-S)",
+   "measured": "245.2 (plan)",
+   "best": 245.2,
+   "best_ft": "20 ft 5.2 in",
+   "range": "241 - 256 in",
+   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "confidence": "medium",
+   "changed": false
+  },
+  {
+   "group": "Entry / foyer",
+   "item": "width (E-W)",
+   "measured": "42.2 (plan)",
+   "best": 42.2,
+   "best_ft": "3 ft 6.2 in",
+   "range": "41.1 - 44.9 in",
+   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "confidence": "medium",
+   "changed": false
+  },
+  {
+   "group": "Entry / foyer",
+   "item": "depth (N-S)",
+   "measured": "71.2 (plan)",
+   "best": 71.2,
+   "best_ft": "5 ft 11.2 in",
+   "range": "69.6 - 75 in",
+   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "confidence": "medium",
+   "changed": false
+  },
+  {
+   "group": "Bedroom 2",
+   "item": "width (E-W)",
+   "measured": "138.5 (plan)",
+   "best": 138.5,
+   "best_ft": "11 ft 6.5 in",
+   "range": "135.9 - 145 in",
+   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "confidence": "medium",
+   "changed": false
+  },
+  {
+   "group": "Bedroom 2",
+   "item": "depth (N-S)",
+   "measured": "158.5 (plan)",
+   "best": 158.5,
+   "best_ft": "13 ft 2.5 in",
+   "range": "155.6 - 165.8 in",
+   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "confidence": "medium",
+   "changed": false
+  },
+  {
+   "group": "Bathroom 2",
+   "item": "width (E-W)",
+   "measured": "112.5 (plan)",
+   "best": 112.5,
+   "best_ft": "9 ft 4.5 in",
+   "range": "110.3 - 118 in",
+   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "confidence": "medium",
+   "changed": false
+  },
+  {
+   "group": "Bathroom 2",
+   "item": "depth (N-S)",
+   "measured": "63.5 (plan)",
+   "best": 63.5,
+   "best_ft": "5 ft 3.5 in",
+   "range": "62 - 67 in",
+   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "confidence": "medium",
+   "changed": false
+  },
+  {
+   "group": "Bedroom 3",
+   "item": "width (E-W)",
+   "measured": "139.2 (plan)",
+   "best": 139.2,
+   "best_ft": "11 ft 7.2 in",
+   "range": "136.6 - 145.8 in",
+   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "confidence": "medium",
+   "changed": false
+  },
+  {
+   "group": "Bedroom 3",
+   "item": "depth (N-S)",
+   "measured": "118.2 (plan)",
+   "best": 118.2,
+   "best_ft": "9 ft 10.2 in",
+   "range": "115.9 - 123.9 in",
+   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "confidence": "medium",
+   "changed": false
+  },
+  {
+   "group": "Storage / pantry hall",
+   "item": "width (E-W)",
+   "measured": "40.0 (plan)",
+   "best": 40.0,
+   "best_ft": "3 ft 4 in",
+   "range": "38.9 - 42.6 in",
+   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "confidence": "medium",
+   "changed": false
+  },
+  {
+   "group": "Storage / pantry hall",
+   "item": "depth (N-S)",
+   "measured": "119.0 (plan)",
+   "best": 119.0,
+   "best_ft": "9 ft 11 in",
+   "range": "116.7 - 124.8 in",
+   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "confidence": "medium",
+   "changed": false
+  },
+  {
+   "group": "Storage closet (lower right)",
+   "item": "width (E-W)",
+   "measured": "80.2 (plan)",
+   "best": 80.2,
+   "best_ft": "6 ft 8.2 in",
+   "range": "78.5 - 84.4 in",
+   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "confidence": "medium",
+   "changed": false
+  },
+  {
+   "group": "Storage closet (lower right)",
+   "item": "depth (N-S)",
+   "measured": "38.2 (plan)",
+   "best": 38.2,
+   "best_ft": "3 ft 2.2 in",
+   "range": "37.1 - 40.7 in",
+   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "confidence": "medium",
+   "changed": false
+  },
+  {
+   "group": "Garage",
+   "item": "width (E-W)",
+   "measured": "204.2 (plan)",
+   "best": 204.2,
+   "best_ft": "17 ft 0.2 in",
+   "range": "200.6 - 213.4 in",
+   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "confidence": "medium",
+   "changed": false
+  },
+  {
+   "group": "Garage",
+   "item": "depth (N-S)",
+   "measured": "255.8 (plan)",
+   "best": 255.8,
+   "best_ft": "21 ft 3.8 in",
+   "range": "251.5 - 267 in",
+   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "confidence": "medium",
+   "changed": false
+  },
+  {
+   "group": "Doors",
+   "item": "Primary bedroom door",
+   "measured": "not measurable",
+   "best": 32,
+   "best_ft": "2 ft 8 in",
+   "range": "28 - 36 in",
+   "basis": "Standard size ASSUMED. The render draws a solid header over every doorway, so widths cannot be measured.",
+   "confidence": "low",
+   "changed": true
+  },
+  {
+   "group": "Doors",
+   "item": "Primary bathroom door",
+   "measured": "not measurable",
+   "best": 30,
+   "best_ft": "2 ft 6 in",
+   "range": "26 - 34 in",
+   "basis": "Standard size ASSUMED. The render draws a solid header over every doorway, so widths cannot be measured.",
+   "confidence": "low",
+   "changed": true
+  },
+  {
+   "group": "Doors",
+   "item": "Primary walk-in closet door",
+   "measured": "not measurable",
+   "best": 28,
+   "best_ft": "2 ft 4 in",
+   "range": "24 - 32 in",
+   "basis": "Standard size ASSUMED. The render draws a solid header over every doorway, so widths cannot be measured.",
+   "confidence": "low",
+   "changed": true
+  },
+  {
+   "group": "Doors",
+   "item": "Laundry door (kitchen side)",
+   "measured": "not measurable",
+   "best": 30,
+   "best_ft": "2 ft 6 in",
+   "range": "26 - 34 in",
+   "basis": "Standard size ASSUMED. The render draws a solid header over every doorway, so widths cannot be measured.",
+   "confidence": "low",
+   "changed": true
+  },
+  {
+   "group": "Doors",
+   "item": "Laundry to garage door",
+   "measured": "not measurable",
+   "best": 32,
+   "best_ft": "2 ft 8 in",
+   "range": "28 - 36 in",
+   "basis": "Standard size ASSUMED. The render draws a solid header over every doorway, so widths cannot be measured.",
+   "confidence": "low",
+   "changed": true
+  },
+  {
+   "group": "Doors",
+   "item": "Bedroom 2 door",
+   "measured": "not measurable",
+   "best": 30,
+   "best_ft": "2 ft 6 in",
+   "range": "26 - 34 in",
+   "basis": "Standard size ASSUMED. The render draws a solid header over every doorway, so widths cannot be measured.",
+   "confidence": "low",
+   "changed": true
+  },
+  {
+   "group": "Doors",
+   "item": "Bathroom 2 door",
+   "measured": "not measurable",
+   "best": 28,
+   "best_ft": "2 ft 4 in",
+   "range": "24 - 32 in",
+   "basis": "Standard size ASSUMED. The render draws a solid header over every doorway, so widths cannot be measured.",
+   "confidence": "low",
+   "changed": true
+  },
+  {
+   "group": "Doors",
+   "item": "Bedroom 3 door",
+   "measured": "not measurable",
+   "best": 30,
+   "best_ft": "2 ft 6 in",
+   "range": "26 - 34 in",
+   "basis": "Standard size ASSUMED. The render draws a solid header over every doorway, so widths cannot be measured.",
+   "confidence": "low",
+   "changed": true
+  },
+  {
+   "group": "Doors",
+   "item": "Front entry door (position approximate)",
+   "measured": "not measurable",
+   "best": 36,
+   "best_ft": "3 ft 0 in",
+   "range": "32 - 40 in",
+   "basis": "Standard size ASSUMED. The render draws a solid header over every doorway, so widths cannot be measured.",
+   "confidence": "low",
+   "changed": true
+  },
+  {
+   "group": "Doors",
+   "item": "Garage overhead door opening",
+   "measured": "174.0 (gap in wall)",
+   "best": 174.0,
+   "best_ft": "14 ft 6 in",
+   "range": "166 - 182 in",
+   "basis": "Measured gap in the garage front wall. A 16 ft (192 in) door would not fit the 17 ft garage as drawn, so 14 ft 6 in is plausible. Verify.",
+   "confidence": "medium",
+   "changed": false
+  },
+  {
+   "group": "Fixtures (typical sizes, not measured)",
+   "item": "Primary bath double vanity - typical 60 or 72 long x 21-22 deep",
+   "measured": "~33 x 70 (top + leaning front face)",
+   "best": 66.0,
+   "best_ft": "5 ft 6 in",
+   "range": "60 - 72 in",
+   "basis": "Stock symbol drawn with its front face, so it looks deeper than a real vanity.",
+   "confidence": "low",
+   "changed": true
+  },
+  {
+   "group": "Fixtures (typical sizes, not measured)",
+   "item": "Primary bath toilet - typical ~20 wide x 28-30 deep",
+   "measured": "35 x 23 footprint",
+   "best": 29.0,
+   "best_ft": "2 ft 5 in",
+   "range": "27 - 31 in",
+   "basis": "Stock symbol. Drawn centerline is only 10.8 in from the back wall; code minimum is 15 in, so the real toilet sits further out.",
+   "confidence": "low",
+   "changed": true
+  },
+  {
+   "group": "Fixtures (typical sizes, not measured)",
+   "item": "Washer and dryer (each) - typical 27 wide x 30-32 deep",
+   "measured": "16 x 22 (each)",
+   "best": 27.0,
+   "best_ft": "2 ft 3 in",
+   "range": "27 - 29 in",
+   "basis": "Listing says full-size; the symbols are far too small.",
+   "confidence": "low",
+   "changed": true
+  },
+  {
+   "group": "Fixtures (typical sizes, not measured)",
+   "item": "Bath 2 tub - typical 60 long x 30 wide (alcove tub)",
+   "measured": "visible part only",
+   "best": 60.0,
+   "best_ft": "5 ft 0 in",
+   "range": "59 - 61 in",
+   "basis": "Bathroom 2 is 63.5 in deep, which fits a standard 60 in tub.",
+   "confidence": "low",
+   "changed": true
+  },
+  {
+   "group": "Fixtures (typical sizes, not measured)",
+   "item": "Refrigerator - typical 33-36 wide x 30-34 deep",
+   "measured": "24 x 18 visible",
+   "best": 36.0,
+   "best_ft": "3 ft 0 in",
+   "range": "33 - 36 in",
+   "basis": "Listing says side-by-side; those are 33-36 in wide.",
+   "confidence": "low",
+   "changed": true
+  },
+  {
+   "group": "Fixtures (typical sizes, not measured)",
+   "item": "Kitchen base counters - typical 25.5 deep",
+   "measured": "14 deep visible (back run)",
+   "best": 25.5,
+   "best_ft": "2 ft 1.5 in",
+   "range": "24 - 26 in",
+   "basis": "Standard counter depth; the back run's front edge is hidden by the 3D wall face.",
+   "confidence": "low",
+   "changed": true
+  },
+  {
+   "group": "Fixtures (typical sizes, not measured)",
+   "item": "Kitchen aisle, peninsula to back counter - typical ~53.5",
+   "measured": "65.0 (to visible edge)",
+   "best": 53.5,
+   "best_ft": "4 ft 5.5 in",
+   "range": "48 - 58 in",
+   "basis": "If the back counter is the standard 25.5 in deep.",
+   "confidence": "low",
+   "changed": true
+  },
+  {
+   "group": "Fixtures (typical sizes, not measured)",
+   "item": "Water heater - typical 20-22 diameter",
+   "measured": "20.8 x 22.2",
+   "best": 21.5,
+   "best_ft": "1 ft 9.5 in",
+   "range": "20 - 22 in",
+   "basis": "Typical 40-50 gallon tank; measured size agrees.",
+   "confidence": "low",
+   "changed": true
+  }
+ ],
+ "corrections": [
+  {
+   "title": "Shower end wall moved 3.8 in toward the door",
+   "detail": "Your tape (69.5 in + 49.5 in) adds to the room depth exactly, and the plan draws that wall where the 4 in shelf face would be. Best estimate uses your tape."
+  },
+  {
+   "title": "Closet and laundry share that wall",
+   "detail": "If the wall really is 3.8 in further from the back wall, the walk-in closet is about 45 in deep and the laundry about 69 in. Tape these two before buying shelving or appliances."
+  },
+  {
+   "title": "Door widths are standard-size assumptions",
+   "detail": "The render covers every doorway with a header and draws 3D leaning door leaves, so no door width could be measured. Swing arcs use typical sizes."
+  },
+  {
+   "title": "Fixtures use typical sizes",
+   "detail": "Toilets, washer/dryer, tub, fridge and vanity are stock 3D symbols. Real appliances listed for this plan (full-size laundry, side-by-side fridge) are larger than drawn."
+  },
+  {
+   "title": "Total area is 8% under the listing",
+   "detail": "Plan footprint is 1,287 sq ft (outside of exterior walls, garage excluded) against 1,400-1,401 listed. The bathroom tape rules out a simple scale error there, so rooms away from the bathroom carry an upward-skewed range of about +4%. One tape measurement in the living room or bedroom 2 would settle it."
+  }
+ ]
+}

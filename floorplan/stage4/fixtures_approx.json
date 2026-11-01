@@ -1,0 +1,11 @@
+[
+ {"id":"F1","name":"Primary bath double vanity","room":"R2","rule":"dark","box":[6,60,280,362]},
+ {"id":"F2","name":"Primary bath toilet","room":"R2","rule":"white","box":[20,60,360,394]},
+ {"id":"F3","name":"Washer / dryer pair","room":"R4","rule":"white","box":[118,160,333,394]},
+ {"id":"F4","name":"Kitchen peninsula / island top","room":"R5","rule":"dark","box":[236,315,276,316]},
+ {"id":"F5","name":"Kitchen counter run (back wall)","room":"R5","rule":"white","box":[194,322,366,396]},
+ {"id":"F6","name":"Kitchen counter run (right wall)","room":"R5","rule":"white","box":[300,323,276,396]},
+ {"id":"F7","name":"Bath 2 tub","room":"R8","rule":"white","box":[478,533,166,231]},
+ {"id":"F8","name":"Water heater","room":"G","rule":"black","box":[330,368,404,440]},
+ {"id":"F9","name":"Garage step / landing","room":"G","rule":"white","box":[140,170,402,445]}
+]

@@ -1,0 +1,3338 @@
+{
+ "meta": {
+  "scale": {
+   "note": "Tilted-perspective render; scale varies by image row.",
+   "primary_bath_h_in_per_px": 0.814,
+   "primary_bath_v_in_per_px": 0.909,
+   "range_in_per_px": "0.76-1.00",
+   "err_pct": 1.5
+  },
+  "H_frame_to_img": [
+   [
+    -5746.234491625498,
+    466.4254407727377,
+    -398038.58544683014
+   ],
+   [
+    0.0,
+    -4790.733972517849,
+    -43116.605752661824
+   ],
+   [
+    0.0,
+    1.0,
+    -5010.19677714749
+   ]
+  ],
+  "frame_origin_note": "x: inches east of unit's west outer wall face; y: inches south of north outer face",
+  "confidence_model": {
+   "high": "+/-(1.5% + 0.5 in)",
+   "medium": "+/-(4.0% + 1.0 in)",
+   "low": "+/-(5.0% + 3.0 in)"
+  }
+ },
+ "rooms": [
+  {
+   "id": "R1",
+   "name": "Primary bedroom",
+   "x0": 4.5,
+   "x1": 165.25,
+   "y0": 105.25,
+   "y1": 271.5,
+   "w_in": 160.8,
+   "d_in": 166.2,
+   "w_ft": "13 ft 4.8 in",
+   "d_ft": "13 ft 10.2 in",
+   "sqft": 185.6,
+   "sqft_err": 6.7,
+   "confidence": "high",
+   "notes": []
+  },
+  {
+   "id": "R2",
+   "name": "Primary bathroom",
+   "x0": 4.5,
+   "x1": 65.5,
+   "y0": 275.25,
+   "y1": 394.25,
+   "w_in": 61.0,
+   "d_in": 119.0,
+   "w_ft": "5 ft 1 in",
+   "d_ft": "9 ft 11 in",
+   "sqft": 50.4,
+   "sqft_err": 2.1,
+   "confidence": "high",
+   "notes": []
+  },
+  {
+   "id": "R2s",
+   "name": "Primary shower",
+   "x0": 70.04,
+   "x1": 106.4,
+   "y0": 328.59,
+   "y1": 394.29,
+   "w_in": 36.4,
+   "d_in": 65.7,
+   "w_ft": "3 ft 0.4 in",
+   "d_ft": "5 ft 5.7 in",
+   "sqft": 16.6,
+   "sqft_err": 0.9,
+   "confidence": "high",
+   "notes": [
+    "left edge = shower glass line (stage 3)",
+    "far wall inside face (stage 3)",
+    "end wall (wall 2) as drawn; tape says 3.8 in further",
+    "back wall inside face"
+   ]
+  },
+  {
+   "id": "R3",
+   "name": "Primary walk-in closet",
+   "x0": 69.75,
+   "x1": 165.5,
+   "y0": 275.25,
+   "y1": 324.25,
+   "w_in": 95.8,
+   "d_in": 49.0,
+   "w_ft": "7 ft 11.8 in",
+   "d_ft": "4 ft 1 in",
+   "sqft": 32.6,
+   "sqft_err": 1.5,
+   "confidence": "high",
+   "notes": []
+  },
+  {
+   "id": "R3b",
+   "name": "Linen closet (by kitchen)",
+   "x0": 169.25,
+   "x1": 188.5,
+   "y0": 275.25,
+   "y1": 324.25,
+   "w_in": 19.2,
+   "d_in": 49.0,
+   "w_ft": "1 ft 7.2 in",
+   "d_ft": "4 ft 1 in",
+   "sqft": 6.6,
+   "sqft_err": 0.4,
+   "confidence": "high",
+   "notes": []
+  },
+  {
+   "id": "R4",
+   "name": "Laundry",
+   "x0": 110.5,
+   "x1": 188.25,
+   "y0": 328.75,
+   "y1": 394.25,
+   "w_in": 77.8,
+   "d_in": 65.5,
+   "w_ft": "6 ft 5.8 in",
+   "d_ft": "5 ft 5.5 in",
+   "sqft": 35.4,
+   "sqft_err": 1.6,
+   "confidence": "high",
+   "notes": [
+    "bottom = house back wall, same as primary bath"
+   ]
+  },
+  {
+   "id": "R5",
+   "name": "Kitchen",
+   "x0": 192.5,
+   "x1": 322.25,
+   "y0": 275.25,
+   "y1": 393.5,
+   "w_in": 129.8,
+   "d_in": 118.2,
+   "w_ft": "10 ft 9.8 in",
+   "d_ft": "9 ft 10.2 in",
+   "sqft": 106.5,
+   "sqft_err": 10.2,
+   "confidence": "medium",
+   "notes": [
+    "top edge open to living (nominal, in line with closet wall)"
+   ]
+  },
+  {
+   "id": "R6",
+   "name": "Living / dining",
+   "x0": 169.25,
+   "x1": 342.0,
+   "y0": 30.0,
+   "y1": 275.25,
+   "w_in": 172.8,
+   "d_in": 245.2,
+   "w_ft": "14 ft 4.8 in",
+   "d_ft": "20 ft 5.2 in",
+   "sqft": 294.2,
+   "sqft_err": 26.4,
+   "confidence": "medium",
+   "notes": [
+    "right edge = wall face beside closet (open to hall below)",
+    "bottom edge open to kitchen (nominal)"
+   ]
+  },
+  {
+   "id": "R6e",
+   "name": "Entry / foyer",
+   "x0": 122.75,
+   "x1": 164.95,
+   "y0": 30.0,
+   "y1": 101.25,
+   "w_in": 42.2,
+   "d_in": 71.2,
+   "w_ft": "3 ft 6.2 in",
+   "d_ft": "5 ft 11.2 in",
+   "sqft": 20.9,
+   "sqft_err": 2.5,
+   "confidence": "medium",
+   "notes": [
+    "right edge = entry side of living-room wall (wall thickness assumed 4.3 in)"
+   ]
+  },
+  {
+   "id": "R6h",
+   "name": "Living room - TV wall strip (open)",
+   "x0": 342.0,
+   "x1": 365.75,
+   "y0": 91.25,
+   "y1": 275.25,
+   "w_in": 23.8,
+   "d_in": 184.0,
+   "w_ft": "1 ft 11.8 in",
+   "d_ft": "15 ft 4 in",
+   "sqft": 30.3,
+   "sqft_err": 3.9,
+   "confidence": "medium",
+   "notes": [
+    "left edge open to living room (nominal line)",
+    "bottom edge nominal (open to storage hall)"
+   ]
+  },
+  {
+   "id": "R7",
+   "name": "Bedroom 2",
+   "x0": 370.25,
+   "x1": 508.75,
+   "y0": 4.25,
+   "y1": 162.75,
+   "w_in": 138.5,
+   "d_in": 158.5,
+   "w_ft": "11 ft 6.5 in",
+   "d_ft": "13 ft 2.5 in",
+   "sqft": 152.4,
+   "sqft_err": 14.3,
+   "confidence": "medium",
+   "notes": []
+  },
+  {
+   "id": "R7c",
+   "name": "Closet (bedroom 2 side)",
+   "x0": 345.5,
+   "x1": 366.0,
+   "y0": 4.25,
+   "y1": 87.0,
+   "w_in": 20.5,
+   "d_in": 82.8,
+   "w_ft": "1 ft 8.5 in",
+   "d_ft": "6 ft 10.8 in",
+   "sqft": 11.8,
+   "sqft_err": 1.7,
+   "confidence": "medium",
+   "notes": []
+  },
+  {
+   "id": "R8",
+   "name": "Bathroom 2",
+   "x0": 419.25,
+   "x1": 531.75,
+   "y0": 166.5,
+   "y1": 230.0,
+   "w_in": 112.5,
+   "d_in": 63.5,
+   "w_ft": "9 ft 4.5 in",
+   "d_ft": "5 ft 3.5 in",
+   "sqft": 49.6,
+   "sqft_err": 5.2,
+   "confidence": "medium",
+   "notes": []
+  },
+  {
+   "id": "R8v",
+   "name": "Hall vestibule (bath 2)",
+   "x0": 365.75,
+   "x1": 415.25,
+   "y0": 166.5,
+   "y1": 230.0,
+   "w_in": 49.5,
+   "d_in": 63.5,
+   "w_ft": "4 ft 1.5 in",
+   "d_ft": "5 ft 3.5 in",
+   "sqft": 21.8,
+   "sqft_err": 2.5,
+   "confidence": "medium",
+   "notes": [
+    "left edge open to hallway (nominal)"
+   ]
+  },
+  {
+   "id": "R9",
+   "name": "Bedroom 3",
+   "x0": 369.75,
+   "x1": 509.0,
+   "y0": 234.0,
+   "y1": 352.25,
+   "w_in": 139.2,
+   "d_in": 118.2,
+   "w_ft": "11 ft 7.2 in",
+   "d_ft": "9 ft 10.2 in",
+   "sqft": 114.3,
+   "sqft_err": 10.9,
+   "confidence": "medium",
+   "notes": []
+  },
+  {
+   "id": "R10",
+   "name": "Storage / pantry hall",
+   "x0": 326.25,
+   "x1": 366.25,
+   "y0": 275.25,
+   "y1": 394.25,
+   "w_in": 40.0,
+   "d_in": 119.0,
+   "w_ft": "3 ft 4 in",
+   "d_ft": "9 ft 11 in",
+   "sqft": 33.1,
+   "sqft_err": 3.7,
+   "confidence": "medium",
+   "notes": []
+  },
+  {
+   "id": "R10b",
+   "name": "Storage closet (lower right)",
+   "x0": 366.25,
+   "x1": 446.5,
+   "y0": 356.0,
+   "y1": 394.25,
+   "w_in": 80.2,
+   "d_in": 38.2,
+   "w_ft": "6 ft 8.2 in",
+   "d_ft": "3 ft 2.2 in",
+   "sqft": 21.3,
+   "sqft_err": 2.5,
+   "confidence": "medium",
+   "notes": [
+    "continuous with storage hall R10 (L-shape)"
+   ]
+  },
+  {
+   "id": "G",
+   "name": "Garage",
+   "x0": 161.5,
+   "x1": 365.75,
+   "y0": 403.25,
+   "y1": 659.0,
+   "w_in": 204.2,
+   "d_in": 255.8,
+   "w_ft": "17 ft 0.2 in",
+   "d_ft": "21 ft 3.8 in",
+   "sqft": 362.8,
+   "sqft_err": 32.2,
+   "confidence": "medium",
+   "notes": []
+  },
+  {
+   "id": "P",
+   "name": "Patio / balcony",
+   "x0": 32.0,
+   "x1": 119.0,
+   "y0": 64.0,
+   "y1": 101.25,
+   "w_in": 87.0,
+   "d_in": 37.2,
+   "w_ft": "7 ft 3 in",
+   "d_ft": "3 ft 1.2 in",
+   "sqft": 22.5,
+   "sqft_err": 4.8,
+   "confidence": "low",
+   "notes": [
+    "railing edges, approximate"
+   ]
+  }
+ ],
+ "doors": [
+  {
+   "id": "D2",
+   "room": "R1",
+   "label": "Primary bedroom door",
+   "hinge": [
+    166.0,
+    107.0
+   ],
+   "axis": "v",
+   "dir": 1,
+   "swing": -1,
+   "assumed_width_in": 32,
+   "swing_clear_in": 32,
+   "confidence": "low",
+   "note": "Width not measurable: the render draws a solid header over doorways and door leaves lean in 3D. Width shown is a standard size ASSUMED for the swing arc - verify."
+  },
+  {
+   "id": "D3",
+   "room": "R2",
+   "label": "Primary bathroom door",
+   "hinge": [
+    65.5,
+    276.5
+   ],
+   "axis": "h",
+   "dir": -1,
+   "swing": 1,
+   "assumed_width_in": 30,
+   "swing_clear_in": 30,
+   "confidence": "low",
+   "note": "Width not measurable: the render draws a solid header over doorways and door leaves lean in 3D. Width shown is a standard size ASSUMED for the swing arc - verify."
+  },
+  {
+   "id": "D4",
+   "room": "R3",
+   "label": "Primary walk-in closet door",
+   "hinge": [
+    69.75,
+    276.5
+   ],
+   "axis": "h",
+   "dir": 1,
+   "swing": 1,
+   "assumed_width_in": 28,
+   "swing_clear_in": 28,
+   "confidence": "low",
+   "note": "Width not measurable: the render draws a solid header over doorways and door leaves lean in 3D. Width shown is a standard size ASSUMED for the swing arc - verify."
+  },
+  {
+   "id": "D5",
+   "room": "R4",
+   "label": "Laundry door (kitchen side)",
+   "hinge": [
+    188.25,
+    338.0
+   ],
+   "axis": "v",
+   "dir": 1,
+   "swing": -1,
+   "assumed_width_in": 30,
+   "swing_clear_in": 30,
+   "confidence": "low",
+   "note": "Width not measurable: the render draws a solid header over doorways and door leaves lean in 3D. Width shown is a standard size ASSUMED for the swing arc - verify."
+  },
+  {
+   "id": "D6",
+   "room": "R4",
+   "label": "Laundry to garage door",
+   "hinge": [
+    176.0,
+    394.25
+   ],
+   "axis": "h",
+   "dir": -1,
+   "swing": -1,
+   "assumed_width_in": 32,
+   "swing_clear_in": 32,
+   "confidence": "low",
+   "note": "Width not measurable: the render draws a solid header over doorways and door leaves lean in 3D. Width shown is a standard size ASSUMED for the swing arc - verify."
+  },
+  {
+   "id": "D7",
+   "room": "R7",
+   "label": "Bedroom 2 door",
+   "hinge": [
+    370.25,
+    162.75
+   ],
+   "axis": "h",
+   "dir": 1,
+   "swing": -1,
+   "assumed_width_in": 30,
+   "swing_clear_in": 30,
+   "confidence": "low",
+   "note": "Width not measurable: the render draws a solid header over doorways and door leaves lean in 3D. Width shown is a standard size ASSUMED for the swing arc - verify."
+  },
+  {
+   "id": "D8",
+   "room": "R8",
+   "label": "Bathroom 2 door",
+   "hinge": [
+    419.25,
+    196.0
+   ],
+   "axis": "v",
+   "dir": 1,
+   "swing": 1,
+   "assumed_width_in": 28,
+   "swing_clear_in": 28,
+   "confidence": "low",
+   "note": "Width not measurable: the render draws a solid header over doorways and door leaves lean in 3D. Width shown is a standard size ASSUMED for the swing arc - verify."
+  },
+  {
+   "id": "D9",
+   "room": "R9",
+   "label": "Bedroom 3 door",
+   "hinge": [
+    369.75,
+    234.0
+   ],
+   "axis": "h",
+   "dir": 1,
+   "swing": 1,
+   "assumed_width_in": 30,
+   "swing_clear_in": 30,
+   "confidence": "low",
+   "note": "Width not measurable: the render draws a solid header over doorways and door leaves lean in 3D. Width shown is a standard size ASSUMED for the swing arc - verify."
+  },
+  {
+   "id": "D1",
+   "room": "R6e",
+   "label": "Front entry door (position approximate)",
+   "hinge": [
+    122.75,
+    30.0
+   ],
+   "axis": "h",
+   "dir": 1,
+   "swing": 1,
+   "assumed_width_in": 36,
+   "swing_clear_in": 36,
+   "confidence": "low",
+   "note": "Width not measurable: the render draws a solid header over doorways and door leaves lean in 3D. Width shown is a standard size ASSUMED for the swing arc - verify."
+  }
+ ],
+ "fixtures": [
+  {
+   "id": "F1",
+   "room": "R2",
+   "label": "Primary bath double vanity (top incl. visible front face)",
+   "x0": 12,
+   "y0": 292,
+   "x1": 45,
+   "y1": 362,
+   "w_in": 33,
+   "d_in": 70,
+   "confidence": "low"
+  },
+  {
+   "id": "F2",
+   "room": "R2",
+   "label": "Primary bath toilet",
+   "x0": 15,
+   "y0": 372,
+   "x1": 50,
+   "y1": 395,
+   "w_in": 35,
+   "d_in": 23,
+   "confidence": "low"
+  },
+  {
+   "id": "F3a",
+   "room": "R4",
+   "label": "Washer (stock symbol)",
+   "x0": 130,
+   "y0": 345,
+   "x1": 146,
+   "y1": 367,
+   "w_in": 16,
+   "d_in": 22,
+   "confidence": "low"
+  },
+  {
+   "id": "F3b",
+   "room": "R4",
+   "label": "Dryer (stock symbol)",
+   "x0": 130,
+   "y0": 369,
+   "x1": 146,
+   "y1": 392,
+   "w_in": 16,
+   "d_in": 23,
+   "confidence": "low"
+  },
+  {
+   "id": "F4",
+   "room": "R5",
+   "label": "Kitchen peninsula (dark top, sink + dishwasher)",
+   "x0": 241,
+   "y0": 278,
+   "x1": 309,
+   "y1": 316,
+   "w_in": 68,
+   "d_in": 38,
+   "confidence": "low"
+  },
+  {
+   "id": "F5",
+   "room": "R5",
+   "label": "Kitchen counter run - right wall",
+   "x0": 305,
+   "y0": 285,
+   "x1": 322.25,
+   "y1": 384,
+   "w_in": 17.2,
+   "d_in": 99,
+   "confidence": "low"
+  },
+  {
+   "id": "F6",
+   "room": "R5",
+   "label": "Kitchen counter run - back wall (front edge partly hidden)",
+   "x0": 192.5,
+   "y0": 381,
+   "x1": 322.25,
+   "y1": 393.5,
+   "w_in": 129.8,
+   "d_in": 12.5,
+   "confidence": "low"
+  },
+  {
+   "id": "F7",
+   "room": "R5",
+   "label": "Refrigerator / tall unit (white box, back-left)",
+   "x0": 194,
+   "y0": 366,
+   "x1": 218,
+   "y1": 384,
+   "w_in": 24,
+   "d_in": 18,
+   "confidence": "low"
+  },
+  {
+   "id": "F8",
+   "room": "R8",
+   "label": "Bath 2 tub (visible part; top hidden by wall face)",
+   "x0": 484,
+   "y0": 194,
+   "x1": 531.75,
+   "y1": 230.0,
+   "w_in": 47.8,
+   "d_in": 36.0,
+   "confidence": "low"
+  },
+  {
+   "id": "F9",
+   "room": "G",
+   "label": "Water heater (round)",
+   "x0": 341,
+   "y0": 410,
+   "x1": 362,
+   "y1": 433,
+   "w_in": 21,
+   "d_in": 23,
+   "confidence": "low"
+  },
+  {
+   "id": "F10",
+   "room": "R1",
+   "label": "Primary bedroom reach-in closet zone (louvered doors)",
+   "x0": 25,
+   "y0": 105.25,
+   "x1": 120,
+   "y1": 142,
+   "w_in": 95,
+   "d_in": 36.8,
+   "confidence": "low"
+  }
+ ],
+ "items": [
+  {
+   "id": "R1-N",
+   "room": "R1",
+   "type": "wall",
+   "label": "Primary bedroom - N wall (inside face)",
+   "value_in": 160.8,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     4.5,
+     105.25
+    ],
+    "b": [
+     165.25,
+     105.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "13 ft 4.8 in",
+   "err_in": 2.9
+  },
+  {
+   "id": "R1-S",
+   "room": "R1",
+   "type": "wall",
+   "label": "Primary bedroom - S wall (inside face)",
+   "value_in": 160.8,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     4.5,
+     271.5
+    ],
+    "b": [
+     165.25,
+     271.5
+    ]
+   },
+   "verify": false,
+   "ft_in": "13 ft 4.8 in",
+   "err_in": 2.9
+  },
+  {
+   "id": "R1-W",
+   "room": "R1",
+   "type": "wall",
+   "label": "Primary bedroom - W wall (inside face)",
+   "value_in": 166.2,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     4.5,
+     105.25
+    ],
+    "b": [
+     4.5,
+     271.5
+    ]
+   },
+   "verify": false,
+   "ft_in": "13 ft 10.2 in",
+   "err_in": 3.0
+  },
+  {
+   "id": "R1-E",
+   "room": "R1",
+   "type": "wall",
+   "label": "Primary bedroom - E wall (inside face)",
+   "value_in": 166.2,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     165.25,
+     105.25
+    ],
+    "b": [
+     165.25,
+     271.5
+    ]
+   },
+   "verify": false,
+   "ft_in": "13 ft 10.2 in",
+   "err_in": 3.0
+  },
+  {
+   "id": "R2-N",
+   "room": "R2",
+   "type": "wall",
+   "label": "Primary bathroom - N wall (inside face)",
+   "value_in": 61.0,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     4.5,
+     275.25
+    ],
+    "b": [
+     65.5,
+     275.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "5 ft 1 in",
+   "err_in": 1.4
+  },
+  {
+   "id": "R2-S",
+   "room": "R2",
+   "type": "wall",
+   "label": "Primary bathroom - S wall (inside face)",
+   "value_in": 61.0,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     4.5,
+     394.25
+    ],
+    "b": [
+     65.5,
+     394.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "5 ft 1 in",
+   "err_in": 1.4
+  },
+  {
+   "id": "R2-W",
+   "room": "R2",
+   "type": "wall",
+   "label": "Primary bathroom - W wall (inside face)",
+   "value_in": 119.0,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     4.5,
+     275.25
+    ],
+    "b": [
+     4.5,
+     394.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "9 ft 11 in",
+   "err_in": 2.3
+  },
+  {
+   "id": "R2-E",
+   "room": "R2",
+   "type": "wall",
+   "label": "Primary bathroom - E wall (inside face)",
+   "value_in": 119.0,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     65.5,
+     275.25
+    ],
+    "b": [
+     65.5,
+     394.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "9 ft 11 in",
+   "err_in": 2.3
+  },
+  {
+   "id": "R2s-N",
+   "room": "R2s",
+   "type": "wall",
+   "label": "Primary shower - N wall (inside face)",
+   "value_in": 36.4,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     70.04,
+     328.59
+    ],
+    "b": [
+     106.4,
+     328.59
+    ]
+   },
+   "verify": false,
+   "ft_in": "3 ft 0.4 in",
+   "err_in": 1.0
+  },
+  {
+   "id": "R2s-S",
+   "room": "R2s",
+   "type": "wall",
+   "label": "Primary shower - S wall (inside face)",
+   "value_in": 36.4,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     70.04,
+     394.29
+    ],
+    "b": [
+     106.4,
+     394.29
+    ]
+   },
+   "verify": false,
+   "ft_in": "3 ft 0.4 in",
+   "err_in": 1.0
+  },
+  {
+   "id": "R2s-W",
+   "room": "R2s",
+   "type": "wall",
+   "label": "Primary shower - W wall (inside face)",
+   "value_in": 65.7,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     70.04,
+     328.59
+    ],
+    "b": [
+     70.04,
+     394.29
+    ]
+   },
+   "verify": false,
+   "ft_in": "5 ft 5.7 in",
+   "err_in": 1.5
+  },
+  {
+   "id": "R2s-E",
+   "room": "R2s",
+   "type": "wall",
+   "label": "Primary shower - E wall (inside face)",
+   "value_in": 65.7,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     106.4,
+     328.59
+    ],
+    "b": [
+     106.4,
+     394.29
+    ]
+   },
+   "verify": false,
+   "ft_in": "5 ft 5.7 in",
+   "err_in": 1.5
+  },
+  {
+   "id": "R3-N",
+   "room": "R3",
+   "type": "wall",
+   "label": "Primary walk-in closet - N wall (inside face)",
+   "value_in": 95.8,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     69.75,
+     275.25
+    ],
+    "b": [
+     165.5,
+     275.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "7 ft 11.8 in",
+   "err_in": 1.9
+  },
+  {
+   "id": "R3-S",
+   "room": "R3",
+   "type": "wall",
+   "label": "Primary walk-in closet - S wall (inside face)",
+   "value_in": 95.8,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     69.75,
+     324.25
+    ],
+    "b": [
+     165.5,
+     324.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "7 ft 11.8 in",
+   "err_in": 1.9
+  },
+  {
+   "id": "R3-W",
+   "room": "R3",
+   "type": "wall",
+   "label": "Primary walk-in closet - W wall (inside face)",
+   "value_in": 49.0,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     69.75,
+     275.25
+    ],
+    "b": [
+     69.75,
+     324.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "4 ft 1 in",
+   "err_in": 1.2
+  },
+  {
+   "id": "R3-E",
+   "room": "R3",
+   "type": "wall",
+   "label": "Primary walk-in closet - E wall (inside face)",
+   "value_in": 49.0,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     165.5,
+     275.25
+    ],
+    "b": [
+     165.5,
+     324.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "4 ft 1 in",
+   "err_in": 1.2
+  },
+  {
+   "id": "R3b-N",
+   "room": "R3b",
+   "type": "wall",
+   "label": "Linen closet (by kitchen) - N wall (inside face)",
+   "value_in": 19.2,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     169.25,
+     275.25
+    ],
+    "b": [
+     188.5,
+     275.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "1 ft 7.2 in",
+   "err_in": 0.8
+  },
+  {
+   "id": "R3b-S",
+   "room": "R3b",
+   "type": "wall",
+   "label": "Linen closet (by kitchen) - S wall (inside face)",
+   "value_in": 19.2,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     169.25,
+     324.25
+    ],
+    "b": [
+     188.5,
+     324.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "1 ft 7.2 in",
+   "err_in": 0.8
+  },
+  {
+   "id": "R3b-W",
+   "room": "R3b",
+   "type": "wall",
+   "label": "Linen closet (by kitchen) - W wall (inside face)",
+   "value_in": 49.0,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     169.25,
+     275.25
+    ],
+    "b": [
+     169.25,
+     324.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "4 ft 1 in",
+   "err_in": 1.2
+  },
+  {
+   "id": "R3b-E",
+   "room": "R3b",
+   "type": "wall",
+   "label": "Linen closet (by kitchen) - E wall (inside face)",
+   "value_in": 49.0,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     188.5,
+     275.25
+    ],
+    "b": [
+     188.5,
+     324.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "4 ft 1 in",
+   "err_in": 1.2
+  },
+  {
+   "id": "R4-N",
+   "room": "R4",
+   "type": "wall",
+   "label": "Laundry - N wall (inside face)",
+   "value_in": 77.8,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     110.5,
+     328.75
+    ],
+    "b": [
+     188.25,
+     328.75
+    ]
+   },
+   "verify": false,
+   "ft_in": "6 ft 5.8 in",
+   "err_in": 1.7
+  },
+  {
+   "id": "R4-S",
+   "room": "R4",
+   "type": "wall",
+   "label": "Laundry - S wall (inside face)",
+   "value_in": 77.8,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     110.5,
+     394.25
+    ],
+    "b": [
+     188.25,
+     394.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "6 ft 5.8 in",
+   "err_in": 1.7
+  },
+  {
+   "id": "R4-W",
+   "room": "R4",
+   "type": "wall",
+   "label": "Laundry - W wall (inside face)",
+   "value_in": 65.5,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     110.5,
+     328.75
+    ],
+    "b": [
+     110.5,
+     394.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "5 ft 5.5 in",
+   "err_in": 1.5
+  },
+  {
+   "id": "R4-E",
+   "room": "R4",
+   "type": "wall",
+   "label": "Laundry - E wall (inside face)",
+   "value_in": 65.5,
+   "confidence": "high",
+   "geom": {
+    "kind": "line",
+    "a": [
+     188.25,
+     328.75
+    ],
+    "b": [
+     188.25,
+     394.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "5 ft 5.5 in",
+   "err_in": 1.5
+  },
+  {
+   "id": "R5-N",
+   "room": "R5",
+   "type": "wall",
+   "label": "Kitchen - N wall (inside face)",
+   "value_in": 129.8,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     192.5,
+     275.25
+    ],
+    "b": [
+     322.25,
+     275.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "10 ft 9.8 in",
+   "err_in": 6.2
+  },
+  {
+   "id": "R5-S",
+   "room": "R5",
+   "type": "wall",
+   "label": "Kitchen - S wall (inside face)",
+   "value_in": 129.8,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     192.5,
+     393.5
+    ],
+    "b": [
+     322.25,
+     393.5
+    ]
+   },
+   "verify": false,
+   "ft_in": "10 ft 9.8 in",
+   "err_in": 6.2
+  },
+  {
+   "id": "R5-W",
+   "room": "R5",
+   "type": "wall",
+   "label": "Kitchen - W wall (inside face)",
+   "value_in": 118.2,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     192.5,
+     275.25
+    ],
+    "b": [
+     192.5,
+     393.5
+    ]
+   },
+   "verify": false,
+   "ft_in": "9 ft 10.2 in",
+   "err_in": 5.7
+  },
+  {
+   "id": "R5-E",
+   "room": "R5",
+   "type": "wall",
+   "label": "Kitchen - E wall (inside face)",
+   "value_in": 118.2,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     322.25,
+     275.25
+    ],
+    "b": [
+     322.25,
+     393.5
+    ]
+   },
+   "verify": false,
+   "ft_in": "9 ft 10.2 in",
+   "err_in": 5.7
+  },
+  {
+   "id": "R6-N",
+   "room": "R6",
+   "type": "wall",
+   "label": "Living / dining - N wall (inside face)",
+   "value_in": 172.8,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     169.25,
+     30.0
+    ],
+    "b": [
+     342.0,
+     30.0
+    ]
+   },
+   "verify": false,
+   "ft_in": "14 ft 4.8 in",
+   "err_in": 7.9
+  },
+  {
+   "id": "R6-S",
+   "room": "R6",
+   "type": "wall",
+   "label": "Living / dining - S wall (inside face)",
+   "value_in": 172.8,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     169.25,
+     275.25
+    ],
+    "b": [
+     342.0,
+     275.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "14 ft 4.8 in",
+   "err_in": 7.9
+  },
+  {
+   "id": "R6-W",
+   "room": "R6",
+   "type": "wall",
+   "label": "Living / dining - W wall (inside face)",
+   "value_in": 245.2,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     169.25,
+     30.0
+    ],
+    "b": [
+     169.25,
+     275.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "20 ft 5.2 in",
+   "err_in": 10.8
+  },
+  {
+   "id": "R6-E",
+   "room": "R6",
+   "type": "wall",
+   "label": "Living / dining - E wall (inside face)",
+   "value_in": 245.2,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     342.0,
+     30.0
+    ],
+    "b": [
+     342.0,
+     275.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "20 ft 5.2 in",
+   "err_in": 10.8
+  },
+  {
+   "id": "R6e-N",
+   "room": "R6e",
+   "type": "wall",
+   "label": "Entry / foyer - N wall (inside face)",
+   "value_in": 42.2,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     122.75,
+     30.0
+    ],
+    "b": [
+     164.95,
+     30.0
+    ]
+   },
+   "verify": false,
+   "ft_in": "3 ft 6.2 in",
+   "err_in": 2.7
+  },
+  {
+   "id": "R6e-S",
+   "room": "R6e",
+   "type": "wall",
+   "label": "Entry / foyer - S wall (inside face)",
+   "value_in": 42.2,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     122.75,
+     101.25
+    ],
+    "b": [
+     164.95,
+     101.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "3 ft 6.2 in",
+   "err_in": 2.7
+  },
+  {
+   "id": "R6e-W",
+   "room": "R6e",
+   "type": "wall",
+   "label": "Entry / foyer - W wall (inside face)",
+   "value_in": 71.2,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     122.75,
+     30.0
+    ],
+    "b": [
+     122.75,
+     101.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "5 ft 11.2 in",
+   "err_in": 3.8
+  },
+  {
+   "id": "R6e-E",
+   "room": "R6e",
+   "type": "wall",
+   "label": "Entry / foyer - E wall (inside face)",
+   "value_in": 71.2,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     164.95,
+     30.0
+    ],
+    "b": [
+     164.95,
+     101.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "5 ft 11.2 in",
+   "err_in": 3.8
+  },
+  {
+   "id": "R6h-N",
+   "room": "R6h",
+   "type": "wall",
+   "label": "Living room - TV wall strip (open) - N wall (inside face)",
+   "value_in": 23.8,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     342.0,
+     91.25
+    ],
+    "b": [
+     365.75,
+     91.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "1 ft 11.8 in",
+   "err_in": 2.0
+  },
+  {
+   "id": "R6h-S",
+   "room": "R6h",
+   "type": "wall",
+   "label": "Living room - TV wall strip (open) - S wall (inside face)",
+   "value_in": 23.8,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     342.0,
+     275.25
+    ],
+    "b": [
+     365.75,
+     275.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "1 ft 11.8 in",
+   "err_in": 2.0
+  },
+  {
+   "id": "R6h-W",
+   "room": "R6h",
+   "type": "wall",
+   "label": "Living room - TV wall strip (open) - W wall (inside face)",
+   "value_in": 184.0,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     342.0,
+     91.25
+    ],
+    "b": [
+     342.0,
+     275.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "15 ft 4 in",
+   "err_in": 8.4
+  },
+  {
+   "id": "R6h-E",
+   "room": "R6h",
+   "type": "wall",
+   "label": "Living room - TV wall strip (open) - E wall (inside face)",
+   "value_in": 184.0,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     365.75,
+     91.25
+    ],
+    "b": [
+     365.75,
+     275.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "15 ft 4 in",
+   "err_in": 8.4
+  },
+  {
+   "id": "R7-N",
+   "room": "R7",
+   "type": "wall",
+   "label": "Bedroom 2 - N wall (inside face)",
+   "value_in": 138.5,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     370.25,
+     4.25
+    ],
+    "b": [
+     508.75,
+     4.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "11 ft 6.5 in",
+   "err_in": 6.5
+  },
+  {
+   "id": "R7-S",
+   "room": "R7",
+   "type": "wall",
+   "label": "Bedroom 2 - S wall (inside face)",
+   "value_in": 138.5,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     370.25,
+     162.75
+    ],
+    "b": [
+     508.75,
+     162.75
+    ]
+   },
+   "verify": false,
+   "ft_in": "11 ft 6.5 in",
+   "err_in": 6.5
+  },
+  {
+   "id": "R7-W",
+   "room": "R7",
+   "type": "wall",
+   "label": "Bedroom 2 - W wall (inside face)",
+   "value_in": 158.5,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     370.25,
+     4.25
+    ],
+    "b": [
+     370.25,
+     162.75
+    ]
+   },
+   "verify": false,
+   "ft_in": "13 ft 2.5 in",
+   "err_in": 7.3
+  },
+  {
+   "id": "R7-E",
+   "room": "R7",
+   "type": "wall",
+   "label": "Bedroom 2 - E wall (inside face)",
+   "value_in": 158.5,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     508.75,
+     4.25
+    ],
+    "b": [
+     508.75,
+     162.75
+    ]
+   },
+   "verify": false,
+   "ft_in": "13 ft 2.5 in",
+   "err_in": 7.3
+  },
+  {
+   "id": "R7c-N",
+   "room": "R7c",
+   "type": "wall",
+   "label": "Closet (bedroom 2 side) - N wall (inside face)",
+   "value_in": 20.5,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     345.5,
+     4.25
+    ],
+    "b": [
+     366.0,
+     4.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "1 ft 8.5 in",
+   "err_in": 1.8
+  },
+  {
+   "id": "R7c-S",
+   "room": "R7c",
+   "type": "wall",
+   "label": "Closet (bedroom 2 side) - S wall (inside face)",
+   "value_in": 20.5,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     345.5,
+     87.0
+    ],
+    "b": [
+     366.0,
+     87.0
+    ]
+   },
+   "verify": false,
+   "ft_in": "1 ft 8.5 in",
+   "err_in": 1.8
+  },
+  {
+   "id": "R7c-W",
+   "room": "R7c",
+   "type": "wall",
+   "label": "Closet (bedroom 2 side) - W wall (inside face)",
+   "value_in": 82.8,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     345.5,
+     4.25
+    ],
+    "b": [
+     345.5,
+     87.0
+    ]
+   },
+   "verify": false,
+   "ft_in": "6 ft 10.8 in",
+   "err_in": 4.3
+  },
+  {
+   "id": "R7c-E",
+   "room": "R7c",
+   "type": "wall",
+   "label": "Closet (bedroom 2 side) - E wall (inside face)",
+   "value_in": 82.8,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     366.0,
+     4.25
+    ],
+    "b": [
+     366.0,
+     87.0
+    ]
+   },
+   "verify": false,
+   "ft_in": "6 ft 10.8 in",
+   "err_in": 4.3
+  },
+  {
+   "id": "R8-N",
+   "room": "R8",
+   "type": "wall",
+   "label": "Bathroom 2 - N wall (inside face)",
+   "value_in": 112.5,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     419.25,
+     166.5
+    ],
+    "b": [
+     531.75,
+     166.5
+    ]
+   },
+   "verify": false,
+   "ft_in": "9 ft 4.5 in",
+   "err_in": 5.5
+  },
+  {
+   "id": "R8-S",
+   "room": "R8",
+   "type": "wall",
+   "label": "Bathroom 2 - S wall (inside face)",
+   "value_in": 112.5,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     419.25,
+     230.0
+    ],
+    "b": [
+     531.75,
+     230.0
+    ]
+   },
+   "verify": false,
+   "ft_in": "9 ft 4.5 in",
+   "err_in": 5.5
+  },
+  {
+   "id": "R8-W",
+   "room": "R8",
+   "type": "wall",
+   "label": "Bathroom 2 - W wall (inside face)",
+   "value_in": 63.5,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     419.25,
+     166.5
+    ],
+    "b": [
+     419.25,
+     230.0
+    ]
+   },
+   "verify": false,
+   "ft_in": "5 ft 3.5 in",
+   "err_in": 3.5
+  },
+  {
+   "id": "R8-E",
+   "room": "R8",
+   "type": "wall",
+   "label": "Bathroom 2 - E wall (inside face)",
+   "value_in": 63.5,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     531.75,
+     166.5
+    ],
+    "b": [
+     531.75,
+     230.0
+    ]
+   },
+   "verify": false,
+   "ft_in": "5 ft 3.5 in",
+   "err_in": 3.5
+  },
+  {
+   "id": "R8v-N",
+   "room": "R8v",
+   "type": "wall",
+   "label": "Hall vestibule (bath 2) - N wall (inside face)",
+   "value_in": 49.5,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     365.75,
+     166.5
+    ],
+    "b": [
+     415.25,
+     166.5
+    ]
+   },
+   "verify": false,
+   "ft_in": "4 ft 1.5 in",
+   "err_in": 3.0
+  },
+  {
+   "id": "R8v-S",
+   "room": "R8v",
+   "type": "wall",
+   "label": "Hall vestibule (bath 2) - S wall (inside face)",
+   "value_in": 49.5,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     365.75,
+     230.0
+    ],
+    "b": [
+     415.25,
+     230.0
+    ]
+   },
+   "verify": false,
+   "ft_in": "4 ft 1.5 in",
+   "err_in": 3.0
+  },
+  {
+   "id": "R8v-W",
+   "room": "R8v",
+   "type": "wall",
+   "label": "Hall vestibule (bath 2) - W wall (inside face)",
+   "value_in": 63.5,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     365.75,
+     166.5
+    ],
+    "b": [
+     365.75,
+     230.0
+    ]
+   },
+   "verify": false,
+   "ft_in": "5 ft 3.5 in",
+   "err_in": 3.5
+  },
+  {
+   "id": "R8v-E",
+   "room": "R8v",
+   "type": "wall",
+   "label": "Hall vestibule (bath 2) - E wall (inside face)",
+   "value_in": 63.5,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     415.25,
+     166.5
+    ],
+    "b": [
+     415.25,
+     230.0
+    ]
+   },
+   "verify": false,
+   "ft_in": "5 ft 3.5 in",
+   "err_in": 3.5
+  },
+  {
+   "id": "R9-N",
+   "room": "R9",
+   "type": "wall",
+   "label": "Bedroom 3 - N wall (inside face)",
+   "value_in": 139.2,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     369.75,
+     234.0
+    ],
+    "b": [
+     509.0,
+     234.0
+    ]
+   },
+   "verify": false,
+   "ft_in": "11 ft 7.2 in",
+   "err_in": 6.6
+  },
+  {
+   "id": "R9-S",
+   "room": "R9",
+   "type": "wall",
+   "label": "Bedroom 3 - S wall (inside face)",
+   "value_in": 139.2,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     369.75,
+     352.25
+    ],
+    "b": [
+     509.0,
+     352.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "11 ft 7.2 in",
+   "err_in": 6.6
+  },
+  {
+   "id": "R9-W",
+   "room": "R9",
+   "type": "wall",
+   "label": "Bedroom 3 - W wall (inside face)",
+   "value_in": 118.2,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     369.75,
+     234.0
+    ],
+    "b": [
+     369.75,
+     352.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "9 ft 10.2 in",
+   "err_in": 5.7
+  },
+  {
+   "id": "R9-E",
+   "room": "R9",
+   "type": "wall",
+   "label": "Bedroom 3 - E wall (inside face)",
+   "value_in": 118.2,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     509.0,
+     234.0
+    ],
+    "b": [
+     509.0,
+     352.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "9 ft 10.2 in",
+   "err_in": 5.7
+  },
+  {
+   "id": "R10-N",
+   "room": "R10",
+   "type": "wall",
+   "label": "Storage / pantry hall - N wall (inside face)",
+   "value_in": 40.0,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     326.25,
+     275.25
+    ],
+    "b": [
+     366.25,
+     275.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "3 ft 4 in",
+   "err_in": 2.6
+  },
+  {
+   "id": "R10-S",
+   "room": "R10",
+   "type": "wall",
+   "label": "Storage / pantry hall - S wall (inside face)",
+   "value_in": 40.0,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     326.25,
+     394.25
+    ],
+    "b": [
+     366.25,
+     394.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "3 ft 4 in",
+   "err_in": 2.6
+  },
+  {
+   "id": "R10-W",
+   "room": "R10",
+   "type": "wall",
+   "label": "Storage / pantry hall - W wall (inside face)",
+   "value_in": 119.0,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     326.25,
+     275.25
+    ],
+    "b": [
+     326.25,
+     394.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "9 ft 11 in",
+   "err_in": 5.8
+  },
+  {
+   "id": "R10-E",
+   "room": "R10",
+   "type": "wall",
+   "label": "Storage / pantry hall - E wall (inside face)",
+   "value_in": 119.0,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     366.25,
+     275.25
+    ],
+    "b": [
+     366.25,
+     394.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "9 ft 11 in",
+   "err_in": 5.8
+  },
+  {
+   "id": "R10b-N",
+   "room": "R10b",
+   "type": "wall",
+   "label": "Storage closet (lower right) - N wall (inside face)",
+   "value_in": 80.2,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     366.25,
+     356.0
+    ],
+    "b": [
+     446.5,
+     356.0
+    ]
+   },
+   "verify": false,
+   "ft_in": "6 ft 8.2 in",
+   "err_in": 4.2
+  },
+  {
+   "id": "R10b-S",
+   "room": "R10b",
+   "type": "wall",
+   "label": "Storage closet (lower right) - S wall (inside face)",
+   "value_in": 80.2,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     366.25,
+     394.25
+    ],
+    "b": [
+     446.5,
+     394.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "6 ft 8.2 in",
+   "err_in": 4.2
+  },
+  {
+   "id": "R10b-W",
+   "room": "R10b",
+   "type": "wall",
+   "label": "Storage closet (lower right) - W wall (inside face)",
+   "value_in": 38.2,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     366.25,
+     356.0
+    ],
+    "b": [
+     366.25,
+     394.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "3 ft 2.2 in",
+   "err_in": 2.5
+  },
+  {
+   "id": "R10b-E",
+   "room": "R10b",
+   "type": "wall",
+   "label": "Storage closet (lower right) - E wall (inside face)",
+   "value_in": 38.2,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     446.5,
+     356.0
+    ],
+    "b": [
+     446.5,
+     394.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "3 ft 2.2 in",
+   "err_in": 2.5
+  },
+  {
+   "id": "G-N",
+   "room": "G",
+   "type": "wall",
+   "label": "Garage - N wall (inside face)",
+   "value_in": 204.2,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     161.5,
+     403.25
+    ],
+    "b": [
+     365.75,
+     403.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "17 ft 0.2 in",
+   "err_in": 9.2
+  },
+  {
+   "id": "G-S",
+   "room": "G",
+   "type": "wall",
+   "label": "Garage - S wall (inside face)",
+   "value_in": 204.2,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     161.5,
+     659.0
+    ],
+    "b": [
+     365.75,
+     659.0
+    ]
+   },
+   "verify": false,
+   "ft_in": "17 ft 0.2 in",
+   "err_in": 9.2
+  },
+  {
+   "id": "G-W",
+   "room": "G",
+   "type": "wall",
+   "label": "Garage - W wall (inside face)",
+   "value_in": 255.8,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     161.5,
+     403.25
+    ],
+    "b": [
+     161.5,
+     659.0
+    ]
+   },
+   "verify": false,
+   "ft_in": "21 ft 3.8 in",
+   "err_in": 11.2
+  },
+  {
+   "id": "G-E",
+   "room": "G",
+   "type": "wall",
+   "label": "Garage - E wall (inside face)",
+   "value_in": 255.8,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     365.75,
+     403.25
+    ],
+    "b": [
+     365.75,
+     659.0
+    ]
+   },
+   "verify": false,
+   "ft_in": "21 ft 3.8 in",
+   "err_in": 11.2
+  },
+  {
+   "id": "P-N",
+   "room": "P",
+   "type": "wall",
+   "label": "Patio / balcony - N wall (inside face)",
+   "value_in": 87.0,
+   "confidence": "low",
+   "geom": {
+    "kind": "line",
+    "a": [
+     32.0,
+     64.0
+    ],
+    "b": [
+     119.0,
+     64.0
+    ]
+   },
+   "verify": false,
+   "ft_in": "7 ft 3 in",
+   "err_in": 7.4
+  },
+  {
+   "id": "P-S",
+   "room": "P",
+   "type": "wall",
+   "label": "Patio / balcony - S wall (inside face)",
+   "value_in": 87.0,
+   "confidence": "low",
+   "geom": {
+    "kind": "line",
+    "a": [
+     32.0,
+     101.25
+    ],
+    "b": [
+     119.0,
+     101.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "7 ft 3 in",
+   "err_in": 7.4
+  },
+  {
+   "id": "P-W",
+   "room": "P",
+   "type": "wall",
+   "label": "Patio / balcony - W wall (inside face)",
+   "value_in": 37.2,
+   "confidence": "low",
+   "geom": {
+    "kind": "line",
+    "a": [
+     32.0,
+     64.0
+    ],
+    "b": [
+     32.0,
+     101.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "3 ft 1.2 in",
+   "err_in": 4.9
+  },
+  {
+   "id": "P-E",
+   "room": "P",
+   "type": "wall",
+   "label": "Patio / balcony - E wall (inside face)",
+   "value_in": 37.2,
+   "confidence": "low",
+   "geom": {
+    "kind": "line",
+    "a": [
+     119.0,
+     64.0
+    ],
+    "b": [
+     119.0,
+     101.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "3 ft 1.2 in",
+   "err_in": 4.9
+  },
+  {
+   "id": "O1",
+   "room": "R6e",
+   "type": "opening",
+   "label": "Entry/foyer to living room opening",
+   "value_in": 50.0,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     165.0,
+     30.0
+    ],
+    "b": [
+     165.0,
+     80.0
+    ]
+   },
+   "verify": false,
+   "ft_in": "4 ft 2 in",
+   "err_in": 3.0
+  },
+  {
+   "id": "O2",
+   "room": "R5",
+   "type": "opening",
+   "label": "Kitchen to living opening (left of peninsula)",
+   "value_in": 59.3,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     192.5,
+     275.25
+    ],
+    "b": [
+     251.8,
+     275.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "4 ft 11.3 in",
+   "err_in": 3.4
+  },
+  {
+   "id": "O3",
+   "room": "R5",
+   "type": "opening",
+   "label": "Kitchen to living opening (right of peninsula)",
+   "value_in": 40.2,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     282.0,
+     275.25
+    ],
+    "b": [
+     322.2,
+     275.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "3 ft 4.2 in",
+   "err_in": 2.6
+  },
+  {
+   "id": "O4",
+   "room": "R8v",
+   "type": "opening",
+   "label": "Hall opening to bedroom vestibule",
+   "value_in": 36.0,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     365.75,
+     168.0
+    ],
+    "b": [
+     365.75,
+     204.0
+    ]
+   },
+   "verify": false,
+   "ft_in": "3 ft 0 in",
+   "err_in": 2.4
+  },
+  {
+   "id": "O5",
+   "room": "R10",
+   "type": "opening",
+   "label": "Storage hall to lower storage closet",
+   "value_in": 40.4,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     366.25,
+     353.8
+    ],
+    "b": [
+     366.25,
+     394.2
+    ]
+   },
+   "verify": false,
+   "ft_in": "3 ft 4.4 in",
+   "err_in": 2.6
+  },
+  {
+   "id": "O6",
+   "room": "G",
+   "type": "opening",
+   "label": "Garage overhead door opening",
+   "value_in": 174.0,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     180.8,
+     659.0
+    ],
+    "b": [
+     354.8,
+     659.0
+    ]
+   },
+   "verify": true,
+   "ft_in": "14 ft 6 in",
+   "err_in": 8.0
+  },
+  {
+   "id": "O7",
+   "room": "G",
+   "type": "opening",
+   "label": "Garage side opening to entry landing",
+   "value_in": 36.6,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     161.5,
+     403.2
+    ],
+    "b": [
+     161.5,
+     439.8
+    ]
+   },
+   "verify": false,
+   "ft_in": "3 ft 0.6 in",
+   "err_in": 2.5
+  },
+  {
+   "id": "D2",
+   "room": "R1",
+   "type": "door",
+   "label": "Primary bedroom door - ASSUMED standard width (not measured)",
+   "value_in": 32,
+   "confidence": "low",
+   "err_in": 4.0,
+   "geom": {
+    "kind": "door",
+    "hinge": [
+     166.0,
+     107.0
+    ],
+    "axis": "v",
+    "dir": 1,
+    "swing": -1,
+    "w": 32
+   },
+   "ft_in": "2 ft 8 in",
+   "verify": true
+  },
+  {
+   "id": "D3",
+   "room": "R2",
+   "type": "door",
+   "label": "Primary bathroom door - ASSUMED standard width (not measured)",
+   "value_in": 30,
+   "confidence": "low",
+   "err_in": 4.0,
+   "geom": {
+    "kind": "door",
+    "hinge": [
+     65.5,
+     276.5
+    ],
+    "axis": "h",
+    "dir": -1,
+    "swing": 1,
+    "w": 30
+   },
+   "ft_in": "2 ft 6 in",
+   "verify": true
+  },
+  {
+   "id": "D4",
+   "room": "R3",
+   "type": "door",
+   "label": "Primary walk-in closet door - ASSUMED standard width (not measured)",
+   "value_in": 28,
+   "confidence": "low",
+   "err_in": 4.0,
+   "geom": {
+    "kind": "door",
+    "hinge": [
+     69.75,
+     276.5
+    ],
+    "axis": "h",
+    "dir": 1,
+    "swing": 1,
+    "w": 28
+   },
+   "ft_in": "2 ft 4 in",
+   "verify": true
+  },
+  {
+   "id": "D5",
+   "room": "R4",
+   "type": "door",
+   "label": "Laundry door (kitchen side) - ASSUMED standard width (not measured)",
+   "value_in": 30,
+   "confidence": "low",
+   "err_in": 4.0,
+   "geom": {
+    "kind": "door",
+    "hinge": [
+     188.25,
+     338.0
+    ],
+    "axis": "v",
+    "dir": 1,
+    "swing": -1,
+    "w": 30
+   },
+   "ft_in": "2 ft 6 in",
+   "verify": true
+  },
+  {
+   "id": "D6",
+   "room": "R4",
+   "type": "door",
+   "label": "Laundry to garage door - ASSUMED standard width (not measured)",
+   "value_in": 32,
+   "confidence": "low",
+   "err_in": 4.0,
+   "geom": {
+    "kind": "door",
+    "hinge": [
+     176.0,
+     394.25
+    ],
+    "axis": "h",
+    "dir": -1,
+    "swing": -1,
+    "w": 32
+   },
+   "ft_in": "2 ft 8 in",
+   "verify": true
+  },
+  {
+   "id": "D7",
+   "room": "R7",
+   "type": "door",
+   "label": "Bedroom 2 door - ASSUMED standard width (not measured)",
+   "value_in": 30,
+   "confidence": "low",
+   "err_in": 4.0,
+   "geom": {
+    "kind": "door",
+    "hinge": [
+     370.25,
+     162.75
+    ],
+    "axis": "h",
+    "dir": 1,
+    "swing": -1,
+    "w": 30
+   },
+   "ft_in": "2 ft 6 in",
+   "verify": true
+  },
+  {
+   "id": "D8",
+   "room": "R8",
+   "type": "door",
+   "label": "Bathroom 2 door - ASSUMED standard width (not measured)",
+   "value_in": 28,
+   "confidence": "low",
+   "err_in": 4.0,
+   "geom": {
+    "kind": "door",
+    "hinge": [
+     419.25,
+     196.0
+    ],
+    "axis": "v",
+    "dir": 1,
+    "swing": 1,
+    "w": 28
+   },
+   "ft_in": "2 ft 4 in",
+   "verify": true
+  },
+  {
+   "id": "D9",
+   "room": "R9",
+   "type": "door",
+   "label": "Bedroom 3 door - ASSUMED standard width (not measured)",
+   "value_in": 30,
+   "confidence": "low",
+   "err_in": 4.0,
+   "geom": {
+    "kind": "door",
+    "hinge": [
+     369.75,
+     234.0
+    ],
+    "axis": "h",
+    "dir": 1,
+    "swing": 1,
+    "w": 30
+   },
+   "ft_in": "2 ft 6 in",
+   "verify": true
+  },
+  {
+   "id": "D1",
+   "room": "R6e",
+   "type": "door",
+   "label": "Front entry door (position approximate) - ASSUMED standard width (not measured)",
+   "value_in": 36,
+   "confidence": "low",
+   "err_in": 4.0,
+   "geom": {
+    "kind": "door",
+    "hinge": [
+     122.75,
+     30.0
+    ],
+    "axis": "h",
+    "dir": 1,
+    "swing": 1,
+    "w": 36
+   },
+   "ft_in": "3 ft 0 in",
+   "verify": true
+  },
+  {
+   "id": "F1-W",
+   "room": "R2",
+   "type": "fixture",
+   "label": "Primary bath double vanity (top incl. visible front face) - width (E-W)",
+   "value_in": 33,
+   "confidence": "low",
+   "geom": {
+    "kind": "rect",
+    "a": [
+     12,
+     292
+    ],
+    "b": [
+     45,
+     362
+    ]
+   },
+   "ft_in": "2 ft 9 in",
+   "err_in": 4.7,
+   "verify": true
+  },
+  {
+   "id": "F1-D",
+   "room": "R2",
+   "type": "fixture",
+   "label": "Primary bath double vanity (top incl. visible front face) - depth (N-S)",
+   "value_in": 70,
+   "confidence": "low",
+   "geom": {
+    "kind": "rect",
+    "a": [
+     12,
+     292
+    ],
+    "b": [
+     45,
+     362
+    ]
+   },
+   "ft_in": "5 ft 10 in",
+   "err_in": 6.5,
+   "verify": true
+  },
+  {
+   "id": "F2-W",
+   "room": "R2",
+   "type": "fixture",
+   "label": "Primary bath toilet - width (E-W)",
+   "value_in": 35,
+   "confidence": "low",
+   "geom": {
+    "kind": "rect",
+    "a": [
+     15,
+     372
+    ],
+    "b": [
+     50,
+     395
+    ]
+   },
+   "ft_in": "2 ft 11 in",
+   "err_in": 4.8,
+   "verify": true
+  },
+  {
+   "id": "F2-D",
+   "room": "R2",
+   "type": "fixture",
+   "label": "Primary bath toilet - depth (N-S)",
+   "value_in": 23,
+   "confidence": "low",
+   "geom": {
+    "kind": "rect",
+    "a": [
+     15,
+     372
+    ],
+    "b": [
+     50,
+     395
+    ]
+   },
+   "ft_in": "1 ft 11 in",
+   "err_in": 4.2,
+   "verify": true
+  },
+  {
+   "id": "F3a-W",
+   "room": "R4",
+   "type": "fixture",
+   "label": "Washer (stock symbol) - width (E-W)",
+   "value_in": 16,
+   "confidence": "low",
+   "geom": {
+    "kind": "rect",
+    "a": [
+     130,
+     345
+    ],
+    "b": [
+     146,
+     367
+    ]
+   },
+   "ft_in": "1 ft 4 in",
+   "err_in": 3.8,
+   "verify": true
+  },
+  {
+   "id": "F3a-D",
+   "room": "R4",
+   "type": "fixture",
+   "label": "Washer (stock symbol) - depth (N-S)",
+   "value_in": 22,
+   "confidence": "low",
+   "geom": {
+    "kind": "rect",
+    "a": [
+     130,
+     345
+    ],
+    "b": [
+     146,
+     367
+    ]
+   },
+   "ft_in": "1 ft 10 in",
+   "err_in": 4.1,
+   "verify": true
+  },
+  {
+   "id": "F3b-W",
+   "room": "R4",
+   "type": "fixture",
+   "label": "Dryer (stock symbol) - width (E-W)",
+   "value_in": 16,
+   "confidence": "low",
+   "geom": {
+    "kind": "rect",
+    "a": [
+     130,
+     369
+    ],
+    "b": [
+     146,
+     392
+    ]
+   },
+   "ft_in": "1 ft 4 in",
+   "err_in": 3.8,
+   "verify": true
+  },
+  {
+   "id": "F3b-D",
+   "room": "R4",
+   "type": "fixture",
+   "label": "Dryer (stock symbol) - depth (N-S)",
+   "value_in": 23,
+   "confidence": "low",
+   "geom": {
+    "kind": "rect",
+    "a": [
+     130,
+     369
+    ],
+    "b": [
+     146,
+     392
+    ]
+   },
+   "ft_in": "1 ft 11 in",
+   "err_in": 4.2,
+   "verify": true
+  },
+  {
+   "id": "F4-W",
+   "room": "R5",
+   "type": "fixture",
+   "label": "Kitchen peninsula (dark top, sink + dishwasher) - width (E-W)",
+   "value_in": 68,
+   "confidence": "low",
+   "geom": {
+    "kind": "rect",
+    "a": [
+     241,
+     278
+    ],
+    "b": [
+     309,
+     316
+    ]
+   },
+   "ft_in": "5 ft 8 in",
+   "err_in": 6.4,
+   "verify": true
+  },
+  {
+   "id": "F4-D",
+   "room": "R5",
+   "type": "fixture",
+   "label": "Kitchen peninsula (dark top, sink + dishwasher) - depth (N-S)",
+   "value_in": 38,
+   "confidence": "low",
+   "geom": {
+    "kind": "rect",
+    "a": [
+     241,
+     278
+    ],
+    "b": [
+     309,
+     316
+    ]
+   },
+   "ft_in": "3 ft 2 in",
+   "err_in": 4.9,
+   "verify": true
+  },
+  {
+   "id": "F5-W",
+   "room": "R5",
+   "type": "fixture",
+   "label": "Kitchen counter run - right wall - width (E-W)",
+   "value_in": 17.2,
+   "confidence": "low",
+   "geom": {
+    "kind": "rect",
+    "a": [
+     305,
+     285
+    ],
+    "b": [
+     322.25,
+     384
+    ]
+   },
+   "ft_in": "1 ft 5.2 in",
+   "err_in": 3.9,
+   "verify": true
+  },
+  {
+   "id": "F5-D",
+   "room": "R5",
+   "type": "fixture",
+   "label": "Kitchen counter run - right wall - depth (N-S)",
+   "value_in": 99,
+   "confidence": "low",
+   "geom": {
+    "kind": "rect",
+    "a": [
+     305,
+     285
+    ],
+    "b": [
+     322.25,
+     384
+    ]
+   },
+   "ft_in": "8 ft 3 in",
+   "err_in": 8.0,
+   "verify": true
+  },
+  {
+   "id": "F6-W",
+   "room": "R5",
+   "type": "fixture",
+   "label": "Kitchen counter run - back wall (front edge partly hidden) - width (E-W)",
+   "value_in": 129.8,
+   "confidence": "low",
+   "geom": {
+    "kind": "rect",
+    "a": [
+     192.5,
+     381
+    ],
+    "b": [
+     322.25,
+     393.5
+    ]
+   },
+   "ft_in": "10 ft 9.8 in",
+   "err_in": 9.5,
+   "verify": true
+  },
+  {
+   "id": "F6-D",
+   "room": "R5",
+   "type": "fixture",
+   "label": "Kitchen counter run - back wall (front edge partly hidden) - depth (N-S)",
+   "value_in": 12.5,
+   "confidence": "low",
+   "geom": {
+    "kind": "rect",
+    "a": [
+     192.5,
+     381
+    ],
+    "b": [
+     322.25,
+     393.5
+    ]
+   },
+   "ft_in": "1 ft 0.5 in",
+   "err_in": 3.6,
+   "verify": true
+  },
+  {
+   "id": "F7-W",
+   "room": "R5",
+   "type": "fixture",
+   "label": "Refrigerator / tall unit (white box, back-left) - width (E-W)",
+   "value_in": 24,
+   "confidence": "low",
+   "geom": {
+    "kind": "rect",
+    "a": [
+     194,
+     366
+    ],
+    "b": [
+     218,
+     384
+    ]
+   },
+   "ft_in": "2 ft 0 in",
+   "err_in": 4.2,
+   "verify": true
+  },
+  {
+   "id": "F7-D",
+   "room": "R5",
+   "type": "fixture",
+   "label": "Refrigerator / tall unit (white box, back-left) - depth (N-S)",
+   "value_in": 18,
+   "confidence": "low",
+   "geom": {
+    "kind": "rect",
+    "a": [
+     194,
+     366
+    ],
+    "b": [
+     218,
+     384
+    ]
+   },
+   "ft_in": "1 ft 6 in",
+   "err_in": 3.9,
+   "verify": true
+  },
+  {
+   "id": "F8-W",
+   "room": "R8",
+   "type": "fixture",
+   "label": "Bath 2 tub (visible part; top hidden by wall face) - width (E-W)",
+   "value_in": 47.8,
+   "confidence": "low",
+   "geom": {
+    "kind": "rect",
+    "a": [
+     484,
+     194
+    ],
+    "b": [
+     531.75,
+     230.0
+    ]
+   },
+   "ft_in": "3 ft 11.8 in",
+   "err_in": 5.4,
+   "verify": true
+  },
+  {
+   "id": "F8-D",
+   "room": "R8",
+   "type": "fixture",
+   "label": "Bath 2 tub (visible part; top hidden by wall face) - depth (N-S)",
+   "value_in": 36.0,
+   "confidence": "low",
+   "geom": {
+    "kind": "rect",
+    "a": [
+     484,
+     194
+    ],
+    "b": [
+     531.75,
+     230.0
+    ]
+   },
+   "ft_in": "3 ft 0 in",
+   "err_in": 4.8,
+   "verify": true
+  },
+  {
+   "id": "F9-W",
+   "room": "G",
+   "type": "fixture",
+   "label": "Water heater (round) - width (E-W)",
+   "value_in": 21,
+   "confidence": "low",
+   "geom": {
+    "kind": "rect",
+    "a": [
+     341,
+     410
+    ],
+    "b": [
+     362,
+     433
+    ]
+   },
+   "ft_in": "1 ft 9 in",
+   "err_in": 4.0,
+   "verify": true
+  },
+  {
+   "id": "F9-D",
+   "room": "G",
+   "type": "fixture",
+   "label": "Water heater (round) - depth (N-S)",
+   "value_in": 23,
+   "confidence": "low",
+   "geom": {
+    "kind": "rect",
+    "a": [
+     341,
+     410
+    ],
+    "b": [
+     362,
+     433
+    ]
+   },
+   "ft_in": "1 ft 11 in",
+   "err_in": 4.2,
+   "verify": true
+  },
+  {
+   "id": "F10-W",
+   "room": "R1",
+   "type": "fixture",
+   "label": "Primary bedroom reach-in closet zone (louvered doors) - width (E-W)",
+   "value_in": 95,
+   "confidence": "low",
+   "geom": {
+    "kind": "rect",
+    "a": [
+     25,
+     105.25
+    ],
+    "b": [
+     120,
+     142
+    ]
+   },
+   "ft_in": "7 ft 11 in",
+   "err_in": 7.8,
+   "verify": true
+  },
+  {
+   "id": "F10-D",
+   "room": "R1",
+   "type": "fixture",
+   "label": "Primary bedroom reach-in closet zone (louvered doors) - depth (N-S)",
+   "value_in": 36.8,
+   "confidence": "low",
+   "geom": {
+    "kind": "rect",
+    "a": [
+     25,
+     105.25
+    ],
+    "b": [
+     120,
+     142
+    ]
+   },
+   "ft_in": "3 ft 0.8 in",
+   "err_in": 4.8,
+   "verify": true
+  },
+  {
+   "id": "C1",
+   "room": "R2",
+   "type": "clearance",
+   "label": "Toilet front to shower glass",
+   "value_in": 20.0,
+   "confidence": "low",
+   "geom": {
+    "kind": "line",
+    "a": [
+     50,
+     383.5
+    ],
+    "b": [
+     70.04,
+     383.5
+    ]
+   },
+   "ft_in": "1 ft 8 in",
+   "err_in": 4.0,
+   "verify": true
+  },
+  {
+   "id": "C2",
+   "room": "R2",
+   "type": "clearance",
+   "label": "Vanity front to shower glass (walkway)",
+   "value_in": 25.0,
+   "confidence": "low",
+   "geom": {
+    "kind": "line",
+    "a": [
+     45,
+     330
+    ],
+    "b": [
+     70.04,
+     330
+    ]
+   },
+   "ft_in": "2 ft 1 in",
+   "err_in": 4.2,
+   "verify": true
+  },
+  {
+   "id": "C3",
+   "room": "R2",
+   "type": "clearance",
+   "label": "Toilet centerline to back wall",
+   "value_in": 10.8,
+   "confidence": "low",
+   "geom": {
+    "kind": "line",
+    "a": [
+     32,
+     383.5
+    ],
+    "b": [
+     32,
+     394.25
+    ]
+   },
+   "ft_in": "0 ft 10.8 in",
+   "err_in": 3.5,
+   "verify": true
+  },
+  {
+   "id": "C4",
+   "room": "R2",
+   "type": "clearance",
+   "label": "Toilet centerline to vanity edge",
+   "value_in": 21.5,
+   "confidence": "low",
+   "geom": {
+    "kind": "line",
+    "a": [
+     32,
+     383.5
+    ],
+    "b": [
+     32,
+     362
+    ]
+   },
+   "ft_in": "1 ft 9.5 in",
+   "err_in": 4.1,
+   "verify": true
+  },
+  {
+   "id": "C5",
+   "room": "R4",
+   "type": "clearance",
+   "label": "Washer/dryer front to opposite wall",
+   "value_in": 42.2,
+   "confidence": "low",
+   "geom": {
+    "kind": "line",
+    "a": [
+     146,
+     360
+    ],
+    "b": [
+     188.25,
+     360
+    ]
+   },
+   "ft_in": "3 ft 6.2 in",
+   "err_in": 5.1,
+   "verify": true
+  },
+  {
+   "id": "C6",
+   "room": "R5",
+   "type": "clearance",
+   "label": "Peninsula to back counter (kitchen aisle)",
+   "value_in": 65.0,
+   "confidence": "low",
+   "geom": {
+    "kind": "line",
+    "a": [
+     275,
+     316
+    ],
+    "b": [
+     275,
+     381
+    ]
+   },
+   "ft_in": "5 ft 5 in",
+   "err_in": 6.2,
+   "verify": true
+  },
+  {
+   "id": "C7",
+   "room": "R5",
+   "type": "clearance",
+   "label": "Peninsula end to right counter run",
+   "value_in": 4.0,
+   "confidence": "low",
+   "geom": {
+    "kind": "line",
+    "a": [
+     309,
+     300
+    ],
+    "b": [
+     305,
+     300
+    ]
+   },
+   "ft_in": "0 ft 4 in",
+   "err_in": 3.2,
+   "verify": true
+  },
+  {
+   "id": "C8",
+   "room": "G",
+   "type": "clearance",
+   "label": "Water heater to garage right wall",
+   "value_in": 3.8,
+   "confidence": "low",
+   "geom": {
+    "kind": "line",
+    "a": [
+     362,
+     421
+    ],
+    "b": [
+     365.75,
+     421
+    ]
+   },
+   "ft_in": "0 ft 3.8 in",
+   "err_in": 3.2,
+   "verify": true
+  }
+ ],
+ "totals": {
+  "interior_rooms_sqft": 1183.4,
+  "footprint_living_sqft": 1286.8,
+  "footprint_err_sqft": 24.9,
+  "garage_sqft": 362.8,
+  "garage_footprint_sqft": 392.2,
+  "listed_sqft": "1,400-1,401",
+  "patio_sqft": 22.5
+ }
+}

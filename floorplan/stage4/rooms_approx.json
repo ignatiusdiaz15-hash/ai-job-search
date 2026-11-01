@@ -1,0 +1,21 @@
+[
+ {"id":"R1","name":"Primary bedroom","box":[5,166,105,272]},
+ {"id":"R2","name":"Primary bathroom","box":[4,68,276,395]},
+ {"id":"R2s","name":"Primary shower","box":[70,107,329,395]},
+ {"id":"R3","name":"Primary walk-in closet","box":[70,165,276,325]},
+ {"id":"R3b","name":"Linen closet (by kitchen)","box":[168,190,276,323]},
+ {"id":"R4","name":"Laundry","box":[109,190,330,395]},
+ {"id":"R5","name":"Kitchen","box":[192,322,276,395]},
+ {"id":"R6","name":"Living / dining","box":[168,340,31,274]},
+ {"id":"R6e","name":"Entry / foyer","box":[122,167,31,101]},
+ {"id":"R6h","name":"Hallway (bedrooms 2-3)","box":[343,366,95,274]},
+ {"id":"R7","name":"Bedroom 2","box":[369,509,4,161]},
+ {"id":"R7c","name":"Closet (bedroom 2 side)","box":[345,365,2,91]},
+ {"id":"R8","name":"Bathroom 2","box":[420,532,166,230]},
+ {"id":"R8v","name":"Hall vestibule (bath 2)","box":[367,417,166,231]},
+ {"id":"R9","name":"Bedroom 3","box":[370,509,236,354]},
+ {"id":"R10","name":"Storage / pantry hall","box":[325,365,276,395]},
+ {"id":"R10b","name":"Storage closet (lower right)","box":[367,447,357,395]},
+ {"id":"G","name":"Garage","box":[160,368,406,669]},
+ {"id":"P","name":"Patio / balcony","box":[30,120,64,102]}
+]
