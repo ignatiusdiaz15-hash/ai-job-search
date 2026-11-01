@@ -73,7 +73,7 @@ th{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.06em
 td.n{font-family:var(--font-mono);font-size:13px;white-space:nowrap;font-variant-numeric:tabular-nums}
 tr.sect td{background:var(--blue-soft);font-family:var(--font-display);font-weight:700;letter-spacing:.05em;text-transform:uppercase;font-size:14px}
 tr.chg td.best{color:var(--tool);font-weight:600}
-.corr{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.corr{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px}
 .corr .card h3{font-size:16px;margin:0 0 4px}
 .corr .card p{font-size:14px}
 textarea{width:100%;box-sizing:border-box;min-height:140px;font-family:var(--font-mono);font-size:12px;background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:var(--r)}
@@ -251,7 +251,7 @@ function draw(){
    poly([[f.x0,f.y0],[f.x1,f.y0],[f.x1,f.y1],[f.x0,f.y1]],{fill:c,'fill-opacity':0.12,stroke:c,'stroke-width':1.6,'stroke-dasharray':'4 3','vector-effect':'non-scaling-stroke'},gFx);
    text((f.x0+f.x1)/2,f.y0+5,`${f.w_in}×${f.d_in}`,'lab-fx',{fill:c},gLab);
   }
-  for(const it of D.items.filter(i=>i.type==='clearance')){
+  for(const it of D.items.filter(i=>i.type==='clearance'&&i.geom)){
    const g=it.geom; pline([g.a,g.b],{stroke:css('--clear'),'stroke-width':2,'stroke-dasharray':'2 3','vector-effect':'non-scaling-stroke'},gFx);
    for(const q of [g.a,g.b]){const[u,v]=P(...q);el('circle',{cx:u,cy:v,r:2.2/ (k||1)+0.6,fill:css('--clear')},gFx)}
    const m=[(g.a[0]+g.b[0])/2,(g.a[1]+g.b[1])/2]; text(m[0],m[1]-5,`${it.value_in}"`,'lab-fx',{fill:css('--clear')},gLab);
@@ -284,7 +284,7 @@ function selectRoom(id,zoom){selRoom=id;const r=roomById[id];
  document.querySelectorAll('#roomlist button').forEach(b=>b.setAttribute('aria-current',b.dataset.id===id?'true':'false'));
  const items=D.items.filter(i=>i.room===id&&i.type!=='wall');
  const walls=D.items.filter(i=>i.room===id&&i.type==='wall');
- const rows=items.map(i=>`<dt>${i.label.replace(r.name+' - ','')}</dt><dd>${i.value_in}" ±${i.err_in} <span class="pill ${i.confidence}">${i.confidence}</span></dd>`).join('');
+ const rows=items.map(i=>`<dt>${i.label.replace(r.name+' - ','')}</dt><dd>${i.value_in}" ±${i.err_in} <span class="pill ${i.confidence}">${i.confidence}</span>${i.note?`<br><span class="small">${i.note}</span>`:''}</dd>`).join('');
  $('#detail').innerHTML=`<h2>${r.name}</h2><dl>
   <dt>Width (E–W)</dt><dd>${fmt(r.w_in)}</dd><dt>Depth (N–S)</dt><dd>${fmt(r.d_in)}</dd>
   <dt>Area</dt><dd>${r.sqft} sq ft ±${r.sqft_err}</dd><dt>Confidence</dt><dd><span class="pill ${r.confidence}">${r.confidence}</span> ±${walls[0]?walls[0].err_in:''}" on ${Math.round(Math.max(r.w_in,r.d_in))}"</dd>${rows}</dl>

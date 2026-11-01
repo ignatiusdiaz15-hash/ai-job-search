@@ -3,7 +3,9 @@ F=json.load(open('stage4/frame.json')); FX0,FY0=F['FX0'],F['FY0']
 rooms=json.load(open('stage4/rooms_final.json'))
 area3=json.load(open('stage3/area_check.json'))
 R={r['id']:r for r in rooms}
-R['R6h']['name']='Living room - TV wall strip (open)'
+R['R6h']['name']='Living room - east side (open, TV wall)'
+R['R6e']['name']='Entry closet / nook (walled in drawing)'
+R['R6e'].setdefault('notes',[]).append('drawing shows walls on all four sides; its door and use could not be identified')
 def ftin(x):
     s='-' if x<0 else ''; x=abs(x); f=int(x//12); i=round(x-12*f,1)
     if i>=12: f+=1; i-=12
@@ -29,10 +31,13 @@ for r in rooms:
         L=math.dist(a,b)
         add(id=f"{r['id']}-{s}",room=r['id'],type='wall',label=f"{r['name']} - {s} wall (inside face)",value_in=L,confidence=c,
             geom=dict(kind='line',a=a,b=b),verify=False)
+# ---- primary bedroom reach-in closet (inside R1's wall-to-wall box) ----
+add(id='R1-closet',room='R1',type='fixture',label='Primary bedroom reach-in closet depth (included in room depth above)',value_in=30.0,confidence='low',err_in=7.0,
+    geom=None,note='drawn zone is 37 in including the leaning door faces; typical reach-in is 24-30 in')
+add(id='R1-sleep',room='R1',type='wall',label='Primary bedroom depth excluding reach-in closet',value_in=R['R1']['d']-30.0,confidence='medium',err_in=7.0,geom=None)
 # ---- measured openings (real gaps in wall bands) ----
-OP=[('O1','R6e','Entry/foyer to living room opening',(165.0,30.0),(165.0,80.0),'medium'),
-    ('O2','R5','Kitchen to living opening (left of peninsula)',(192.5,R['R5']['y0']),(251.8,R['R5']['y0']),'medium'),
-    ('O3','R5','Kitchen to living opening (right of peninsula)',(282.0,R['R5']['y0']),(322.2,R['R5']['y0']),'medium'),
+PEN_W=235.4  # peninsula west end corrected for 3D lean (drawn 241, 36 in tall)
+OP=[('O2','R5','Kitchen walkway, left of peninsula (peninsula meets right counter, so no walkway on the right)',(R['R5']['x0'],R['R5']['y0']),(PEN_W,R['R5']['y0']),'low'),
     ('O4','R8v','Hall opening to bedroom vestibule',(R['R6h']['x1'],168.0),(R['R6h']['x1'],204.0),'medium'),
     ('O5','R10','Storage hall to lower storage closet',(R['R10']['x1'],353.8),(R['R10']['x1'],394.2),'medium'),
     ('O6','G','Garage overhead door opening',(180.8,R['G']['y1']),(354.8,R['G']['y1']),'medium'),
@@ -49,7 +54,7 @@ DOORS=[('D2','R1','Primary bedroom door',(166.0,107.0),'v',+1,-1,32),
        ('D7','R7','Bedroom 2 door',(R['R7']['x0'],R['R7']['y1']),'h',+1,-1,30),
        ('D8','R8','Bathroom 2 door',(R['R8']['x0'],196.0),'v',+1,+1,28),
        ('D9','R9','Bedroom 3 door',(R['R9']['x0'],R['R9']['y0']),'h',+1,+1,30),
-       ('D1','R6e','Front entry door (position approximate)',(R['R6e']['x0'],R['R6e']['y0']),'h',+1,+1,36)]
+       ('D10','R3b','Linen closet door (leaf drawn swinging into kitchen)',(R['R5']['x0'],R['R3b']['y0']+1),'v',+1,+1,24)]
 doors=[]
 for i,rm,lab,h,ax,dirn,sw,assumed in DOORS:
     doors.append(dict(id=i,room=rm,label=lab,hinge=h,axis=ax,dir=dirn,swing=sw,assumed_width_in=assumed,
@@ -65,7 +70,7 @@ FXS=[('F1','R2','Primary bath double vanity (top incl. visible front face)',(12,
      ('F4','R5','Kitchen peninsula (dark top, sink + dishwasher)',(241,278),(309,316)),
      ('F5','R5','Kitchen counter run - right wall',(305,285),(R['R5']['x1'],384)),
      ('F6','R5','Kitchen counter run - back wall (front edge partly hidden)',(R['R5']['x0'],381),(R['R5']['x1'],R['R5']['y1'])),
-     ('F7','R5','Refrigerator / tall unit (white box, back-left)',(194,366),(218,384)),
+     ('F7','R5','White appliance, back-left (range or fridge - drawing unclear)',(194,366),(218,384)),
      ('F8','R8','Bath 2 tub (visible part; top hidden by wall face)',(484,194),(R['R8']['x1'],R['R8']['y1'])),
      ('F9','G','Water heater (round)',(341,410),(362,433)),
      ('F10','R1','Primary bedroom reach-in closet zone (louvered doors)',(25,R['R1']['y0']),(120,142))]
@@ -73,21 +78,22 @@ fixtures=[]
 for i,rm,lab,a,b in FXS:
     w=b[0]-a[0]; d=b[1]-a[1]
     fixtures.append(dict(id=i,room=rm,label=lab,x0=a[0],y0=a[1],x1=b[0],y1=b[1],w_in=round(w,1),d_in=round(d,1),confidence='low'))
-    add(id=i+'-W',room=rm,type='fixture',label=lab+' - width (E-W)',value_in=w,confidence='low',geom=dict(kind='rect',a=a,b=b))
-    add(id=i+'-D',room=rm,type='fixture',label=lab+' - depth (N-S)',value_in=d,confidence='low',geom=dict(kind='rect',a=a,b=b))
+    add(id=i+'-W',room=rm,type='fixture',label=lab+' - width (E-W), as drawn',value_in=w,confidence='low',geom=dict(kind='rect',a=a,b=b))
+    add(id=i+'-D',room=rm,type='fixture',label=lab+' - depth (N-S), as drawn',value_in=d,confidence='low',geom=dict(kind='rect',a=a,b=b))
 FX={f['id']:f for f in fixtures}
 # ---- clearances ----
-glass=R['R2s']['x0']
-CL=[('C1','R2','Toilet front to shower glass',(FX['F2']['x1'],383.5),(glass,383.5)),
-    ('C2','R2','Vanity front to shower glass (walkway)',(FX['F1']['x1'],330),(glass,330)),
-    ('C3','R2','Toilet centerline to back wall',(32,(FX['F2']['y0']+FX['F2']['y1'])/2),(32,R['R2']['y1'])),
-    ('C4','R2','Toilet centerline to vanity edge',(32,(FX['F2']['y0']+FX['F2']['y1'])/2),(32,FX['F1']['y1'])),
-    ('C5','R4','Washer/dryer front to opposite wall',(FX['F3a']['x1'],360),(R['R4']['x1'],360)),
-    ('C6','R5','Peninsula to back counter (kitchen aisle)',(275,FX['F4']['y1']),(275,FX['F6']['y0'])),
-    ('C7','R5','Peninsula end to right counter run',(FX['F4']['x1'],300),(FX['F5']['x0'],300)),
-    ('C8','G','Water heater to garage right wall',(FX['F9']['x1'],421),(R['G']['x1'],421))]
-for i,rm,lab,a,b in CL:
-    add(id=i,room=rm,type='clearance',label=lab,value_in=math.dist(a,b),confidence='low',geom=dict(kind='line',a=a,b=b))
+# The drawing is a tilted 3D render: anything shorter than the walls is drawn shifted toward the camera
+# (south-east here) and its front faces make it look deeper. Drawn clearances are therefore biased.
+# Estimates below anchor on your tape (66 in side wall -> shower glass) and standard fixture depths.
+CL=[('C1','R2','Toilet front to shower glass',20.0,36.0,'66 in (tape) minus a ~30 in toilet; drawing shows 20 in because the toilet symbol is drawn shifted ~14 in east'),
+    ('C2','R2','Vanity front to shower glass (walkway)',25.0,44.0,'66 in minus a standard 22 in vanity; drawn vanity includes its leaning front face'),
+    ('C3','R2','Toilet centerline to back wall (side clearance)',10.8,18.0,'drawing shifts the toilet ~7 in toward the back wall; code minimum is 15 in'),
+    ('C4','R2','Toilet centerline to end of vanity',21.5,21.5,'toilet and vanity shift by about the same amount, so the drawn value stands'),
+    ('C5','R4','Washer/dryer front to opposite wall',42.2,48.0,'77.8 in laundry width minus ~30 in full-size machines (the drawn symbols are only 16 in deep)'),
+    ('C6','R5','Kitchen aisle, peninsula to back counter',65.0,53.5,'back counter front edge is hidden in the drawing; assumes a standard 25.5 in counter')]
+for i,rm,lab,drawn,est,why in CL:
+    add(id=i,room=rm,type='clearance',label=f"{lab} - estimate (drawing shows {drawn} in)",value_in=est,confidence='low',err_in=6.0,
+        geom=None,drawn_in=drawn,note=why)
 # ---- totals ----
 liv=[r for r in room_out if r['id'] not in ('G','P','R2s')]
 tot_int=sum(r['sqft'] for r in liv)+R['R2s']['w']*R['R2s']['d']/144

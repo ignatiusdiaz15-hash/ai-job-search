@@ -166,7 +166,7 @@
    "changed": false
   },
   {
-   "group": "Entry / foyer",
+   "group": "Entry closet / nook (walled in drawing)",
    "item": "width (E-W)",
    "measured": "42.2 (plan)",
    "best": 42.2,
@@ -177,7 +177,7 @@
    "changed": false
   },
   {
-   "group": "Entry / foyer",
+   "group": "Entry closet / nook (walled in drawing)",
    "item": "depth (N-S)",
    "measured": "71.2 (plan)",
    "best": 71.2,
@@ -320,6 +320,83 @@
    "changed": false
   },
   {
+   "group": "Primary bedroom",
+   "item": "Depth excluding the reach-in closet",
+   "measured": "166.2 (wall to wall)",
+   "best": 136.2,
+   "best_ft": "11 ft 4.2 in",
+   "range": "129.2 - 142.2 in",
+   "basis": "Room depth minus a typical 24-30 in reach-in closet; the drawn closet zone (37 in) includes the leaning door faces.",
+   "confidence": "medium",
+   "changed": true
+  },
+  {
+   "group": "Clearances (estimated)",
+   "item": "Toilet front to shower glass",
+   "measured": "20.0 (drawn)",
+   "best": 36.0,
+   "best_ft": "3 ft 0 in",
+   "range": "30 - 42 in",
+   "basis": "66 in (tape) minus a ~30 in toilet; drawing shows 20 in because the toilet symbol is drawn shifted ~14 in east",
+   "confidence": "low",
+   "changed": true
+  },
+  {
+   "group": "Clearances (estimated)",
+   "item": "Vanity front to shower glass (walkway)",
+   "measured": "25.0 (drawn)",
+   "best": 44.0,
+   "best_ft": "3 ft 8 in",
+   "range": "38 - 50 in",
+   "basis": "66 in minus a standard 22 in vanity; drawn vanity includes its leaning front face",
+   "confidence": "low",
+   "changed": true
+  },
+  {
+   "group": "Clearances (estimated)",
+   "item": "Toilet centerline to back wall (side clearance)",
+   "measured": "10.8 (drawn)",
+   "best": 18.0,
+   "best_ft": "1 ft 6 in",
+   "range": "12 - 24 in",
+   "basis": "drawing shifts the toilet ~7 in toward the back wall; code minimum is 15 in",
+   "confidence": "low",
+   "changed": true
+  },
+  {
+   "group": "Clearances (estimated)",
+   "item": "Toilet centerline to end of vanity",
+   "measured": "21.5 (drawn)",
+   "best": 21.5,
+   "best_ft": "1 ft 9.5 in",
+   "range": "15.5 - 27.5 in",
+   "basis": "toilet and vanity shift by about the same amount, so the drawn value stands",
+   "confidence": "low",
+   "changed": false
+  },
+  {
+   "group": "Clearances (estimated)",
+   "item": "Washer/dryer front to opposite wall",
+   "measured": "42.2 (drawn)",
+   "best": 48.0,
+   "best_ft": "4 ft 0 in",
+   "range": "42 - 54 in",
+   "basis": "77.8 in laundry width minus ~30 in full-size machines (the drawn symbols are only 16 in deep)",
+   "confidence": "low",
+   "changed": true
+  },
+  {
+   "group": "Clearances (estimated)",
+   "item": "Kitchen aisle, peninsula to back counter",
+   "measured": "65.0 (drawn)",
+   "best": 53.5,
+   "best_ft": "4 ft 5.5 in",
+   "range": "47.5 - 59.5 in",
+   "basis": "back counter front edge is hidden in the drawing; assumes a standard 25.5 in counter",
+   "confidence": "low",
+   "changed": true
+  },
+  {
    "group": "Doors",
    "item": "Primary bedroom door",
    "measured": "not measurable",
@@ -409,11 +486,11 @@
   },
   {
    "group": "Doors",
-   "item": "Front entry door (position approximate)",
+   "item": "Linen closet door (leaf drawn swinging into kitchen)",
    "measured": "not measurable",
-   "best": 36,
-   "best_ft": "3 ft 0 in",
-   "range": "32 - 40 in",
+   "best": 24,
+   "best_ft": "2 ft 0 in",
+   "range": "20 - 28 in",
    "basis": "Standard size ASSUMED. The render draws a solid header over every doorway, so widths cannot be measured.",
    "confidence": "low",
    "changed": true
@@ -475,8 +552,8 @@
   },
   {
    "group": "Fixtures (typical sizes, not measured)",
-   "item": "Refrigerator - typical 33-36 wide x 30-34 deep",
-   "measured": "24 x 18 visible",
+   "item": "Refrigerator (position not identifiable in the drawing) - typical 33-36 wide x 30-34 deep",
+   "measured": "not identified",
    "best": 36.0,
    "best_ft": "3 ft 0 in",
    "range": "33 - 36 in",
@@ -519,6 +596,14 @@
   }
  ],
  "corrections": [
+  {
+   "title": "Removed things the drawing does not show",
+   "detail": "A 50 in \"foyer to living room\" opening and a front-door swing were artifacts: the drawing has a solid wall there, and the small walled space is now listed as an entry closet or nook. Two kitchen \"openings\" were split by the dark peninsula; it is one 43 in walkway on the left."
+  },
+  {
+   "title": "Fixtures are drawn shifted by the 3D view",
+   "detail": "Anything shorter than the walls appears pushed toward the camera (south-east) and looks deeper because its front faces show. Drawn clearances around the toilet, vanity, washer/dryer and kitchen were biased; the estimates use your tape plus standard fixture depths."
+  },
   {
    "title": "Shower end wall moved 3.8 in toward the door",
    "detail": "Your tape (69.5 in + 49.5 in) adds to the room depth exactly, and the plan draws that wall where the 4 in shelf face would be. Best estimate uses your tape."

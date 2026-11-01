@@ -174,7 +174,7 @@
   },
   {
    "id": "R6e",
-   "name": "Entry / foyer",
+   "name": "Entry closet / nook (walled in drawing)",
    "x0": 122.75,
    "x1": 164.95,
    "y0": 30.0,
@@ -187,12 +187,13 @@
    "sqft_err": 2.5,
    "confidence": "medium",
    "notes": [
-    "right edge = entry side of living-room wall (wall thickness assumed 4.3 in)"
+    "right edge = entry side of living-room wall (wall thickness assumed 4.3 in)",
+    "drawing shows walls on all four sides; its door and use could not be identified"
    ]
   },
   {
    "id": "R6h",
-   "name": "Living room - TV wall strip (open)",
+   "name": "Living room - east side (open, TV wall)",
    "x0": 342.0,
    "x1": 365.75,
    "y0": 91.25,
@@ -490,18 +491,18 @@
    "note": "Width not measurable: the render draws a solid header over doorways and door leaves lean in 3D. Width shown is a standard size ASSUMED for the swing arc - verify."
   },
   {
-   "id": "D1",
-   "room": "R6e",
-   "label": "Front entry door (position approximate)",
+   "id": "D10",
+   "room": "R3b",
+   "label": "Linen closet door (leaf drawn swinging into kitchen)",
    "hinge": [
-    122.75,
-    30.0
+    192.5,
+    276.25
    ],
-   "axis": "h",
+   "axis": "v",
    "dir": 1,
    "swing": 1,
-   "assumed_width_in": 36,
-   "swing_clear_in": 36,
+   "assumed_width_in": 24,
+   "swing_clear_in": 24,
    "confidence": "low",
    "note": "Width not measurable: the render draws a solid header over doorways and door leaves lean in 3D. Width shown is a standard size ASSUMED for the swing arc - verify."
   }
@@ -594,7 +595,7 @@
   {
    "id": "F7",
    "room": "R5",
-   "label": "Refrigerator / tall unit (white box, back-left)",
+   "label": "White appliance, back-left (range or fridge - drawing unclear)",
    "x0": 194,
    "y0": 366,
    "x1": 218,
@@ -1349,7 +1350,7 @@
    "id": "R6e-N",
    "room": "R6e",
    "type": "wall",
-   "label": "Entry / foyer - N wall (inside face)",
+   "label": "Entry closet / nook (walled in drawing) - N wall (inside face)",
    "value_in": 42.2,
    "confidence": "medium",
    "geom": {
@@ -1371,7 +1372,7 @@
    "id": "R6e-S",
    "room": "R6e",
    "type": "wall",
-   "label": "Entry / foyer - S wall (inside face)",
+   "label": "Entry closet / nook (walled in drawing) - S wall (inside face)",
    "value_in": 42.2,
    "confidence": "medium",
    "geom": {
@@ -1393,7 +1394,7 @@
    "id": "R6e-W",
    "room": "R6e",
    "type": "wall",
-   "label": "Entry / foyer - W wall (inside face)",
+   "label": "Entry closet / nook (walled in drawing) - W wall (inside face)",
    "value_in": 71.2,
    "confidence": "medium",
    "geom": {
@@ -1415,7 +1416,7 @@
    "id": "R6e-E",
    "room": "R6e",
    "type": "wall",
-   "label": "Entry / foyer - E wall (inside face)",
+   "label": "Entry closet / nook (walled in drawing) - E wall (inside face)",
    "value_in": 71.2,
    "confidence": "medium",
    "geom": {
@@ -1437,7 +1438,7 @@
    "id": "R6h-N",
    "room": "R6h",
    "type": "wall",
-   "label": "Living room - TV wall strip (open) - N wall (inside face)",
+   "label": "Living room - east side (open, TV wall) - N wall (inside face)",
    "value_in": 23.8,
    "confidence": "medium",
    "geom": {
@@ -1459,7 +1460,7 @@
    "id": "R6h-S",
    "room": "R6h",
    "type": "wall",
-   "label": "Living room - TV wall strip (open) - S wall (inside face)",
+   "label": "Living room - east side (open, TV wall) - S wall (inside face)",
    "value_in": 23.8,
    "confidence": "medium",
    "geom": {
@@ -1481,7 +1482,7 @@
    "id": "R6h-W",
    "room": "R6h",
    "type": "wall",
-   "label": "Living room - TV wall strip (open) - W wall (inside face)",
+   "label": "Living room - east side (open, TV wall) - W wall (inside face)",
    "value_in": 184.0,
    "confidence": "medium",
    "geom": {
@@ -1503,7 +1504,7 @@
    "id": "R6h-E",
    "room": "R6h",
    "type": "wall",
-   "label": "Living room - TV wall strip (open) - E wall (inside face)",
+   "label": "Living room - east side (open, TV wall) - E wall (inside face)",
    "value_in": 184.0,
    "confidence": "medium",
    "geom": {
@@ -2314,34 +2315,37 @@
    "err_in": 4.9
   },
   {
-   "id": "O1",
-   "room": "R6e",
-   "type": "opening",
-   "label": "Entry/foyer to living room opening",
-   "value_in": 50.0,
+   "id": "R1-closet",
+   "room": "R1",
+   "type": "fixture",
+   "label": "Primary bedroom reach-in closet depth (included in room depth above)",
+   "value_in": 30.0,
+   "confidence": "low",
+   "err_in": 7.0,
+   "geom": null,
+   "note": "drawn zone is 37 in including the leaning door faces; typical reach-in is 24-30 in",
+   "ft_in": "2 ft 6 in",
+   "verify": true
+  },
+  {
+   "id": "R1-sleep",
+   "room": "R1",
+   "type": "wall",
+   "label": "Primary bedroom depth excluding reach-in closet",
+   "value_in": 136.2,
    "confidence": "medium",
-   "geom": {
-    "kind": "line",
-    "a": [
-     165.0,
-     30.0
-    ],
-    "b": [
-     165.0,
-     80.0
-    ]
-   },
-   "verify": false,
-   "ft_in": "4 ft 2 in",
-   "err_in": 3.0
+   "err_in": 7.0,
+   "geom": null,
+   "ft_in": "11 ft 4.2 in",
+   "verify": false
   },
   {
    "id": "O2",
    "room": "R5",
    "type": "opening",
-   "label": "Kitchen to living opening (left of peninsula)",
-   "value_in": 59.3,
-   "confidence": "medium",
+   "label": "Kitchen walkway, left of peninsula (peninsula meets right counter, so no walkway on the right)",
+   "value_in": 42.9,
+   "confidence": "low",
    "geom": {
     "kind": "line",
     "a": [
@@ -2349,35 +2353,13 @@
      275.25
     ],
     "b": [
-     251.8,
+     235.4,
      275.25
     ]
    },
    "verify": false,
-   "ft_in": "4 ft 11.3 in",
-   "err_in": 3.4
-  },
-  {
-   "id": "O3",
-   "room": "R5",
-   "type": "opening",
-   "label": "Kitchen to living opening (right of peninsula)",
-   "value_in": 40.2,
-   "confidence": "medium",
-   "geom": {
-    "kind": "line",
-    "a": [
-     282.0,
-     275.25
-    ],
-    "b": [
-     322.2,
-     275.25
-    ]
-   },
-   "verify": false,
-   "ft_in": "3 ft 4.2 in",
-   "err_in": 2.6
+   "ft_in": "3 ft 6.9 in",
+   "err_in": 5.1
   },
   {
    "id": "O4",
@@ -2644,32 +2626,32 @@
    "verify": true
   },
   {
-   "id": "D1",
-   "room": "R6e",
+   "id": "D10",
+   "room": "R3b",
    "type": "door",
-   "label": "Front entry door (position approximate) - ASSUMED standard width (not measured)",
-   "value_in": 36,
+   "label": "Linen closet door (leaf drawn swinging into kitchen) - ASSUMED standard width (not measured)",
+   "value_in": 24,
    "confidence": "low",
    "err_in": 4.0,
    "geom": {
     "kind": "door",
     "hinge": [
-     122.75,
-     30.0
+     192.5,
+     276.25
     ],
-    "axis": "h",
+    "axis": "v",
     "dir": 1,
     "swing": 1,
-    "w": 36
+    "w": 24
    },
-   "ft_in": "3 ft 0 in",
+   "ft_in": "2 ft 0 in",
    "verify": true
   },
   {
    "id": "F1-W",
    "room": "R2",
    "type": "fixture",
-   "label": "Primary bath double vanity (top incl. visible front face) - width (E-W)",
+   "label": "Primary bath double vanity (top incl. visible front face) - width (E-W), as drawn",
    "value_in": 33,
    "confidence": "low",
    "geom": {
@@ -2691,7 +2673,7 @@
    "id": "F1-D",
    "room": "R2",
    "type": "fixture",
-   "label": "Primary bath double vanity (top incl. visible front face) - depth (N-S)",
+   "label": "Primary bath double vanity (top incl. visible front face) - depth (N-S), as drawn",
    "value_in": 70,
    "confidence": "low",
    "geom": {
@@ -2713,7 +2695,7 @@
    "id": "F2-W",
    "room": "R2",
    "type": "fixture",
-   "label": "Primary bath toilet - width (E-W)",
+   "label": "Primary bath toilet - width (E-W), as drawn",
    "value_in": 35,
    "confidence": "low",
    "geom": {
@@ -2735,7 +2717,7 @@
    "id": "F2-D",
    "room": "R2",
    "type": "fixture",
-   "label": "Primary bath toilet - depth (N-S)",
+   "label": "Primary bath toilet - depth (N-S), as drawn",
    "value_in": 23,
    "confidence": "low",
    "geom": {
@@ -2757,7 +2739,7 @@
    "id": "F3a-W",
    "room": "R4",
    "type": "fixture",
-   "label": "Washer (stock symbol) - width (E-W)",
+   "label": "Washer (stock symbol) - width (E-W), as drawn",
    "value_in": 16,
    "confidence": "low",
    "geom": {
@@ -2779,7 +2761,7 @@
    "id": "F3a-D",
    "room": "R4",
    "type": "fixture",
-   "label": "Washer (stock symbol) - depth (N-S)",
+   "label": "Washer (stock symbol) - depth (N-S), as drawn",
    "value_in": 22,
    "confidence": "low",
    "geom": {
@@ -2801,7 +2783,7 @@
    "id": "F3b-W",
    "room": "R4",
    "type": "fixture",
-   "label": "Dryer (stock symbol) - width (E-W)",
+   "label": "Dryer (stock symbol) - width (E-W), as drawn",
    "value_in": 16,
    "confidence": "low",
    "geom": {
@@ -2823,7 +2805,7 @@
    "id": "F3b-D",
    "room": "R4",
    "type": "fixture",
-   "label": "Dryer (stock symbol) - depth (N-S)",
+   "label": "Dryer (stock symbol) - depth (N-S), as drawn",
    "value_in": 23,
    "confidence": "low",
    "geom": {
@@ -2845,7 +2827,7 @@
    "id": "F4-W",
    "room": "R5",
    "type": "fixture",
-   "label": "Kitchen peninsula (dark top, sink + dishwasher) - width (E-W)",
+   "label": "Kitchen peninsula (dark top, sink + dishwasher) - width (E-W), as drawn",
    "value_in": 68,
    "confidence": "low",
    "geom": {
@@ -2867,7 +2849,7 @@
    "id": "F4-D",
    "room": "R5",
    "type": "fixture",
-   "label": "Kitchen peninsula (dark top, sink + dishwasher) - depth (N-S)",
+   "label": "Kitchen peninsula (dark top, sink + dishwasher) - depth (N-S), as drawn",
    "value_in": 38,
    "confidence": "low",
    "geom": {
@@ -2889,7 +2871,7 @@
    "id": "F5-W",
    "room": "R5",
    "type": "fixture",
-   "label": "Kitchen counter run - right wall - width (E-W)",
+   "label": "Kitchen counter run - right wall - width (E-W), as drawn",
    "value_in": 17.2,
    "confidence": "low",
    "geom": {
@@ -2911,7 +2893,7 @@
    "id": "F5-D",
    "room": "R5",
    "type": "fixture",
-   "label": "Kitchen counter run - right wall - depth (N-S)",
+   "label": "Kitchen counter run - right wall - depth (N-S), as drawn",
    "value_in": 99,
    "confidence": "low",
    "geom": {
@@ -2933,7 +2915,7 @@
    "id": "F6-W",
    "room": "R5",
    "type": "fixture",
-   "label": "Kitchen counter run - back wall (front edge partly hidden) - width (E-W)",
+   "label": "Kitchen counter run - back wall (front edge partly hidden) - width (E-W), as drawn",
    "value_in": 129.8,
    "confidence": "low",
    "geom": {
@@ -2955,7 +2937,7 @@
    "id": "F6-D",
    "room": "R5",
    "type": "fixture",
-   "label": "Kitchen counter run - back wall (front edge partly hidden) - depth (N-S)",
+   "label": "Kitchen counter run - back wall (front edge partly hidden) - depth (N-S), as drawn",
    "value_in": 12.5,
    "confidence": "low",
    "geom": {
@@ -2977,7 +2959,7 @@
    "id": "F7-W",
    "room": "R5",
    "type": "fixture",
-   "label": "Refrigerator / tall unit (white box, back-left) - width (E-W)",
+   "label": "White appliance, back-left (range or fridge - drawing unclear) - width (E-W), as drawn",
    "value_in": 24,
    "confidence": "low",
    "geom": {
@@ -2999,7 +2981,7 @@
    "id": "F7-D",
    "room": "R5",
    "type": "fixture",
-   "label": "Refrigerator / tall unit (white box, back-left) - depth (N-S)",
+   "label": "White appliance, back-left (range or fridge - drawing unclear) - depth (N-S), as drawn",
    "value_in": 18,
    "confidence": "low",
    "geom": {
@@ -3021,7 +3003,7 @@
    "id": "F8-W",
    "room": "R8",
    "type": "fixture",
-   "label": "Bath 2 tub (visible part; top hidden by wall face) - width (E-W)",
+   "label": "Bath 2 tub (visible part; top hidden by wall face) - width (E-W), as drawn",
    "value_in": 47.8,
    "confidence": "low",
    "geom": {
@@ -3043,7 +3025,7 @@
    "id": "F8-D",
    "room": "R8",
    "type": "fixture",
-   "label": "Bath 2 tub (visible part; top hidden by wall face) - depth (N-S)",
+   "label": "Bath 2 tub (visible part; top hidden by wall face) - depth (N-S), as drawn",
    "value_in": 36.0,
    "confidence": "low",
    "geom": {
@@ -3065,7 +3047,7 @@
    "id": "F9-W",
    "room": "G",
    "type": "fixture",
-   "label": "Water heater (round) - width (E-W)",
+   "label": "Water heater (round) - width (E-W), as drawn",
    "value_in": 21,
    "confidence": "low",
    "geom": {
@@ -3087,7 +3069,7 @@
    "id": "F9-D",
    "room": "G",
    "type": "fixture",
-   "label": "Water heater (round) - depth (N-S)",
+   "label": "Water heater (round) - depth (N-S), as drawn",
    "value_in": 23,
    "confidence": "low",
    "geom": {
@@ -3109,7 +3091,7 @@
    "id": "F10-W",
    "room": "R1",
    "type": "fixture",
-   "label": "Primary bedroom reach-in closet zone (louvered doors) - width (E-W)",
+   "label": "Primary bedroom reach-in closet zone (louvered doors) - width (E-W), as drawn",
    "value_in": 95,
    "confidence": "low",
    "geom": {
@@ -3131,7 +3113,7 @@
    "id": "F10-D",
    "room": "R1",
    "type": "fixture",
-   "label": "Primary bedroom reach-in closet zone (louvered doors) - depth (N-S)",
+   "label": "Primary bedroom reach-in closet zone (louvered doors) - depth (N-S), as drawn",
    "value_in": 36.8,
    "confidence": "low",
    "geom": {
@@ -3153,176 +3135,84 @@
    "id": "C1",
    "room": "R2",
    "type": "clearance",
-   "label": "Toilet front to shower glass",
-   "value_in": 20.0,
+   "label": "Toilet front to shower glass - estimate (drawing shows 20.0 in)",
+   "value_in": 36.0,
    "confidence": "low",
-   "geom": {
-    "kind": "line",
-    "a": [
-     50,
-     383.5
-    ],
-    "b": [
-     70.04,
-     383.5
-    ]
-   },
-   "ft_in": "1 ft 8 in",
-   "err_in": 4.0,
+   "err_in": 6.0,
+   "geom": null,
+   "drawn_in": 20.0,
+   "note": "66 in (tape) minus a ~30 in toilet; drawing shows 20 in because the toilet symbol is drawn shifted ~14 in east",
+   "ft_in": "3 ft 0 in",
    "verify": true
   },
   {
    "id": "C2",
    "room": "R2",
    "type": "clearance",
-   "label": "Vanity front to shower glass (walkway)",
-   "value_in": 25.0,
+   "label": "Vanity front to shower glass (walkway) - estimate (drawing shows 25.0 in)",
+   "value_in": 44.0,
    "confidence": "low",
-   "geom": {
-    "kind": "line",
-    "a": [
-     45,
-     330
-    ],
-    "b": [
-     70.04,
-     330
-    ]
-   },
-   "ft_in": "2 ft 1 in",
-   "err_in": 4.2,
+   "err_in": 6.0,
+   "geom": null,
+   "drawn_in": 25.0,
+   "note": "66 in minus a standard 22 in vanity; drawn vanity includes its leaning front face",
+   "ft_in": "3 ft 8 in",
    "verify": true
   },
   {
    "id": "C3",
    "room": "R2",
    "type": "clearance",
-   "label": "Toilet centerline to back wall",
-   "value_in": 10.8,
+   "label": "Toilet centerline to back wall (side clearance) - estimate (drawing shows 10.8 in)",
+   "value_in": 18.0,
    "confidence": "low",
-   "geom": {
-    "kind": "line",
-    "a": [
-     32,
-     383.5
-    ],
-    "b": [
-     32,
-     394.25
-    ]
-   },
-   "ft_in": "0 ft 10.8 in",
-   "err_in": 3.5,
+   "err_in": 6.0,
+   "geom": null,
+   "drawn_in": 10.8,
+   "note": "drawing shifts the toilet ~7 in toward the back wall; code minimum is 15 in",
+   "ft_in": "1 ft 6 in",
    "verify": true
   },
   {
    "id": "C4",
    "room": "R2",
    "type": "clearance",
-   "label": "Toilet centerline to vanity edge",
+   "label": "Toilet centerline to end of vanity - estimate (drawing shows 21.5 in)",
    "value_in": 21.5,
    "confidence": "low",
-   "geom": {
-    "kind": "line",
-    "a": [
-     32,
-     383.5
-    ],
-    "b": [
-     32,
-     362
-    ]
-   },
+   "err_in": 6.0,
+   "geom": null,
+   "drawn_in": 21.5,
+   "note": "toilet and vanity shift by about the same amount, so the drawn value stands",
    "ft_in": "1 ft 9.5 in",
-   "err_in": 4.1,
    "verify": true
   },
   {
    "id": "C5",
    "room": "R4",
    "type": "clearance",
-   "label": "Washer/dryer front to opposite wall",
-   "value_in": 42.2,
+   "label": "Washer/dryer front to opposite wall - estimate (drawing shows 42.2 in)",
+   "value_in": 48.0,
    "confidence": "low",
-   "geom": {
-    "kind": "line",
-    "a": [
-     146,
-     360
-    ],
-    "b": [
-     188.25,
-     360
-    ]
-   },
-   "ft_in": "3 ft 6.2 in",
-   "err_in": 5.1,
+   "err_in": 6.0,
+   "geom": null,
+   "drawn_in": 42.2,
+   "note": "77.8 in laundry width minus ~30 in full-size machines (the drawn symbols are only 16 in deep)",
+   "ft_in": "4 ft 0 in",
    "verify": true
   },
   {
    "id": "C6",
    "room": "R5",
    "type": "clearance",
-   "label": "Peninsula to back counter (kitchen aisle)",
-   "value_in": 65.0,
+   "label": "Kitchen aisle, peninsula to back counter - estimate (drawing shows 65.0 in)",
+   "value_in": 53.5,
    "confidence": "low",
-   "geom": {
-    "kind": "line",
-    "a": [
-     275,
-     316
-    ],
-    "b": [
-     275,
-     381
-    ]
-   },
-   "ft_in": "5 ft 5 in",
-   "err_in": 6.2,
-   "verify": true
-  },
-  {
-   "id": "C7",
-   "room": "R5",
-   "type": "clearance",
-   "label": "Peninsula end to right counter run",
-   "value_in": 4.0,
-   "confidence": "low",
-   "geom": {
-    "kind": "line",
-    "a": [
-     309,
-     300
-    ],
-    "b": [
-     305,
-     300
-    ]
-   },
-   "ft_in": "0 ft 4 in",
-   "err_in": 3.2,
-   "verify": true
-  },
-  {
-   "id": "C8",
-   "room": "G",
-   "type": "clearance",
-   "label": "Water heater to garage right wall",
-   "value_in": 3.8,
-   "confidence": "low",
-   "geom": {
-    "kind": "line",
-    "a": [
-     362,
-     421
-    ],
-    "b": [
-     365.75,
-     421
-    ]
-   },
-   "ft_in": "0 ft 3.8 in",
-   "err_in": 3.2,
+   "err_in": 6.0,
+   "geom": null,
+   "drawn_in": 65.0,
+   "note": "back counter front edge is hidden in the drawing; assumes a standard 25.5 in counter",
+   "ft_in": "4 ft 5.5 in",
    "verify": true
   }
  ],

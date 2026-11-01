@@ -29,6 +29,13 @@ for rid in ['R1','R5','R6','R6e','R7','R8','R9','R10','R10b','G']:
         v=r[key]; lo=round(v*0.985-0.5,1); hi=round(v*(1.04 if c=='medium' else 1.015)+1,1)
         row(r['name'],dim,f"{v} (plan)",v,lo,hi,
             'Plan value. Range is skewed upward because the plan\'s total area is 8% under the listed 1,400 sq ft.' if c=='medium' else 'Plan value next to the tape-checked bathroom.',c,False)
+# ---- primary bedroom split ----
+row(R['R1']['name'],'Depth excluding the reach-in closet',f"{R['R1']['d_in']} (wall to wall)",round(R['R1']['d_in']-30,1),round(R['R1']['d_in']-37,1),round(R['R1']['d_in']-24,1),
+    'Room depth minus a typical 24-30 in reach-in closet; the drawn closet zone (37 in) includes the leaning door faces.','medium',True)
+# ---- clearances (estimates) ----
+for it in M['items']:
+    if it['type']=='clearance':
+        row('Clearances (estimated)',it['label'].split(' - estimate')[0],f"{it['drawn_in']} (drawn)",it['value_in'],it['value_in']-6,it['value_in']+6,it['note'],'low',it['drawn_in']!=it['value_in'])
 # ---- doors: assumptions (not measurable) ----
 for d in M['doors']:
     row('Doors',d['label'],'not measurable',d['assumed_width_in'],d['assumed_width_in']-4,d['assumed_width_in']+4,
@@ -39,13 +46,15 @@ FX=[('Primary bath double vanity','~33 x 70 (top + leaning front face)','60 or 7
     ('Primary bath toilet','35 x 23 footprint','~20 wide x 28-30 deep','Stock symbol. Drawn centerline is only 10.8 in from the back wall; code minimum is 15 in, so the real toilet sits further out.',29.0,27,31),
     ('Washer and dryer (each)','16 x 22 (each)','27 wide x 30-32 deep','Listing says full-size; the symbols are far too small.',27.0,27,29),
     ('Bath 2 tub','visible part only','60 long x 30 wide (alcove tub)','Bathroom 2 is 63.5 in deep, which fits a standard 60 in tub.',60.0,59,61),
-    ('Refrigerator','24 x 18 visible','33-36 wide x 30-34 deep','Listing says side-by-side; those are 33-36 in wide.',36.0,33,36),
+    ('Refrigerator (position not identifiable in the drawing)','not identified','33-36 wide x 30-34 deep','Listing says side-by-side; those are 33-36 in wide.',36.0,33,36),
     ('Kitchen base counters','14 deep visible (back run)','25.5 deep','Standard counter depth; the back run\'s front edge is hidden by the 3D wall face.',25.5,24,26),
     ('Kitchen aisle, peninsula to back counter','65.0 (to visible edge)','~53.5','If the back counter is the standard 25.5 in deep.',53.5,48,58),
     ('Water heater','20.8 x 22.2','20-22 diameter','Typical 40-50 gallon tank; measured size agrees.',21.5,20,22)]
 for name,meas,typ,why,best,lo,hi in FX:
     row('Fixtures (typical sizes, not measured)',name+f' - typical {typ}',meas,best,lo,hi,why,'low',True)
 corrections=[
+ dict(title='Removed things the drawing does not show',detail='A 50 in "foyer to living room" opening and a front-door swing were artifacts: the drawing has a solid wall there, and the small walled space is now listed as an entry closet or nook. Two kitchen "openings" were split by the dark peninsula; it is one 43 in walkway on the left.'),
+ dict(title='Fixtures are drawn shifted by the 3D view',detail='Anything shorter than the walls appears pushed toward the camera (south-east) and looks deeper because its front faces show. Drawn clearances around the toilet, vanity, washer/dryer and kitchen were biased; the estimates use your tape plus standard fixture depths.'),
  dict(title='Shower end wall moved 3.8 in toward the door',detail='Your tape (69.5 in + 49.5 in) adds to the room depth exactly, and the plan draws that wall where the 4 in shelf face would be. Best estimate uses your tape.'),
  dict(title='Closet and laundry share that wall',detail='If the wall really is 3.8 in further from the back wall, the walk-in closet is about 45 in deep and the laundry about 69 in. Tape these two before buying shelving or appliances.'),
  dict(title='Door widths are standard-size assumptions',detail='The render covers every doorway with a header and draws 3D leaning door leaves, so no door width could be measured. Swing arcs use typical sizes.'),
