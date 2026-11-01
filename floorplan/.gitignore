@@ -1,0 +1,2 @@
+# floor plan images are deliverables; override repo-wide *.png ignore
+!*.png
