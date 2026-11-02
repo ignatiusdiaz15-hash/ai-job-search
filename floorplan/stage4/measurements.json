@@ -34,7 +34,92 @@
    {
     "room": "R6",
     "fx": 1.0478,
-    "fy": 1.0194
+    "fy": 1.0194,
+    "kind": "tape"
+   },
+   {
+    "room": "R1",
+    "fx": 1.0389,
+    "fy": 1.0045,
+    "kind": "tape"
+   },
+   {
+    "room": "R3",
+    "fx": 1.0433,
+    "fy": 1.0119,
+    "kind": "estimate"
+   },
+   {
+    "room": "R3b",
+    "fx": 1.0433,
+    "fy": 1.0119,
+    "kind": "estimate"
+   },
+   {
+    "room": "R4",
+    "fx": 1.0433,
+    "fy": 1.0119,
+    "kind": "estimate"
+   },
+   {
+    "room": "R5",
+    "fx": 1.0433,
+    "fy": 1.0119,
+    "kind": "estimate"
+   },
+   {
+    "room": "R6e",
+    "fx": 1.0433,
+    "fy": 1.0119,
+    "kind": "estimate"
+   },
+   {
+    "room": "R7",
+    "fx": 1.0433,
+    "fy": 1.0119,
+    "kind": "estimate"
+   },
+   {
+    "room": "R7c",
+    "fx": 1.0433,
+    "fy": 1.0119,
+    "kind": "estimate"
+   },
+   {
+    "room": "R8",
+    "fx": 1.0433,
+    "fy": 1.0119,
+    "kind": "estimate"
+   },
+   {
+    "room": "R8v",
+    "fx": 1.0433,
+    "fy": 1.0119,
+    "kind": "estimate"
+   },
+   {
+    "room": "R9",
+    "fx": 1.0433,
+    "fy": 1.0119,
+    "kind": "estimate"
+   },
+   {
+    "room": "R10",
+    "fx": 1.0433,
+    "fy": 1.0119,
+    "kind": "estimate"
+   },
+   {
+    "room": "R10b",
+    "fx": 1.0433,
+    "fy": 1.0119,
+    "kind": "estimate"
+   },
+   {
+    "room": "G",
+    "fx": 1.0433,
+    "fy": 1.0119,
+    "kind": "estimate"
    }
   ]
  },
@@ -46,14 +131,23 @@
    "x1": 165.25,
    "y0": 105.25,
    "y1": 271.5,
-   "w_in": 160.8,
-   "d_in": 166.2,
-   "w_ft": "13 ft 4.8 in",
-   "d_ft": "13 ft 10.2 in",
-   "sqft": 185.6,
-   "sqft_err": 6.7,
+   "w_in": 167.0,
+   "d_in": 167.0,
+   "w_ft": "13 ft 11 in",
+   "d_ft": "13 ft 11 in",
+   "sqft": 193.7,
+   "sqft_err": 3.9,
    "confidence": "high",
-   "notes": []
+   "notes": [
+    "Tape-measured: 167 in side to side (door wall to opposite wall); 167 in back to front, wall to wall including the closet",
+    "Drawing showed 160.8 x 166.2 in (+3.9% / +0.5%)"
+   ],
+   "drawn": {
+    "w_in": 160.8,
+    "d_in": 166.2,
+    "sqft": 185.6
+   },
+   "tape": true
   },
   {
    "id": "R2",
@@ -99,14 +193,22 @@
    "x1": 165.5,
    "y0": 275.25,
    "y1": 324.25,
-   "w_in": 95.8,
-   "d_in": 49.0,
-   "w_ft": "7 ft 11.8 in",
-   "d_ft": "4 ft 1 in",
-   "sqft": 32.6,
+   "w_in": 99.9,
+   "d_in": 49.6,
+   "w_ft": "8 ft 3.9 in",
+   "d_ft": "4 ft 1.6 in",
+   "sqft": 34.4,
    "sqft_err": 1.5,
    "confidence": "high",
-   "notes": []
+   "notes": [
+    "Best estimate: drawing (95.8 x 49.0 in) scaled by the average of your living-room and bedroom tape (+4.3% side to side, +1.2% front to back). Not taped yet"
+   ],
+   "drawn": {
+    "w_in": 95.8,
+    "d_in": 49.0,
+    "sqft": 32.6
+   },
+   "scaled": true
   },
   {
    "id": "R3b",
@@ -115,14 +217,22 @@
    "x1": 188.5,
    "y0": 275.25,
    "y1": 324.25,
-   "w_in": 19.2,
-   "d_in": 49.0,
-   "w_ft": "1 ft 7.2 in",
-   "d_ft": "4 ft 1 in",
-   "sqft": 6.6,
+   "w_in": 20.0,
+   "d_in": 49.6,
+   "w_ft": "1 ft 8 in",
+   "d_ft": "4 ft 1.6 in",
+   "sqft": 7.0,
    "sqft_err": 0.4,
    "confidence": "high",
-   "notes": []
+   "notes": [
+    "Best estimate: drawing (19.2 x 49.0 in) scaled by the average of your living-room and bedroom tape (+4.3% side to side, +1.2% front to back). Not taped yet"
+   ],
+   "drawn": {
+    "w_in": 19.2,
+    "d_in": 49.0,
+    "sqft": 6.6
+   },
+   "scaled": true
   },
   {
    "id": "R4",
@@ -131,16 +241,23 @@
    "x1": 188.25,
    "y0": 328.75,
    "y1": 394.25,
-   "w_in": 77.8,
-   "d_in": 65.5,
-   "w_ft": "6 ft 5.8 in",
-   "d_ft": "5 ft 5.5 in",
-   "sqft": 35.4,
+   "w_in": 81.2,
+   "d_in": 66.3,
+   "w_ft": "6 ft 9.2 in",
+   "d_ft": "5 ft 6.3 in",
+   "sqft": 37.4,
    "sqft_err": 1.6,
    "confidence": "high",
    "notes": [
-    "bottom = house back wall, same as primary bath"
-   ]
+    "bottom = house back wall, same as primary bath",
+    "Best estimate: drawing (77.8 x 65.5 in) scaled by the average of your living-room and bedroom tape (+4.3% side to side, +1.2% front to back). Not taped yet"
+   ],
+   "drawn": {
+    "w_in": 77.8,
+    "d_in": 65.5,
+    "sqft": 35.4
+   },
+   "scaled": true
   },
   {
    "id": "R5",
@@ -149,16 +266,23 @@
    "x1": 322.25,
    "y0": 275.25,
    "y1": 393.5,
-   "w_in": 129.8,
-   "d_in": 118.2,
-   "w_ft": "10 ft 9.8 in",
-   "d_ft": "9 ft 10.2 in",
-   "sqft": 106.5,
+   "w_in": 135.4,
+   "d_in": 119.6,
+   "w_ft": "11 ft 3.4 in",
+   "d_ft": "9 ft 11.6 in",
+   "sqft": 112.4,
    "sqft_err": 10.2,
    "confidence": "medium",
    "notes": [
-    "top edge open to living (nominal, in line with closet wall)"
-   ]
+    "top edge open to living (nominal, in line with closet wall)",
+    "Best estimate: drawing (129.8 x 118.2 in) scaled by the average of your living-room and bedroom tape (+4.3% side to side, +1.2% front to back). Not taped yet"
+   ],
+   "drawn": {
+    "w_in": 129.8,
+    "d_in": 118.2,
+    "sqft": 106.5
+   },
+   "scaled": true
   },
   {
    "id": "R6",
@@ -175,9 +299,9 @@
    "sqft_err": 6.9,
    "confidence": "high",
    "notes": [
-    "Tape-measured. Drawing showed 172.8 x 245.2 in; the room is 4.8% wider and 1.9% deeper than drawn",
-    "Width to the TV wall 205.9 in is the drawn 196.5 in scaled by the same factor (not taped)",
-    "Drawing area 324.6 sq ft"
+    "Tape-measured: 181 in side to side, not counting the TV nook; 250 in front windows to the corner by the kitchen arch",
+    "Drawing showed 172.8 x 245.2 in (+4.8% / +1.9%)",
+    "Width to the TV wall is the drawn 196.5 in scaled by the same factor (not taped)"
    ],
    "poly": [
     [
@@ -205,6 +329,11 @@
      275.25
     ]
    ],
+   "drawn": {
+    "w_in": 196.5,
+    "d_in": 245.2,
+    "sqft": 324.6
+   },
    "tape": true
   },
   {
@@ -214,17 +343,24 @@
    "x1": 164.95,
    "y0": 30.0,
    "y1": 101.25,
-   "w_in": 42.2,
-   "d_in": 71.2,
-   "w_ft": "3 ft 6.2 in",
-   "d_ft": "5 ft 11.2 in",
-   "sqft": 20.9,
+   "w_in": 44.0,
+   "d_in": 72.1,
+   "w_ft": "3 ft 8 in",
+   "d_ft": "6 ft 0.1 in",
+   "sqft": 22.1,
    "sqft_err": 2.5,
    "confidence": "medium",
    "notes": [
     "right edge = entry side of living-room wall (wall thickness assumed 4.3 in)",
-    "drawing shows walls on all four sides; its door and use could not be identified"
-   ]
+    "drawing shows walls on all four sides; its door and use could not be identified",
+    "Best estimate: drawing (42.2 x 71.2 in) scaled by the average of your living-room and bedroom tape (+4.3% side to side, +1.2% front to back). Not taped yet"
+   ],
+   "drawn": {
+    "w_in": 42.2,
+    "d_in": 71.2,
+    "sqft": 20.9
+   },
+   "scaled": true
   },
   {
    "id": "R7",
@@ -233,14 +369,22 @@
    "x1": 508.75,
    "y0": 4.25,
    "y1": 162.75,
-   "w_in": 138.5,
-   "d_in": 158.5,
-   "w_ft": "11 ft 6.5 in",
-   "d_ft": "13 ft 2.5 in",
-   "sqft": 152.4,
+   "w_in": 144.5,
+   "d_in": 160.4,
+   "w_ft": "12 ft 0.5 in",
+   "d_ft": "13 ft 4.4 in",
+   "sqft": 160.9,
    "sqft_err": 14.3,
    "confidence": "medium",
-   "notes": []
+   "notes": [
+    "Best estimate: drawing (138.5 x 158.5 in) scaled by the average of your living-room and bedroom tape (+4.3% side to side, +1.2% front to back). Not taped yet"
+   ],
+   "drawn": {
+    "w_in": 138.5,
+    "d_in": 158.5,
+    "sqft": 152.4
+   },
+   "scaled": true
   },
   {
    "id": "R7c",
@@ -249,14 +393,22 @@
    "x1": 366.0,
    "y0": 4.25,
    "y1": 87.0,
-   "w_in": 20.5,
-   "d_in": 82.8,
-   "w_ft": "1 ft 8.5 in",
-   "d_ft": "6 ft 10.8 in",
-   "sqft": 11.8,
+   "w_in": 21.4,
+   "d_in": 83.8,
+   "w_ft": "1 ft 9.4 in",
+   "d_ft": "6 ft 11.8 in",
+   "sqft": 12.5,
    "sqft_err": 1.7,
    "confidence": "medium",
-   "notes": []
+   "notes": [
+    "Best estimate: drawing (20.5 x 82.8 in) scaled by the average of your living-room and bedroom tape (+4.3% side to side, +1.2% front to back). Not taped yet"
+   ],
+   "drawn": {
+    "w_in": 20.5,
+    "d_in": 82.8,
+    "sqft": 11.8
+   },
+   "scaled": true
   },
   {
    "id": "R8",
@@ -265,14 +417,22 @@
    "x1": 531.75,
    "y0": 166.5,
    "y1": 230.0,
-   "w_in": 112.5,
-   "d_in": 63.5,
-   "w_ft": "9 ft 4.5 in",
-   "d_ft": "5 ft 3.5 in",
-   "sqft": 49.6,
+   "w_in": 117.4,
+   "d_in": 64.3,
+   "w_ft": "9 ft 9.4 in",
+   "d_ft": "5 ft 4.3 in",
+   "sqft": 52.4,
    "sqft_err": 5.2,
    "confidence": "medium",
-   "notes": []
+   "notes": [
+    "Best estimate: drawing (112.5 x 63.5 in) scaled by the average of your living-room and bedroom tape (+4.3% side to side, +1.2% front to back). Not taped yet"
+   ],
+   "drawn": {
+    "w_in": 112.5,
+    "d_in": 63.5,
+    "sqft": 49.6
+   },
+   "scaled": true
   },
   {
    "id": "R8v",
@@ -281,16 +441,23 @@
    "x1": 415.25,
    "y0": 166.5,
    "y1": 230.0,
-   "w_in": 49.5,
-   "d_in": 63.5,
-   "w_ft": "4 ft 1.5 in",
-   "d_ft": "5 ft 3.5 in",
-   "sqft": 21.8,
+   "w_in": 51.6,
+   "d_in": 64.3,
+   "w_ft": "4 ft 3.6 in",
+   "d_ft": "5 ft 4.3 in",
+   "sqft": 23.0,
    "sqft_err": 2.5,
    "confidence": "medium",
    "notes": [
-    "left edge open to hallway (nominal)"
-   ]
+    "left edge open to hallway (nominal)",
+    "Best estimate: drawing (49.5 x 63.5 in) scaled by the average of your living-room and bedroom tape (+4.3% side to side, +1.2% front to back). Not taped yet"
+   ],
+   "drawn": {
+    "w_in": 49.5,
+    "d_in": 63.5,
+    "sqft": 21.8
+   },
+   "scaled": true
   },
   {
    "id": "R9",
@@ -299,14 +466,22 @@
    "x1": 509.0,
    "y0": 234.0,
    "y1": 352.25,
-   "w_in": 139.2,
-   "d_in": 118.2,
-   "w_ft": "11 ft 7.2 in",
-   "d_ft": "9 ft 10.2 in",
-   "sqft": 114.3,
+   "w_in": 145.2,
+   "d_in": 119.6,
+   "w_ft": "12 ft 1.2 in",
+   "d_ft": "9 ft 11.6 in",
+   "sqft": 120.7,
    "sqft_err": 10.9,
    "confidence": "medium",
-   "notes": []
+   "notes": [
+    "Best estimate: drawing (139.2 x 118.2 in) scaled by the average of your living-room and bedroom tape (+4.3% side to side, +1.2% front to back). Not taped yet"
+   ],
+   "drawn": {
+    "w_in": 139.2,
+    "d_in": 118.2,
+    "sqft": 114.3
+   },
+   "scaled": true
   },
   {
    "id": "R10",
@@ -315,14 +490,22 @@
    "x1": 366.25,
    "y0": 275.25,
    "y1": 394.25,
-   "w_in": 40.0,
-   "d_in": 119.0,
-   "w_ft": "3 ft 4 in",
-   "d_ft": "9 ft 11 in",
-   "sqft": 33.1,
+   "w_in": 41.7,
+   "d_in": 120.4,
+   "w_ft": "3 ft 5.7 in",
+   "d_ft": "10 ft 0.4 in",
+   "sqft": 34.9,
    "sqft_err": 3.7,
    "confidence": "medium",
-   "notes": []
+   "notes": [
+    "Best estimate: drawing (40.0 x 119.0 in) scaled by the average of your living-room and bedroom tape (+4.3% side to side, +1.2% front to back). Not taped yet"
+   ],
+   "drawn": {
+    "w_in": 40.0,
+    "d_in": 119.0,
+    "sqft": 33.1
+   },
+   "scaled": true
   },
   {
    "id": "R10b",
@@ -331,16 +514,23 @@
    "x1": 446.5,
    "y0": 356.0,
    "y1": 394.25,
-   "w_in": 80.2,
-   "d_in": 38.2,
-   "w_ft": "6 ft 8.2 in",
-   "d_ft": "3 ft 2.2 in",
-   "sqft": 21.3,
+   "w_in": 83.7,
+   "d_in": 38.7,
+   "w_ft": "6 ft 11.7 in",
+   "d_ft": "3 ft 2.7 in",
+   "sqft": 22.5,
    "sqft_err": 2.5,
    "confidence": "medium",
    "notes": [
-    "continuous with storage hall R10 (L-shape)"
-   ]
+    "continuous with storage hall R10 (L-shape)",
+    "Best estimate: drawing (80.2 x 38.2 in) scaled by the average of your living-room and bedroom tape (+4.3% side to side, +1.2% front to back). Not taped yet"
+   ],
+   "drawn": {
+    "w_in": 80.2,
+    "d_in": 38.2,
+    "sqft": 21.3
+   },
+   "scaled": true
   },
   {
    "id": "G",
@@ -349,14 +539,22 @@
    "x1": 365.75,
    "y0": 403.25,
    "y1": 659.0,
-   "w_in": 204.2,
-   "d_in": 255.8,
-   "w_ft": "17 ft 0.2 in",
-   "d_ft": "21 ft 3.8 in",
-   "sqft": 362.8,
+   "w_in": 213.0,
+   "d_in": 258.9,
+   "w_ft": "17 ft 9 in",
+   "d_ft": "21 ft 6.9 in",
+   "sqft": 383.0,
    "sqft_err": 32.2,
    "confidence": "medium",
-   "notes": []
+   "notes": [
+    "Best estimate: drawing (204.2 x 255.8 in) scaled by the average of your living-room and bedroom tape (+4.3% side to side, +1.2% front to back). Not taped yet"
+   ],
+   "drawn": {
+    "w_in": 204.2,
+    "d_in": 255.8,
+    "sqft": 362.8
+   },
+   "scaled": true
   },
   {
    "id": "P",
@@ -662,8 +860,8 @@
    "id": "R1-N0",
    "room": "R1",
    "type": "wall",
-   "label": "Primary bedroom - N wall (inside face)",
-   "value_in": 160.8,
+   "label": "Primary bedroom - N wall (inside face) (scaled to your tape)",
+   "value_in": 167.0,
    "confidence": "high",
    "geom": {
     "kind": "line",
@@ -677,15 +875,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "13 ft 4.8 in",
-   "err_in": 2.9
+   "ft_in": "13 ft 11 in",
+   "err_in": 4.3
   },
   {
    "id": "R1-S1",
    "room": "R1",
    "type": "wall",
-   "label": "Primary bedroom - S wall (inside face)",
-   "value_in": 160.8,
+   "label": "Primary bedroom - S wall (inside face) (scaled to your tape)",
+   "value_in": 167.0,
    "confidence": "high",
    "geom": {
     "kind": "line",
@@ -699,15 +897,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "13 ft 4.8 in",
-   "err_in": 2.9
+   "ft_in": "13 ft 11 in",
+   "err_in": 4.3
   },
   {
    "id": "R1-W2",
    "room": "R1",
    "type": "wall",
-   "label": "Primary bedroom - W wall (inside face)",
-   "value_in": 166.2,
+   "label": "Primary bedroom - W wall (inside face) (scaled to your tape)",
+   "value_in": 167.0,
    "confidence": "high",
    "geom": {
     "kind": "line",
@@ -721,15 +919,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "13 ft 10.2 in",
-   "err_in": 3.0
+   "ft_in": "13 ft 11 in",
+   "err_in": 4.3
   },
   {
    "id": "R1-E3",
    "room": "R1",
    "type": "wall",
-   "label": "Primary bedroom - E wall (inside face)",
-   "value_in": 166.2,
+   "label": "Primary bedroom - E wall (inside face) (scaled to your tape)",
+   "value_in": 167.0,
    "confidence": "high",
    "geom": {
     "kind": "line",
@@ -743,8 +941,8 @@
     ]
    },
    "verify": false,
-   "ft_in": "13 ft 10.2 in",
-   "err_in": 3.0
+   "ft_in": "13 ft 11 in",
+   "err_in": 4.3
   },
   {
    "id": "R2-N0",
@@ -926,8 +1124,8 @@
    "id": "R3-N0",
    "room": "R3",
    "type": "wall",
-   "label": "Primary walk-in closet - N wall (inside face)",
-   "value_in": 95.8,
+   "label": "Primary walk-in closet - N wall (inside face) (scaled estimate)",
+   "value_in": 99.9,
    "confidence": "high",
    "geom": {
     "kind": "line",
@@ -941,15 +1139,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "7 ft 11.8 in",
-   "err_in": 1.9
+   "ft_in": "8 ft 3.9 in",
+   "err_in": 3.0
   },
   {
    "id": "R3-S1",
    "room": "R3",
    "type": "wall",
-   "label": "Primary walk-in closet - S wall (inside face)",
-   "value_in": 95.8,
+   "label": "Primary walk-in closet - S wall (inside face) (scaled estimate)",
+   "value_in": 99.9,
    "confidence": "high",
    "geom": {
     "kind": "line",
@@ -963,15 +1161,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "7 ft 11.8 in",
-   "err_in": 1.9
+   "ft_in": "8 ft 3.9 in",
+   "err_in": 3.0
   },
   {
    "id": "R3-W2",
    "room": "R3",
    "type": "wall",
-   "label": "Primary walk-in closet - W wall (inside face)",
-   "value_in": 49.0,
+   "label": "Primary walk-in closet - W wall (inside face) (scaled estimate)",
+   "value_in": 49.6,
    "confidence": "high",
    "geom": {
     "kind": "line",
@@ -985,15 +1183,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "4 ft 1 in",
-   "err_in": 1.2
+   "ft_in": "4 ft 1.6 in",
+   "err_in": 2.0
   },
   {
    "id": "R3-E3",
    "room": "R3",
    "type": "wall",
-   "label": "Primary walk-in closet - E wall (inside face)",
-   "value_in": 49.0,
+   "label": "Primary walk-in closet - E wall (inside face) (scaled estimate)",
+   "value_in": 49.6,
    "confidence": "high",
    "geom": {
     "kind": "line",
@@ -1007,15 +1205,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "4 ft 1 in",
-   "err_in": 1.2
+   "ft_in": "4 ft 1.6 in",
+   "err_in": 2.0
   },
   {
    "id": "R3b-N0",
    "room": "R3b",
    "type": "wall",
-   "label": "Linen closet (by kitchen) - N wall (inside face)",
-   "value_in": 19.2,
+   "label": "Linen closet (by kitchen) - N wall (inside face) (scaled estimate)",
+   "value_in": 20.1,
    "confidence": "high",
    "geom": {
     "kind": "line",
@@ -1029,15 +1227,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "1 ft 7.2 in",
-   "err_in": 0.8
+   "ft_in": "1 ft 8.1 in",
+   "err_in": 1.4
   },
   {
    "id": "R3b-S1",
    "room": "R3b",
    "type": "wall",
-   "label": "Linen closet (by kitchen) - S wall (inside face)",
-   "value_in": 19.2,
+   "label": "Linen closet (by kitchen) - S wall (inside face) (scaled estimate)",
+   "value_in": 20.1,
    "confidence": "high",
    "geom": {
     "kind": "line",
@@ -1051,15 +1249,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "1 ft 7.2 in",
-   "err_in": 0.8
+   "ft_in": "1 ft 8.1 in",
+   "err_in": 1.4
   },
   {
    "id": "R3b-W2",
    "room": "R3b",
    "type": "wall",
-   "label": "Linen closet (by kitchen) - W wall (inside face)",
-   "value_in": 49.0,
+   "label": "Linen closet (by kitchen) - W wall (inside face) (scaled estimate)",
+   "value_in": 49.6,
    "confidence": "high",
    "geom": {
     "kind": "line",
@@ -1073,15 +1271,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "4 ft 1 in",
-   "err_in": 1.2
+   "ft_in": "4 ft 1.6 in",
+   "err_in": 2.0
   },
   {
    "id": "R3b-E3",
    "room": "R3b",
    "type": "wall",
-   "label": "Linen closet (by kitchen) - E wall (inside face)",
-   "value_in": 49.0,
+   "label": "Linen closet (by kitchen) - E wall (inside face) (scaled estimate)",
+   "value_in": 49.6,
    "confidence": "high",
    "geom": {
     "kind": "line",
@@ -1095,15 +1293,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "4 ft 1 in",
-   "err_in": 1.2
+   "ft_in": "4 ft 1.6 in",
+   "err_in": 2.0
   },
   {
    "id": "R4-N0",
    "room": "R4",
    "type": "wall",
-   "label": "Laundry - N wall (inside face)",
-   "value_in": 77.8,
+   "label": "Laundry - N wall (inside face) (scaled estimate)",
+   "value_in": 81.1,
    "confidence": "high",
    "geom": {
     "kind": "line",
@@ -1117,15 +1315,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "6 ft 5.8 in",
-   "err_in": 1.7
+   "ft_in": "6 ft 9.1 in",
+   "err_in": 2.6
   },
   {
    "id": "R4-S1",
    "room": "R4",
    "type": "wall",
-   "label": "Laundry - S wall (inside face)",
-   "value_in": 77.8,
+   "label": "Laundry - S wall (inside face) (scaled estimate)",
+   "value_in": 81.1,
    "confidence": "high",
    "geom": {
     "kind": "line",
@@ -1139,15 +1337,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "6 ft 5.8 in",
-   "err_in": 1.7
+   "ft_in": "6 ft 9.1 in",
+   "err_in": 2.6
   },
   {
    "id": "R4-W2",
    "room": "R4",
    "type": "wall",
-   "label": "Laundry - W wall (inside face)",
-   "value_in": 65.5,
+   "label": "Laundry - W wall (inside face) (scaled estimate)",
+   "value_in": 66.3,
    "confidence": "high",
    "geom": {
     "kind": "line",
@@ -1161,15 +1359,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "5 ft 5.5 in",
-   "err_in": 1.5
+   "ft_in": "5 ft 6.3 in",
+   "err_in": 2.3
   },
   {
    "id": "R4-E3",
    "room": "R4",
    "type": "wall",
-   "label": "Laundry - E wall (inside face)",
-   "value_in": 65.5,
+   "label": "Laundry - E wall (inside face) (scaled estimate)",
+   "value_in": 66.3,
    "confidence": "high",
    "geom": {
     "kind": "line",
@@ -1183,15 +1381,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "5 ft 5.5 in",
-   "err_in": 1.5
+   "ft_in": "5 ft 6.3 in",
+   "err_in": 2.3
   },
   {
    "id": "R5-N0",
    "room": "R5",
    "type": "wall",
-   "label": "Kitchen - N wall (inside face)",
-   "value_in": 129.8,
+   "label": "Kitchen - N wall (inside face) (scaled estimate)",
+   "value_in": 135.4,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1205,15 +1403,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "10 ft 9.8 in",
-   "err_in": 6.2
+   "ft_in": "11 ft 3.4 in",
+   "err_in": 3.7
   },
   {
    "id": "R5-S1",
    "room": "R5",
    "type": "wall",
-   "label": "Kitchen - S wall (inside face)",
-   "value_in": 129.8,
+   "label": "Kitchen - S wall (inside face) (scaled estimate)",
+   "value_in": 135.4,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1227,15 +1425,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "10 ft 9.8 in",
-   "err_in": 6.2
+   "ft_in": "11 ft 3.4 in",
+   "err_in": 3.7
   },
   {
    "id": "R5-W2",
    "room": "R5",
    "type": "wall",
-   "label": "Kitchen - W wall (inside face)",
-   "value_in": 118.2,
+   "label": "Kitchen - W wall (inside face) (scaled estimate)",
+   "value_in": 119.7,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1249,15 +1447,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "9 ft 10.2 in",
-   "err_in": 5.7
+   "ft_in": "9 ft 11.7 in",
+   "err_in": 3.4
   },
   {
    "id": "R5-E3",
    "room": "R5",
    "type": "wall",
-   "label": "Kitchen - E wall (inside face)",
-   "value_in": 118.2,
+   "label": "Kitchen - E wall (inside face) (scaled estimate)",
+   "value_in": 119.7,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1271,8 +1469,8 @@
     ]
    },
    "verify": false,
-   "ft_in": "9 ft 10.2 in",
-   "err_in": 5.7
+   "ft_in": "9 ft 11.7 in",
+   "err_in": 3.4
   },
   {
    "id": "R6-N0",
@@ -1410,8 +1608,8 @@
    "id": "R6e-N0",
    "room": "R6e",
    "type": "wall",
-   "label": "Entry closet / nook (walled in drawing) - N wall (inside face)",
-   "value_in": 42.2,
+   "label": "Entry closet / nook (walled in drawing) - N wall (inside face) (scaled estimate)",
+   "value_in": 44.0,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1425,15 +1623,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "3 ft 6.2 in",
-   "err_in": 2.7
+   "ft_in": "3 ft 8 in",
+   "err_in": 1.9
   },
   {
    "id": "R6e-S1",
    "room": "R6e",
    "type": "wall",
-   "label": "Entry closet / nook (walled in drawing) - S wall (inside face)",
-   "value_in": 42.2,
+   "label": "Entry closet / nook (walled in drawing) - S wall (inside face) (scaled estimate)",
+   "value_in": 44.0,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1447,15 +1645,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "3 ft 6.2 in",
-   "err_in": 2.7
+   "ft_in": "3 ft 8 in",
+   "err_in": 1.9
   },
   {
    "id": "R6e-W2",
    "room": "R6e",
    "type": "wall",
-   "label": "Entry closet / nook (walled in drawing) - W wall (inside face)",
-   "value_in": 71.2,
+   "label": "Entry closet / nook (walled in drawing) - W wall (inside face) (scaled estimate)",
+   "value_in": 72.1,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1469,15 +1667,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "5 ft 11.2 in",
-   "err_in": 3.8
+   "ft_in": "6 ft 0.1 in",
+   "err_in": 2.4
   },
   {
    "id": "R6e-E3",
    "room": "R6e",
    "type": "wall",
-   "label": "Entry closet / nook (walled in drawing) - E wall (inside face)",
-   "value_in": 71.2,
+   "label": "Entry closet / nook (walled in drawing) - E wall (inside face) (scaled estimate)",
+   "value_in": 72.1,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1491,15 +1689,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "5 ft 11.2 in",
-   "err_in": 3.8
+   "ft_in": "6 ft 0.1 in",
+   "err_in": 2.4
   },
   {
    "id": "R7-N0",
    "room": "R7",
    "type": "wall",
-   "label": "Bedroom 2 - N wall (inside face)",
-   "value_in": 138.5,
+   "label": "Bedroom 2 - N wall (inside face) (scaled estimate)",
+   "value_in": 144.5,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1513,15 +1711,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "11 ft 6.5 in",
-   "err_in": 6.5
+   "ft_in": "12 ft 0.5 in",
+   "err_in": 3.9
   },
   {
    "id": "R7-S1",
    "room": "R7",
    "type": "wall",
-   "label": "Bedroom 2 - S wall (inside face)",
-   "value_in": 138.5,
+   "label": "Bedroom 2 - S wall (inside face) (scaled estimate)",
+   "value_in": 144.5,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1535,15 +1733,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "11 ft 6.5 in",
-   "err_in": 6.5
+   "ft_in": "12 ft 0.5 in",
+   "err_in": 3.9
   },
   {
    "id": "R7-W2",
    "room": "R7",
    "type": "wall",
-   "label": "Bedroom 2 - W wall (inside face)",
-   "value_in": 158.5,
+   "label": "Bedroom 2 - W wall (inside face) (scaled estimate)",
+   "value_in": 160.4,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1557,15 +1755,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "13 ft 2.5 in",
-   "err_in": 7.3
+   "ft_in": "13 ft 4.4 in",
+   "err_in": 4.2
   },
   {
    "id": "R7-E3",
    "room": "R7",
    "type": "wall",
-   "label": "Bedroom 2 - E wall (inside face)",
-   "value_in": 158.5,
+   "label": "Bedroom 2 - E wall (inside face) (scaled estimate)",
+   "value_in": 160.4,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1579,15 +1777,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "13 ft 2.5 in",
-   "err_in": 7.3
+   "ft_in": "13 ft 4.4 in",
+   "err_in": 4.2
   },
   {
    "id": "R7c-N0",
    "room": "R7c",
    "type": "wall",
-   "label": "Closet (bedroom 2 side) - N wall (inside face)",
-   "value_in": 20.5,
+   "label": "Closet (bedroom 2 side) - N wall (inside face) (scaled estimate)",
+   "value_in": 21.4,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1601,15 +1799,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "1 ft 8.5 in",
-   "err_in": 1.8
+   "ft_in": "1 ft 9.4 in",
+   "err_in": 1.4
   },
   {
    "id": "R7c-S1",
    "room": "R7c",
    "type": "wall",
-   "label": "Closet (bedroom 2 side) - S wall (inside face)",
-   "value_in": 20.5,
+   "label": "Closet (bedroom 2 side) - S wall (inside face) (scaled estimate)",
+   "value_in": 21.4,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1623,15 +1821,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "1 ft 8.5 in",
-   "err_in": 1.8
+   "ft_in": "1 ft 9.4 in",
+   "err_in": 1.4
   },
   {
    "id": "R7c-W2",
    "room": "R7c",
    "type": "wall",
-   "label": "Closet (bedroom 2 side) - W wall (inside face)",
-   "value_in": 82.8,
+   "label": "Closet (bedroom 2 side) - W wall (inside face) (scaled estimate)",
+   "value_in": 83.7,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1645,15 +1843,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "6 ft 10.8 in",
-   "err_in": 4.3
+   "ft_in": "6 ft 11.7 in",
+   "err_in": 2.7
   },
   {
    "id": "R7c-E3",
    "room": "R7c",
    "type": "wall",
-   "label": "Closet (bedroom 2 side) - E wall (inside face)",
-   "value_in": 82.8,
+   "label": "Closet (bedroom 2 side) - E wall (inside face) (scaled estimate)",
+   "value_in": 83.7,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1667,15 +1865,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "6 ft 10.8 in",
-   "err_in": 4.3
+   "ft_in": "6 ft 11.7 in",
+   "err_in": 2.7
   },
   {
    "id": "R8-N0",
    "room": "R8",
    "type": "wall",
-   "label": "Bathroom 2 - N wall (inside face)",
-   "value_in": 112.5,
+   "label": "Bathroom 2 - N wall (inside face) (scaled estimate)",
+   "value_in": 117.4,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1689,15 +1887,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "9 ft 4.5 in",
-   "err_in": 5.5
+   "ft_in": "9 ft 9.4 in",
+   "err_in": 3.3
   },
   {
    "id": "R8-S1",
    "room": "R8",
    "type": "wall",
-   "label": "Bathroom 2 - S wall (inside face)",
-   "value_in": 112.5,
+   "label": "Bathroom 2 - S wall (inside face) (scaled estimate)",
+   "value_in": 117.4,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1711,15 +1909,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "9 ft 4.5 in",
-   "err_in": 5.5
+   "ft_in": "9 ft 9.4 in",
+   "err_in": 3.3
   },
   {
    "id": "R8-W2",
    "room": "R8",
    "type": "wall",
-   "label": "Bathroom 2 - W wall (inside face)",
-   "value_in": 63.5,
+   "label": "Bathroom 2 - W wall (inside face) (scaled estimate)",
+   "value_in": 64.3,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1733,15 +1931,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "5 ft 3.5 in",
-   "err_in": 3.5
+   "ft_in": "5 ft 4.3 in",
+   "err_in": 2.3
   },
   {
    "id": "R8-E3",
    "room": "R8",
    "type": "wall",
-   "label": "Bathroom 2 - E wall (inside face)",
-   "value_in": 63.5,
+   "label": "Bathroom 2 - E wall (inside face) (scaled estimate)",
+   "value_in": 64.3,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1755,15 +1953,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "5 ft 3.5 in",
-   "err_in": 3.5
+   "ft_in": "5 ft 4.3 in",
+   "err_in": 2.3
   },
   {
    "id": "R8v-N0",
    "room": "R8v",
    "type": "wall",
-   "label": "Hall vestibule (bath 2) - N wall (inside face)",
-   "value_in": 49.5,
+   "label": "Hall vestibule (bath 2) - N wall (inside face) (scaled estimate)",
+   "value_in": 51.6,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1777,15 +1975,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "4 ft 1.5 in",
-   "err_in": 3.0
+   "ft_in": "4 ft 3.6 in",
+   "err_in": 2.0
   },
   {
    "id": "R8v-S1",
    "room": "R8v",
    "type": "wall",
-   "label": "Hall vestibule (bath 2) - S wall (inside face)",
-   "value_in": 49.5,
+   "label": "Hall vestibule (bath 2) - S wall (inside face) (scaled estimate)",
+   "value_in": 51.6,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1799,15 +1997,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "4 ft 1.5 in",
-   "err_in": 3.0
+   "ft_in": "4 ft 3.6 in",
+   "err_in": 2.0
   },
   {
    "id": "R8v-W2",
    "room": "R8v",
    "type": "wall",
-   "label": "Hall vestibule (bath 2) - W wall (inside face)",
-   "value_in": 63.5,
+   "label": "Hall vestibule (bath 2) - W wall (inside face) (scaled estimate)",
+   "value_in": 64.3,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1821,15 +2019,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "5 ft 3.5 in",
-   "err_in": 3.5
+   "ft_in": "5 ft 4.3 in",
+   "err_in": 2.3
   },
   {
    "id": "R8v-E3",
    "room": "R8v",
    "type": "wall",
-   "label": "Hall vestibule (bath 2) - E wall (inside face)",
-   "value_in": 63.5,
+   "label": "Hall vestibule (bath 2) - E wall (inside face) (scaled estimate)",
+   "value_in": 64.3,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1843,15 +2041,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "5 ft 3.5 in",
-   "err_in": 3.5
+   "ft_in": "5 ft 4.3 in",
+   "err_in": 2.3
   },
   {
    "id": "R9-N0",
    "room": "R9",
    "type": "wall",
-   "label": "Bedroom 3 - N wall (inside face)",
-   "value_in": 139.2,
+   "label": "Bedroom 3 - N wall (inside face) (scaled estimate)",
+   "value_in": 145.3,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1865,15 +2063,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "11 ft 7.2 in",
-   "err_in": 6.6
+   "ft_in": "12 ft 1.3 in",
+   "err_in": 3.9
   },
   {
    "id": "R9-S1",
    "room": "R9",
    "type": "wall",
-   "label": "Bedroom 3 - S wall (inside face)",
-   "value_in": 139.2,
+   "label": "Bedroom 3 - S wall (inside face) (scaled estimate)",
+   "value_in": 145.3,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1887,15 +2085,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "11 ft 7.2 in",
-   "err_in": 6.6
+   "ft_in": "12 ft 1.3 in",
+   "err_in": 3.9
   },
   {
    "id": "R9-W2",
    "room": "R9",
    "type": "wall",
-   "label": "Bedroom 3 - W wall (inside face)",
-   "value_in": 118.2,
+   "label": "Bedroom 3 - W wall (inside face) (scaled estimate)",
+   "value_in": 119.7,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1909,15 +2107,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "9 ft 10.2 in",
-   "err_in": 5.7
+   "ft_in": "9 ft 11.7 in",
+   "err_in": 3.4
   },
   {
    "id": "R9-E3",
    "room": "R9",
    "type": "wall",
-   "label": "Bedroom 3 - E wall (inside face)",
-   "value_in": 118.2,
+   "label": "Bedroom 3 - E wall (inside face) (scaled estimate)",
+   "value_in": 119.7,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1931,15 +2129,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "9 ft 10.2 in",
-   "err_in": 5.7
+   "ft_in": "9 ft 11.7 in",
+   "err_in": 3.4
   },
   {
    "id": "R10-N0",
    "room": "R10",
    "type": "wall",
-   "label": "Storage / pantry hall - N wall (inside face)",
-   "value_in": 40.0,
+   "label": "Storage / pantry hall - N wall (inside face) (scaled estimate)",
+   "value_in": 41.7,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1953,15 +2151,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "3 ft 4 in",
-   "err_in": 2.6
+   "ft_in": "3 ft 5.7 in",
+   "err_in": 1.8
   },
   {
    "id": "R10-S1",
    "room": "R10",
    "type": "wall",
-   "label": "Storage / pantry hall - S wall (inside face)",
-   "value_in": 40.0,
+   "label": "Storage / pantry hall - S wall (inside face) (scaled estimate)",
+   "value_in": 41.7,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1975,15 +2173,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "3 ft 4 in",
-   "err_in": 2.6
+   "ft_in": "3 ft 5.7 in",
+   "err_in": 1.8
   },
   {
    "id": "R10-W2",
    "room": "R10",
    "type": "wall",
-   "label": "Storage / pantry hall - W wall (inside face)",
-   "value_in": 119.0,
+   "label": "Storage / pantry hall - W wall (inside face) (scaled estimate)",
+   "value_in": 120.4,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1997,15 +2195,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "9 ft 11 in",
-   "err_in": 5.8
+   "ft_in": "10 ft 0.4 in",
+   "err_in": 3.4
   },
   {
    "id": "R10-E3",
    "room": "R10",
    "type": "wall",
-   "label": "Storage / pantry hall - E wall (inside face)",
-   "value_in": 119.0,
+   "label": "Storage / pantry hall - E wall (inside face) (scaled estimate)",
+   "value_in": 120.4,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -2019,15 +2217,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "9 ft 11 in",
-   "err_in": 5.8
+   "ft_in": "10 ft 0.4 in",
+   "err_in": 3.4
   },
   {
    "id": "R10b-N0",
    "room": "R10b",
    "type": "wall",
-   "label": "Storage closet (lower right) - N wall (inside face)",
-   "value_in": 80.2,
+   "label": "Storage closet (lower right) - N wall (inside face) (scaled estimate)",
+   "value_in": 83.7,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -2041,15 +2239,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "6 ft 8.2 in",
-   "err_in": 4.2
+   "ft_in": "6 ft 11.7 in",
+   "err_in": 2.7
   },
   {
    "id": "R10b-S1",
    "room": "R10b",
    "type": "wall",
-   "label": "Storage closet (lower right) - S wall (inside face)",
-   "value_in": 80.2,
+   "label": "Storage closet (lower right) - S wall (inside face) (scaled estimate)",
+   "value_in": 83.7,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -2063,15 +2261,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "6 ft 8.2 in",
-   "err_in": 4.2
+   "ft_in": "6 ft 11.7 in",
+   "err_in": 2.7
   },
   {
    "id": "R10b-W2",
    "room": "R10b",
    "type": "wall",
-   "label": "Storage closet (lower right) - W wall (inside face)",
-   "value_in": 38.2,
+   "label": "Storage closet (lower right) - W wall (inside face) (scaled estimate)",
+   "value_in": 38.7,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -2085,15 +2283,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "3 ft 2.2 in",
-   "err_in": 2.5
+   "ft_in": "3 ft 2.7 in",
+   "err_in": 1.8
   },
   {
    "id": "R10b-E3",
    "room": "R10b",
    "type": "wall",
-   "label": "Storage closet (lower right) - E wall (inside face)",
-   "value_in": 38.2,
+   "label": "Storage closet (lower right) - E wall (inside face) (scaled estimate)",
+   "value_in": 38.7,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -2107,15 +2305,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "3 ft 2.2 in",
-   "err_in": 2.5
+   "ft_in": "3 ft 2.7 in",
+   "err_in": 1.8
   },
   {
    "id": "G-N0",
    "room": "G",
    "type": "wall",
-   "label": "Garage - N wall (inside face)",
-   "value_in": 204.2,
+   "label": "Garage - N wall (inside face) (scaled estimate)",
+   "value_in": 213.1,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -2129,15 +2327,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "17 ft 0.2 in",
-   "err_in": 9.2
+   "ft_in": "17 ft 9.1 in",
+   "err_in": 5.3
   },
   {
    "id": "G-S1",
    "room": "G",
    "type": "wall",
-   "label": "Garage - S wall (inside face)",
-   "value_in": 204.2,
+   "label": "Garage - S wall (inside face) (scaled estimate)",
+   "value_in": 213.1,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -2151,15 +2349,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "17 ft 0.2 in",
-   "err_in": 9.2
+   "ft_in": "17 ft 9.1 in",
+   "err_in": 5.3
   },
   {
    "id": "G-W2",
    "room": "G",
    "type": "wall",
-   "label": "Garage - W wall (inside face)",
-   "value_in": 255.8,
+   "label": "Garage - W wall (inside face) (scaled estimate)",
+   "value_in": 258.8,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -2173,15 +2371,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "21 ft 3.8 in",
-   "err_in": 11.2
+   "ft_in": "21 ft 6.8 in",
+   "err_in": 6.2
   },
   {
    "id": "G-E3",
    "room": "G",
    "type": "wall",
-   "label": "Garage - E wall (inside face)",
-   "value_in": 255.8,
+   "label": "Garage - E wall (inside face) (scaled estimate)",
+   "value_in": 258.8,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -2195,8 +2393,8 @@
     ]
    },
    "verify": false,
-   "ft_in": "21 ft 3.8 in",
-   "err_in": 11.2
+   "ft_in": "21 ft 6.8 in",
+   "err_in": 6.2
   },
   {
    "id": "P-N0",
@@ -2304,11 +2502,11 @@
    "room": "R1",
    "type": "wall",
    "label": "Primary bedroom depth excluding reach-in closet",
-   "value_in": 136.2,
+   "value_in": 137.0,
    "confidence": "medium",
    "err_in": 7.0,
    "geom": null,
-   "ft_in": "11 ft 4.2 in",
+   "ft_in": "11 ft 5 in",
    "verify": false
   },
   {
@@ -3188,38 +3386,64 @@
    "verify": true
   },
   {
-   "id": "R6-tapeD",
-   "room": "R6",
+   "id": "R1-tapeW",
+   "room": "R1",
    "type": "wall",
-   "label": "Living room depth, front windows to corner by kitchen arch - YOUR TAPE",
-   "value_in": 250.0,
+   "label": "Primary bedroom - side to side (door wall to opposite wall) - YOUR TAPE",
+   "value_in": 167.0,
    "confidence": "high",
    "err_in": 1.5,
    "geom": null,
-   "ft_in": "20 ft 10 in",
+   "ft_in": "13 ft 11 in",
+   "verify": false
+  },
+  {
+   "id": "R1-tapeD",
+   "room": "R1",
+   "type": "wall",
+   "label": "Primary bedroom - back to front, wall to wall including the closet - YOUR TAPE",
+   "value_in": 167.0,
+   "confidence": "high",
+   "err_in": 1.5,
+   "geom": null,
+   "ft_in": "13 ft 11 in",
    "verify": false
   },
   {
    "id": "R6-tapeW",
    "room": "R6",
    "type": "wall",
-   "label": "Living room width, side to side without TV nook - YOUR TAPE",
+   "label": "Living / dining - side to side, not counting the TV nook - YOUR TAPE",
    "value_in": 181.0,
    "confidence": "high",
    "err_in": 1.5,
    "geom": null,
    "ft_in": "15 ft 1 in",
    "verify": false
+  },
+  {
+   "id": "R6-tapeD",
+   "room": "R6",
+   "type": "wall",
+   "label": "Living / dining - front windows to the corner by the kitchen arch - YOUR TAPE",
+   "value_in": 250.0,
+   "confidence": "high",
+   "err_in": 1.5,
+   "geom": null,
+   "ft_in": "20 ft 10 in",
+   "verify": false
   }
  ],
  "totals": {
-  "interior_rooms_sqft": 1205.6,
+  "interior_rooms_sqft": 1247.6,
   "footprint_living_sqft": 1286.8,
   "footprint_err_sqft": 24.9,
-  "garage_sqft": 362.8,
+  "garage_sqft": 383.0,
   "garage_footprint_sqft": 392.2,
   "listed_sqft": "1,400-1,401",
   "patio_sqft": 22.5,
-  "projected_living_sqft": 1349.0
+  "projected_living_sqft": 1354.0,
+  "scale_fx": 1.0433,
+  "scale_fy": 1.0119
  }
 }

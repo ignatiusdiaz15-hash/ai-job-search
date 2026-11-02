@@ -234,11 +234,11 @@ function draw(){
   p.addEventListener('click',e=>{if(measuring||dragging)return;selectRoom(r.id,false)});
   const cx=(r.x0+r.x1)/2, cy=(r.y0+r.y1)/2, small=r.w_in<30||r.d_in<30;
   text(cx,cy-(small?0:7),SHORT[r.id]||r.name,'lab-room',{fill:css('--ink'),'font-size':small?'1em':'1.15em'},gLab);
-  if(!small){text(cx,cy+7,`${r.w_ft} × ${r.d_ft}`,'lab-sub',{fill:css('--ink-2')},gLab);text(cx,cy+19,`${r.sqft} sq ft`,'lab-sub',{fill:c},gLab)}
+  if(!small){text(cx,cy+7,`${r.scaled?'≈ ':''}${r.w_ft} × ${r.d_ft}`,'lab-sub',{fill:css('--ink-2')},gLab);text(cx,cy+19,`${r.sqft} sq ft`,'lab-sub',{fill:c},gLab)}
   if(showW&&!small){ // dimension lines inside room: width near north wall, depth near west wall
    const o=7;
-   const wy=r.poly?r.y1-o:r.y0+o; dim([r.x0,wy],[r.x1,wy],r.w_in,c,gWalls);
-   dim([r.x0+o,r.y0],[r.x0+o,r.y1],r.d_in,c,gWalls,true);
+   const wy=r.poly?r.y1-o:r.y0+o; dim([r.x0,wy],[r.x1,wy],r.w_in,c,gWalls,false,r.scaled);
+   dim([r.x0+o,r.y0],[r.x0+o,r.y1],r.d_in,c,gWalls,true,r.scaled);
   }
  }
  if(showW) for(const it of D.items.filter(i=>i.type==='opening')){
@@ -267,10 +267,10 @@ function draw(){
  }
  drawFurn(); applyT();
 }
-function dim(a,b,val,c,parent,vert){
+function dim(a,b,val,c,parent,vert,approx){
  pline([a,b],{stroke:c,'stroke-width':1,'vector-effect':'non-scaling-stroke','stroke-opacity':0.75},parent);
  for(const q of [a,b]){const t=vert?[[q[0]-3,q[1]],[q[0]+3,q[1]]]:[[q[0],q[1]-3],[q[0],q[1]+3]];pline(t,{stroke:c,'stroke-width':1,'vector-effect':'non-scaling-stroke'},parent)}
- const m=[(a[0]+b[0])/2,(a[1]+b[1])/2];const t=text(m[0],m[1],`${val}"`,'lab-dim',{fill:c},parent);
+ const m=[(a[0]+b[0])/2,(a[1]+b[1])/2];const t=text(m[0],m[1],`${approx?'≈':''}${val}"`,'lab-dim',{fill:c},parent);
  if(vert){const[u,v]=P(...m);t.setAttribute('transform',`rotate(-90 ${u} ${v})`)}
 }
 // ---------- room list & detail ----------
@@ -287,7 +287,7 @@ function selectRoom(id,zoom){selRoom=id;const r=roomById[id];
  const rows=items.map(i=>`<dt>${i.label.replace(r.name+' - ','')}</dt><dd>${i.value_in}" ±${i.err_in} <span class="pill ${i.confidence}">${i.confidence}</span>${i.note?`<br><span class="small">${i.note}</span>`:''}</dd>`).join('');
  $('#detail').innerHTML=`<h2>${r.name}</h2><dl>
   <dt>Width (E–W)</dt><dd>${fmt(r.w_in)}</dd><dt>Depth (N–S)</dt><dd>${fmt(r.d_in)}</dd>
-  <dt>Area</dt><dd>${r.sqft} sq ft ±${r.sqft_err}</dd><dt>Confidence</dt><dd><span class="pill ${r.confidence}">${r.confidence}</span> ±${walls[0]?walls[0].err_in:''}" on ${Math.round(Math.max(r.w_in,r.d_in))}"</dd>${rows}</dl>
+  <dt>Area</dt><dd>${r.sqft} sq ft ±${r.sqft_err}</dd>${r.drawn?`<dt>Drawing showed</dt><dd>${r.drawn.w_in} × ${r.drawn.d_in} in · ${r.drawn.sqft} sq ft</dd>`:''}<dt>Source</dt><dd>${r.tape?'Your tape':r.scaled?'Estimate (scaled drawing)':'Drawing'}</dd><dt>Confidence</dt><dd><span class="pill ${r.confidence}">${r.confidence}</span> ±${walls[0]?walls[0].err_in:''}" on ${Math.round(Math.max(r.w_in,r.d_in))}"</dd>${rows}</dl>
   ${r.notes&&r.notes.length?`<p class="small" style="margin:8px 0 0">${r.notes.join('; ')}.</p>`:''}`;
  $('#readout').textContent=`${r.name}: ${ftin(r.w_in)} × ${ftin(r.d_in)} · ${r.sqft} sq ft`;
  if(zoom)fitInches(r.x0,r.y0,r.x1,r.y1,24); draw()}
