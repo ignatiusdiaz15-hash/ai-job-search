@@ -127,6 +127,11 @@ svg .lab-room{font-family:var(--font-display);font-weight:700}
         <button id="v-orig" aria-pressed="true">Your plan</button><button id="v-str" aria-pressed="false">Straightened</button>
       </div>
     </div>
+    <div class="grp"><span class="lbl">Grid</span>
+      <div class="seg" role="group" aria-label="Room grid">
+        <button id="g-off" data-g="off" aria-pressed="true">Off</button><button data-g="2" aria-pressed="false">Midpoint</button><button data-g="3" aria-pressed="false">Thirds</button><button data-g="4" aria-pressed="false">Quarters</button><button data-g="12" aria-pressed="false">1 ft</button><button data-g="24" aria-pressed="false">2 ft</button>
+      </div>
+    </div>
     <div class="grp"><span class="lbl">Tools</span>
       <button id="t-measure" aria-pressed="false">Measure</button>
       <button id="b-csv">Copy CSV</button>
@@ -242,9 +247,9 @@ function draw(){
   const c=color(r.confidence), sel=selRoom===r.id;
   const p=poly(r.poly||[[r.x0,r.y0],[r.x1,r.y0],[r.x1,r.y1],[r.x0,r.y1]],{fill:c,'fill-opacity':sel?0.22:0.07,stroke:c,'stroke-width':sel?3:1.6,'vector-effect':'non-scaling-stroke','stroke-dasharray':r.id==='P'?'6 4':'none',style:'cursor:pointer'},gRooms);
   p.addEventListener('click',e=>{if(measuring||dragging)return;selectRoom(r.id,false)});
-  const cx=(r.x0+r.x1)/2, cy=(r.y0+r.y1)/2, small=r.w_in<30||r.d_in<30;
-  text(cx,cy-(small?0:7),SHORT[r.id]||r.name,'lab-room',{fill:css('--ink'),'font-size':small?'1em':'1.15em'},gLab);
-  if(!small){text(cx,cy+7,`${r.scaled?'≈ ':''}${L(r.w_in)} × ${L(r.d_in)}`,'lab-sub',{fill:css('--ink-2')},gLab);text(cx,cy+19,`${r.sqft} sq ft`,'lab-sub',{fill:c},gLab)}
+  const cx=(r.x0+r.x1)/2, cy=(r.y0+r.y1)/2, small=r.w_in<30||r.d_in<30, gridded=gridMode!=='off'&&selRoom===r.id;
+  if(!gridded)text(cx,cy-(small?0:7),SHORT[r.id]||r.name,'lab-room',{fill:css('--ink'),'font-size':small?'1em':'1.15em'},gLab);
+  if(!small&&!gridded){text(cx,cy+7,`${r.scaled?'≈ ':''}${L(r.w_in)} × ${L(r.d_in)}`,'lab-sub',{fill:css('--ink-2')},gLab);text(cx,cy+19,`${r.sqft} sq ft`,'lab-sub',{fill:c},gLab)}
   if(showW&&!small){ // dimension lines inside room: width near north wall, depth near west wall
    const o=7;
    const wy=r.poly?r.y1-o:r.y0+o; dim([r.x0,wy],[r.x1,wy],r.w_in,c,gWalls,false,r.scaled);
@@ -275,8 +280,36 @@ function draw(){
   pline([[hx,hy],...arc,[hx,hy]],{stroke:css('--lo'),'stroke-width':1.3,'stroke-dasharray':'5 3',fill:css('--lo'),'fill-opacity':0.06,'vector-effect':'non-scaling-stroke'},gDoors);
   pline([[hx,hy],open],{stroke:css('--lo'),'stroke-width':2.2,'vector-effect':'non-scaling-stroke'},gDoors);
  }
- drawFurn(); applyT();
+ drawGrid(); drawFurn(); applyT();
 }
+let gridMode='off';
+function drawGrid(){
+ if(gridMode==='off'||!selRoom)return;
+ const r=roomById[selRoom]; if(!r)return;
+ const P0=rpoly(r), gc=css('--tool'), gl=css('--blue');
+ const g=el('g',{'pointer-events':'none'},ov);
+ const cid='clip-'+r.id; const cp=el('clipPath',{id:cid},g); poly(P0,{},cp);
+ const lines=el('g',{'clip-path':`url(#${cid})`},g);
+ const W=r.w_in, Dd=r.d_in, sx=(r.x1-r.x0)/W, sy=(r.y1-r.y0)/Dd;   // true inches -> drawing units
+ let xs=[], ys=[];
+ if(['2','3','4'].includes(gridMode)){const n=+gridMode;for(let i=1;i<n;i++){xs.push(W*i/n);ys.push(Dd*i/n)}}
+ else{const st=+gridMode;for(let v=st;v<W-0.5;v+=st)xs.push(v);for(let v=st;v<Dd-0.5;v+=st)ys.push(v)}
+ const labs=el('g',{},g);
+ for(const v of xs){const x=r.x0+v*sx;pline([[x,r.y0],[x,r.y1]],{stroke:gl,'stroke-width':1.2,'stroke-dasharray':'6 4','vector-effect':'non-scaling-stroke'},lines);
+  if(['2','3','4'].includes(gridMode)||xs.length<=14)text(x,r.y0+5,L(v),'lab-dim',{fill:gl},labs)}
+ for(const v of ys){const y=r.y0+v*sy;pline([[r.x0,y],[r.x1,y]],{stroke:gl,'stroke-width':1.2,'stroke-dasharray':'6 4','vector-effect':'non-scaling-stroke'},lines);
+  if(['2','3','4'].includes(gridMode)||ys.length<=14){const t=text(r.x0+5,y,L(v),'lab-dim',{fill:gl},labs);const[u,w]=P(r.x0+5,y);t.setAttribute('transform',`rotate(-90 ${u} ${w})`)}}
+ // centre lines + centre point (always)
+ const cx=r.x0+(W/2)*sx, cy=r.y0+(Dd/2)*sy;
+ pline([[cx,r.y0],[cx,r.y1]],{stroke:gc,'stroke-width':2,'vector-effect':'non-scaling-stroke'},lines);
+ pline([[r.x0,cy],[r.x1,cy]],{stroke:gc,'stroke-width':2,'vector-effect':'non-scaling-stroke'},lines);
+ const[u,v]=P(cx,cy);el('circle',{cx:u,cy:v,r:5/k,fill:gc,stroke:css('--sheet'),'stroke-width':2/k},g);
+ text(cx,cy-9,`Center · ${L(W/2)} from W & E walls · ${L(Dd/2)} from N & S walls`,'',{fill:gc,'font-weight':'600'},g);
+ $('#readout').textContent=`${r.name} center: ${LL(W/2)} from the side walls, ${LL(Dd/2)} from the front/back walls`+(r.poly?' (L-shaped room: center of its full outline)':'');
+}
+function setGrid(m){gridMode=m;document.querySelectorAll('[data-g]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.g===m));
+ if(m!=='off'&&!selRoom)$('#readout').textContent='Tap a room to grid it';draw()}
+document.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>setGrid(b.dataset.g));
 function dim(a,b,val,c,parent,vert,approx){
  pline([a,b],{stroke:c,'stroke-width':1,'vector-effect':'non-scaling-stroke','stroke-opacity':0.75},parent);
  for(const q of [a,b]){const t=vert?[[q[0]-3,q[1]],[q[0]+3,q[1]]]:[[q[0],q[1]-3],[q[0],q[1]+3]];pline(t,{stroke:c,'stroke-width':1,'vector-effect':'non-scaling-stroke'},parent)}
