@@ -199,7 +199,7 @@
    "d_ft": "4 ft 1.6 in",
    "sqft": 34.4,
    "sqft_err": 1.5,
-   "confidence": "high",
+   "confidence": "medium",
    "notes": [
     "Best estimate: drawing (95.8 x 49.0 in) scaled by the average of your living-room and bedroom tape (+4.3% side to side, +1.2% front to back). Not taped yet"
    ],
@@ -223,7 +223,7 @@
    "d_ft": "4 ft 1.6 in",
    "sqft": 7.0,
    "sqft_err": 0.4,
-   "confidence": "high",
+   "confidence": "medium",
    "notes": [
     "Best estimate: drawing (19.2 x 49.0 in) scaled by the average of your living-room and bedroom tape (+4.3% side to side, +1.2% front to back). Not taped yet"
    ],
@@ -247,7 +247,7 @@
    "d_ft": "5 ft 6.3 in",
    "sqft": 37.4,
    "sqft_err": 1.6,
-   "confidence": "high",
+   "confidence": "medium",
    "notes": [
     "bottom = house back wall, same as primary bath",
     "Best estimate: drawing (77.8 x 65.5 in) scaled by the average of your living-room and bedroom tape (+4.3% side to side, +1.2% front to back). Not taped yet"

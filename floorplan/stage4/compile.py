@@ -151,6 +151,7 @@ for ro in room_out:
     else:
         fx,fy=FXA,FYA; area_draw=ro['sqft']; ro['drawn']=dict(w_in=ro['w_in'],d_in=ro['d_in'],sqft=area_draw)
         ro.update(w_in=round(ro['w_in']*fx,1),d_in=round(ro['d_in']*fy,1),sqft=round(area_draw*fx*fy,1),scaled=True)
+        if ro['confidence']=='high': ro['confidence']='medium'
         ro['notes']=ro.get('notes',[])+[f"Best estimate: drawing ({ro['drawn']['w_in']} x {ro['drawn']['d_in']} in) scaled by the average of your living-room and bedroom tape ({100*(fx-1):+.1f}% side to side, {100*(fy-1):+.1f}% front to back). Not taped yet"]
         zones.append(dict(room=rid,fx=round(fx,4),fy=round(fy,4),kind='estimate'))
     ro['w_ft']=ftin(ro['w_in']); ro['d_ft']=ftin(ro['d_in'])
