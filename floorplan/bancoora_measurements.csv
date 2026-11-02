@@ -20,9 +20,9 @@ R4,Laundry,room,R4,Area (sq ft),35.4,,1.6,high,False
 R5,Kitchen,room,R5,Width (E-W),129.8,10 ft 9.8 in,,medium,False
 R5,Kitchen,room,R5,Depth (N-S),118.2,9 ft 10.2 in,,medium,False
 R5,Kitchen,room,R5,Area (sq ft),106.5,,10.2,medium,False
-R6,Living / dining,room,R6,Width (E-W),196.5,16 ft 4.5 in,,medium,False
-R6,Living / dining,room,R6,Depth (N-S),245.2,20 ft 5.2 in,,medium,False
-R6,Living / dining,room,R6,Area (sq ft),324.6,,29.0,medium,False
+R6,Living / dining,room,R6,Width (E-W),205.9,17 ft 1.9 in,,high,False
+R6,Living / dining,room,R6,Depth (N-S),250.0,20 ft 10 in,,high,False
+R6,Living / dining,room,R6,Area (sq ft),346.7,,6.9,high,False
 R6e,Entry closet / nook (walled in drawing),room,R6e,Width (E-W),42.2,3 ft 6.2 in,,medium,False
 R6e,Entry closet / nook (walled in drawing),room,R6e,Depth (N-S),71.2,5 ft 11.2 in,,medium,False
 R6e,Entry closet / nook (walled in drawing),room,R6e,Area (sq ft),20.9,,2.5,medium,False
@@ -135,12 +135,14 @@ R5,Kitchen,fixture,F6-D,"Kitchen counter run - back wall (front edge partly hidd
 R5,Kitchen,fixture,F7-W,"White appliance, back-left (range or fridge - drawing unclear) - width (E-W), as drawn",24,2 ft 0 in,4.2,low,True
 R5,Kitchen,fixture,F7-D,"White appliance, back-left (range or fridge - drawing unclear) - depth (N-S), as drawn",18,1 ft 6 in,3.9,low,True
 R5,Kitchen,clearance,C6,"Kitchen aisle, peninsula to back counter - estimate (drawing shows 65.0 in)",53.5,4 ft 5.5 in,6.0,low,True
-R6,Living / dining,wall,R6-N0,Living / dining - N wall (inside face),172.8,14 ft 4.8 in,7.9,medium,False
-R6,Living / dining,wall,R6-E1,Living / dining - E (beside closet) wall (inside face),61.2,5 ft 1.2 in,3.4,medium,False
-R6,Living / dining,wall,R6-N2,Living / dining - N (step at closet) wall (inside face),23.8,1 ft 11.8 in,2.0,medium,False
-R6,Living / dining,wall,R6-E3,Living / dining - E (TV wall) wall (inside face),184.0,15 ft 4 in,8.4,medium,False
-R6,Living / dining,wall,R6-S4,Living / dining - S wall (inside face),196.5,16 ft 4.5 in,8.9,medium,False
-R6,Living / dining,wall,R6-W5,Living / dining - W wall (inside face),245.2,20 ft 5.2 in,10.8,medium,False
+R6,Living / dining,wall,R6-N0,Living / dining - N wall (inside face) (scaled to your tape),181.0,15 ft 1 in,4.6,medium,False
+R6,Living / dining,wall,R6-E1,Living / dining - E (beside closet) wall (inside face) (scaled to your tape),62.4,5 ft 2.4 in,2.2,medium,False
+R6,Living / dining,wall,R6-N2,Living / dining - N (step at closet) wall (inside face) (scaled to your tape),24.9,2 ft 0.9 in,1.5,medium,False
+R6,Living / dining,wall,R6-E3,Living / dining - E (TV wall) wall (inside face) (scaled to your tape),187.6,15 ft 7.6 in,4.8,medium,False
+R6,Living / dining,wall,R6-S4,Living / dining - S wall (inside face) (scaled to your tape),205.9,17 ft 1.9 in,5.1,medium,False
+R6,Living / dining,wall,R6-W5,Living / dining - W wall (inside face) (scaled to your tape),250.0,20 ft 10 in,6.0,medium,False
+R6,Living / dining,wall,R6-tapeD,"Living room depth, front windows to corner by kitchen arch - YOUR TAPE",250.0,20 ft 10 in,1.5,high,False
+R6,Living / dining,wall,R6-tapeW,"Living room width, side to side without TV nook - YOUR TAPE",181.0,15 ft 1 in,1.5,high,False
 R6e,Entry closet / nook (walled in drawing),wall,R6e-N0,Entry closet / nook (walled in drawing) - N wall (inside face),42.2,3 ft 6.2 in,2.7,medium,False
 R6e,Entry closet / nook (walled in drawing),wall,R6e-S1,Entry closet / nook (walled in drawing) - S wall (inside face),42.2,3 ft 6.2 in,2.7,medium,False
 R6e,Entry closet / nook (walled in drawing),wall,R6e-W2,Entry closet / nook (walled in drawing) - W wall (inside face),71.2,5 ft 11.2 in,3.8,medium,False

@@ -121,6 +121,33 @@ meta=dict(scale=dict(note='Tilted-perspective render; scale varies by image row.
      primary_bath_h_in_per_px=0.814,primary_bath_v_in_per_px=0.909,range_in_per_px='0.76-1.00',err_pct=1.5),
      H_frame_to_img=Hm.tolist(),frame_origin_note='x: inches east of unit\'s west outer wall face; y: inches south of north outer face',
      confidence_model={k:f'+/-({int(v[0]*1000)/10}% + {v[1]} in)' for k,v in ERR.items()})
+# ---- tape measurements taken at home (override the drawing) ----
+TAPE={'R6':dict(d=250.0,w_north=181.0,note='Your tape: front windows to the corner by the kitchen arch 250 in; side to side, not counting the TV nook, 181 in')}
+zones=[]
+ro6=next(r for r in room_out if r['id']=='R6')
+dn=L6['y1']-L6['y0']; wn=T6['x0']-L6['x0']          # drawing: depth, and width north of the TV nook
+fx=TAPE['R6']['w_north']/wn; fy=TAPE['R6']['d']/dn
+zones.append(dict(room='R6',fx=round(fx,4),fy=round(fy,4)))
+area_draw=ro6['sqft']
+ro6.update(w_in=round(ro6['w_in']*fx,1),d_in=TAPE['R6']['d'],sqft=round(area_draw*fx*fy,1),confidence='high',tape=True)
+ro6['w_ft']=ftin(ro6['w_in']); ro6['d_ft']=ftin(ro6['d_in']); ro6['sqft_err']=round(ro6['sqft']*0.02,1)
+ro6['notes']=[f"Tape-measured. Drawing showed {wn:.1f} x {dn:.1f} in; the room is {100*(fx-1):.1f}% wider and {100*(fy-1):.1f}% deeper than drawn",
+              f"Width to the TV wall {ro6['w_in']} in is the drawn {L6['x1']-L6['x0']:.1f} in scaled by the same factor (not taped)",
+              f"Drawing area {area_draw} sq ft"]
+for it in items:
+    if it['room']=='R6' and it['type']=='wall':
+        g=it.get('geom')
+        if g and g.get('kind')=='line':
+            dx=abs(g['a'][0]-g['b'][0])*fx; dy=abs(g['a'][1]-g['b'][1])*fy; v=math.hypot(dx,dy)
+            it.update(value_in=round(v,1),ft_in=ftin(v),confidence='medium',err_in=round(v*0.02+1,1),label=it['label']+' (scaled to your tape)')
+add(id='R6-tapeD',room='R6',type='wall',label='Living room depth, front windows to corner by kitchen arch - YOUR TAPE',value_in=250.0,confidence='high',err_in=1.5,geom=None)
+add(id='R6-tapeW',room='R6',type='wall',label='Living room width, side to side without TV nook - YOUR TAPE',value_in=181.0,confidence='high',err_in=1.5,geom=None)
+# projected house area if the rest of the house (outside the tape-matched primary wing) is off like the living room
+wing=sum(r['sqft'] for r in room_out if r['id'] in ('R1','R2','R2s','R3','R3b','R4'))
+proj=round(area3['living_sqft']+ (area3['living_sqft']-wing*1.13)*(fx*fy-1),0)
+totals.update(projected_living_sqft=proj)
+totals['interior_rooms_sqft']=round(totals['interior_rooms_sqft']+ro6['sqft']-area_draw,1)
+meta['zones']=zones
 data=dict(meta=meta,rooms=room_out,doors=doors,fixtures=fixtures,items=items,totals=totals)
 json.dump(data,open('stage4/measurements.json','w'),indent=1)
 print('img check', chk[:2]/chk[2], 'n items',len(items))

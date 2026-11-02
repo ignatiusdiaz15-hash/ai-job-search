@@ -295,7 +295,7 @@ function selectRoom(id,zoom){selRoom=id;const r=roomById[id];
 function buildSide(){const t=D.totals;
  $('#totals').innerHTML=`<span>Rooms, inside walls</span><b>${t.interior_rooms_sqft} sq ft</b>
   <span>Living area to outside of walls</span><b>${t.footprint_living_sqft} ±${t.footprint_err_sqft}</b>
-  <span>Listed</span><b>${t.listed_sqft}</b><span>Garage (inside)</span><b>${t.garage_sqft} sq ft</b><span>Patio</span><b>${t.patio_sqft} sq ft</b>`;
+  ${t.projected_living_sqft?`<span>Projected, if rest of house matches your living-room tape</span><b>~${t.projected_living_sqft.toLocaleString()}</b>`:''}<span>Listed</span><b>${t.listed_sqft}</b><span>Garage (inside)</span><b>${t.garage_sqft} sq ft</b><span>Patio</span><b>${t.patio_sqft} sq ft</b>`;
  const L=[['--hi','High confidence'],['--med','Medium'],['--lo','Low / assumed'],['--open','Opening'],['--clear','Clearance'],['--furn','Your furniture'],['--tool','Measure tool']];
  $('#legend').innerHTML=L.map(([c,n])=>`<span><span class="sw" style="background:var(${c})"></span>${n}</span>`).join('')}
 // ---------- pan / zoom ----------
@@ -323,10 +323,11 @@ $('#z-fit').onclick=fitAll;
 // ---------- measure tool ----------
 let mpts=[];
 function addMeasure(p){if(mpts.length>=2)mpts=[];mpts.push(p);drawMeasure()}
+function zoneAt(x,y){for(const z of (D.meta.zones||[])){const r=roomById[z.room];if(r&&inRoom(r,x,y))return z}return{fx:1,fy:1}}
 function drawMeasure(){gM.replaceChildren();const c=css('--tool');
  for(const q of mpts){const[u,v]=P(...q);el('circle',{cx:u,cy:v,r:4/k,fill:c,stroke:css('--sheet'),'stroke-width':1.5/k},gM)}
  if(mpts.length===2){const[a,b]=mpts;pline([a,b],{stroke:c,'stroke-width':2.5,'vector-effect':'non-scaling-stroke'},gM);
-  const d=Math.hypot(b[0]-a[0],b[1]-a[1]);text((a[0]+b[0])/2,(a[1]+b[1])/2-6,`${d.toFixed(1)}" · ${ftin(d)}`,'',{fill:c,'font-weight':'600'},gM);
+  const za=zoneAt(...a),zb=zoneAt(...b),fx=(za.fx+zb.fx)/2,fy=(za.fy+zb.fy)/2;const d=Math.hypot((b[0]-a[0])*fx,(b[1]-a[1])*fy);text((a[0]+b[0])/2,(a[1]+b[1])/2-6,`${d.toFixed(1)}" · ${ftin(d)}`,'',{fill:c,'font-weight':'600'},gM);
   $('#readout').textContent=`Measured: ${fmt(d)} (±${(d*0.02+1).toFixed(1)} in)`}
  else if(mpts.length===1)$('#readout').textContent='Tap the second point'}
 $('#t-measure').onclick=()=>{measuring=!measuring;$('#t-measure').setAttribute('aria-pressed',measuring);svg.classList.toggle('measuring',measuring);
@@ -341,7 +342,7 @@ $('#furnform').addEventListener('submit',e=>{e.preventDefault();const w=parseLen
  const r=svg.getBoundingClientRect();const[u,v]=toWorld(r.left+r.width/2,r.top+r.height/2);const[x,y]=Pinv(u,v);
  const f={id:'f'+(++fid),x,y,w,d,a:0};furn.push(f);activeF=f.id;drawFurn()});
 function corners(f){const c=Math.cos(f.a*Math.PI/180),s=Math.sin(f.a*Math.PI/180);
- return [[-f.w/2,-f.d/2],[f.w/2,-f.d/2],[f.w/2,f.d/2],[-f.w/2,f.d/2]].map(([x,y])=>[f.x+x*c-y*s,f.y+x*s+y*c])}
+ const z=zoneAt(f.x,f.y);return [[-f.w/2,-f.d/2],[f.w/2,-f.d/2],[f.w/2,f.d/2],[-f.w/2,f.d/2]].map(([x,y])=>[f.x+(x*c-y*s)/z.fx,f.y+(x*s+y*c)/z.fy])}
 function drawFurn(){gF.replaceChildren();const c=css('--furn');
  for(const f of furn){const cs=corners(f);const g=el('g',{'data-furn':f.id,style:'cursor:move'},gF);
   poly(cs,{fill:c,'fill-opacity':f.id===activeF?0.3:0.18,stroke:c,'stroke-width':f.id===activeF?3:2,'vector-effect':'non-scaling-stroke'},g);
@@ -355,6 +356,7 @@ function fitCheck(){const f=furn.find(z=>z.id===activeF);const m=$('#fitmsg');if
  const room=D.rooms.find(r=>r.id!=='P'&&inRoom(r,f.x,f.y));
  if(!room){m.className='fitmsg bad';m.textContent='Center is outside every room.';return}
  let minc=Infinity;for(const[x,y]of corners(f)){const d=edgeDist(room,x,y);minc=Math.min(minc,inRoom(room,x,y)?d:-d)}
+ const zf=zoneAt(f.x,f.y);minc*=(zf.fx+zf.fy)/2;
  if(minc>=0){m.className='fitmsg ok';m.textContent=`Fits in ${room.name}: ${minc.toFixed(1)} in to the nearest wall. Check doors, fixtures and swings too.`}
  else{m.className='fitmsg bad';m.textContent=`Too big here: crosses a ${room.name} wall by ${(-minc).toFixed(1)} in.`}}
 const rot=d=>{const f=furn.find(z=>z.id===activeF);if(f){f.a=(f.a+d+360)%360;drawFurn()}};

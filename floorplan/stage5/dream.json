@@ -100,6 +100,39 @@
    "changed": true
   },
   {
+   "group": "Living / dining",
+   "item": "Depth, front windows to corner by kitchen arch",
+   "measured": "245.2 (plan)",
+   "best": 250.0,
+   "best_ft": "20 ft 10 in",
+   "range": "248.5 - 251.5 in",
+   "basis": "Your tape. Drawing is 2.0% short here.",
+   "confidence": "high",
+   "changed": true
+  },
+  {
+   "group": "Living / dining",
+   "item": "Width, side to side without the TV nook",
+   "measured": "172.8 (plan)",
+   "best": 181.0,
+   "best_ft": "15 ft 1 in",
+   "range": "179.5 - 182.5 in",
+   "basis": "Your tape. Drawing is 4.7% narrow here.",
+   "confidence": "high",
+   "changed": true
+  },
+  {
+   "group": "Living / dining",
+   "item": "Width to the TV wall",
+   "measured": "196.5 (plan)",
+   "best": 205.8,
+   "best_ft": "17 ft 1.8 in",
+   "range": "202.8 - 208.8 in",
+   "basis": "Drawn width scaled by your tape (not taped directly).",
+   "confidence": "medium",
+   "changed": true
+  },
+  {
    "group": "Primary bedroom",
    "item": "width (E-W)",
    "measured": "160.8 (plan)",
@@ -128,7 +161,7 @@
    "best": 129.8,
    "best_ft": "10 ft 9.8 in",
    "range": "127.4 - 136 in",
-   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "basis": "Plan value. Your living-room tape came out 2-5% larger than the drawing, so this room is likely 2-5% larger too; the range is skewed up.",
    "confidence": "medium",
    "changed": false
   },
@@ -139,29 +172,7 @@
    "best": 118.2,
    "best_ft": "9 ft 10.2 in",
    "range": "115.9 - 123.9 in",
-   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
-   "confidence": "medium",
-   "changed": false
-  },
-  {
-   "group": "Living / dining",
-   "item": "width (E-W)",
-   "measured": "196.5 (plan)",
-   "best": 196.5,
-   "best_ft": "16 ft 4.5 in",
-   "range": "193.1 - 205.4 in",
-   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
-   "confidence": "medium",
-   "changed": false
-  },
-  {
-   "group": "Living / dining",
-   "item": "depth (N-S)",
-   "measured": "245.2 (plan)",
-   "best": 245.2,
-   "best_ft": "20 ft 5.2 in",
-   "range": "241 - 256 in",
-   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "basis": "Plan value. Your living-room tape came out 2-5% larger than the drawing, so this room is likely 2-5% larger too; the range is skewed up.",
    "confidence": "medium",
    "changed": false
   },
@@ -172,7 +183,7 @@
    "best": 42.2,
    "best_ft": "3 ft 6.2 in",
    "range": "41.1 - 44.9 in",
-   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "basis": "Plan value. Your living-room tape came out 2-5% larger than the drawing, so this room is likely 2-5% larger too; the range is skewed up.",
    "confidence": "medium",
    "changed": false
   },
@@ -183,7 +194,7 @@
    "best": 71.2,
    "best_ft": "5 ft 11.2 in",
    "range": "69.6 - 75 in",
-   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "basis": "Plan value. Your living-room tape came out 2-5% larger than the drawing, so this room is likely 2-5% larger too; the range is skewed up.",
    "confidence": "medium",
    "changed": false
   },
@@ -194,7 +205,7 @@
    "best": 138.5,
    "best_ft": "11 ft 6.5 in",
    "range": "135.9 - 145 in",
-   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "basis": "Plan value. Your living-room tape came out 2-5% larger than the drawing, so this room is likely 2-5% larger too; the range is skewed up.",
    "confidence": "medium",
    "changed": false
   },
@@ -205,7 +216,7 @@
    "best": 158.5,
    "best_ft": "13 ft 2.5 in",
    "range": "155.6 - 165.8 in",
-   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "basis": "Plan value. Your living-room tape came out 2-5% larger than the drawing, so this room is likely 2-5% larger too; the range is skewed up.",
    "confidence": "medium",
    "changed": false
   },
@@ -216,7 +227,7 @@
    "best": 112.5,
    "best_ft": "9 ft 4.5 in",
    "range": "110.3 - 118 in",
-   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "basis": "Plan value. Your living-room tape came out 2-5% larger than the drawing, so this room is likely 2-5% larger too; the range is skewed up.",
    "confidence": "medium",
    "changed": false
   },
@@ -227,7 +238,7 @@
    "best": 63.5,
    "best_ft": "5 ft 3.5 in",
    "range": "62 - 67 in",
-   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "basis": "Plan value. Your living-room tape came out 2-5% larger than the drawing, so this room is likely 2-5% larger too; the range is skewed up.",
    "confidence": "medium",
    "changed": false
   },
@@ -238,7 +249,7 @@
    "best": 139.2,
    "best_ft": "11 ft 7.2 in",
    "range": "136.6 - 145.8 in",
-   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "basis": "Plan value. Your living-room tape came out 2-5% larger than the drawing, so this room is likely 2-5% larger too; the range is skewed up.",
    "confidence": "medium",
    "changed": false
   },
@@ -249,7 +260,7 @@
    "best": 118.2,
    "best_ft": "9 ft 10.2 in",
    "range": "115.9 - 123.9 in",
-   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "basis": "Plan value. Your living-room tape came out 2-5% larger than the drawing, so this room is likely 2-5% larger too; the range is skewed up.",
    "confidence": "medium",
    "changed": false
   },
@@ -260,7 +271,7 @@
    "best": 40.0,
    "best_ft": "3 ft 4 in",
    "range": "38.9 - 42.6 in",
-   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "basis": "Plan value. Your living-room tape came out 2-5% larger than the drawing, so this room is likely 2-5% larger too; the range is skewed up.",
    "confidence": "medium",
    "changed": false
   },
@@ -271,7 +282,7 @@
    "best": 119.0,
    "best_ft": "9 ft 11 in",
    "range": "116.7 - 124.8 in",
-   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "basis": "Plan value. Your living-room tape came out 2-5% larger than the drawing, so this room is likely 2-5% larger too; the range is skewed up.",
    "confidence": "medium",
    "changed": false
   },
@@ -282,7 +293,7 @@
    "best": 80.2,
    "best_ft": "6 ft 8.2 in",
    "range": "78.5 - 84.4 in",
-   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "basis": "Plan value. Your living-room tape came out 2-5% larger than the drawing, so this room is likely 2-5% larger too; the range is skewed up.",
    "confidence": "medium",
    "changed": false
   },
@@ -293,7 +304,7 @@
    "best": 38.2,
    "best_ft": "3 ft 2.2 in",
    "range": "37.1 - 40.7 in",
-   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "basis": "Plan value. Your living-room tape came out 2-5% larger than the drawing, so this room is likely 2-5% larger too; the range is skewed up.",
    "confidence": "medium",
    "changed": false
   },
@@ -304,7 +315,7 @@
    "best": 204.2,
    "best_ft": "17 ft 0.2 in",
    "range": "200.6 - 213.4 in",
-   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "basis": "Plan value. Your living-room tape came out 2-5% larger than the drawing, so this room is likely 2-5% larger too; the range is skewed up.",
    "confidence": "medium",
    "changed": false
   },
@@ -315,7 +326,7 @@
    "best": 255.8,
    "best_ft": "21 ft 3.8 in",
    "range": "251.5 - 267 in",
-   "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
+   "basis": "Plan value. Your living-room tape came out 2-5% larger than the drawing, so this room is likely 2-5% larger too; the range is skewed up.",
    "confidence": "medium",
    "changed": false
   },
@@ -621,8 +632,8 @@
    "detail": "Toilets, washer/dryer, tub, fridge and vanity are stock 3D symbols. Real appliances listed for this plan (full-size laundry, side-by-side fridge) are larger than drawn."
   },
   {
-   "title": "Total area is 8% under the listing",
-   "detail": "Plan footprint is 1,287 sq ft (outside of exterior walls, garage excluded) against 1,400-1,401 listed. The bathroom tape rules out a simple scale error there, so rooms away from the bathroom carry an upward-skewed range of about +4%. One tape measurement in the living room or bedroom 2 would settle it."
+   "title": "Living room tape explains most of the area gap",
+   "detail": "Your living room is 4.7% wider and 2.0% deeper than drawn, while the primary bathroom matched the drawing. If the rest of the house is off the same way, the living area is about 1,349 sq ft against 1,400 listed, instead of 1,287. Bedroom 2 and 3 measurements will confirm it."
   }
  ]
 }

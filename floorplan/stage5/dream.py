@@ -23,12 +23,15 @@ row('Primary walk-in closet','Depth (door wall to shower/laundry wall)',f"{R['R3
 row('Laundry','Depth (closet wall to back wall)',f"{R['R4']['d_in']} (plan)",round(R['R4']['d_in']+3.8,1),round(R['R4']['d_in']-0.5,1),round(R['R4']['d_in']+5.5,1),
     'Same wall as above: laundry gains what the closet loses. Verify.','medium',True)
 # ---- other rooms: measured value; upper bound covers the unexplained 8% area gap (~4% linear) ----
-for rid in ['R1','R5','R6','R6e','R7','R8','R9','R10','R10b','G']:
+row('Living / dining','Depth, front windows to corner by kitchen arch','245.2 (plan)',250.0,248.5,251.5,'Your tape. Drawing is 2.0% short here.','high',True)
+row('Living / dining','Width, side to side without the TV nook','172.8 (plan)',181.0,179.5,182.5,'Your tape. Drawing is 4.7% narrow here.','high',True)
+row('Living / dining','Width to the TV wall','196.5 (plan)',round(196.5*181/172.8,1),round(196.5*181/172.8-3,1),round(196.5*181/172.8+3,1),'Drawn width scaled by your tape (not taped directly).','medium',True)
+for rid in ['R1','R5','R6e','R7','R8','R9','R10','R10b','G']:
     r=R[rid]; c='high' if rid=='R1' else 'medium'
     for dim,key in (('width (E-W)','w_in'),('depth (N-S)','d_in')):
         v=r[key]; lo=round(v*0.985-0.5,1); hi=round(v*(1.04 if c=='medium' else 1.015)+1,1)
         row(r['name'],dim,f"{v} (plan)",v,lo,hi,
-            'Plan value. Range is skewed upward because the plan\'s total area is 8% under the listed 1,400 sq ft.' if c=='medium' else 'Plan value next to the tape-checked bathroom.',c,False)
+            'Plan value. Your living-room tape came out 2-5% larger than the drawing, so this room is likely 2-5% larger too; the range is skewed up.' if c=='medium' else 'Plan value next to the tape-checked bathroom.',c,False)
 # ---- primary bedroom split ----
 row(R['R1']['name'],'Depth excluding the reach-in closet',f"{R['R1']['d_in']} (wall to wall)",round(R['R1']['d_in']-30,1),round(R['R1']['d_in']-37,1),round(R['R1']['d_in']-24,1),
     'Room depth minus a typical 24-30 in reach-in closet; the drawn closet zone (37 in) includes the leaning door faces.','medium',True)
@@ -59,6 +62,6 @@ corrections=[
  dict(title='Closet and laundry share that wall',detail='If the wall really is 3.8 in further from the back wall, the walk-in closet is about 45 in deep and the laundry about 69 in. Tape these two before buying shelving or appliances.'),
  dict(title='Door widths are standard-size assumptions',detail='The render covers every doorway with a header and draws 3D leaning door leaves, so no door width could be measured. Swing arcs use typical sizes.'),
  dict(title='Fixtures use typical sizes',detail='Toilets, washer/dryer, tub, fridge and vanity are stock 3D symbols. Real appliances listed for this plan (full-size laundry, side-by-side fridge) are larger than drawn.'),
- dict(title='Total area is 8% under the listing',detail='Plan footprint is 1,287 sq ft (outside of exterior walls, garage excluded) against 1,400-1,401 listed. The bathroom tape rules out a simple scale error there, so rooms away from the bathroom carry an upward-skewed range of about +4%. One tape measurement in the living room or bedroom 2 would settle it.')]
+ dict(title='Living room tape explains most of the area gap',detail='Your living room is 4.7% wider and 2.0% deeper than drawn, while the primary bathroom matched the drawing. If the rest of the house is off the same way, the living area is about 1,349 sq ft against 1,400 listed, instead of 1,287. Bedroom 2 and 3 measurements will confirm it.')]
 json.dump(dict(rows=rows,corrections=corrections),open('stage5/dream.json','w'),indent=1)
 print(len(rows),'dream rows')

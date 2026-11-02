@@ -29,7 +29,14 @@
    "high": "+/-(1.5% + 0.5 in)",
    "medium": "+/-(4.0% + 1.0 in)",
    "low": "+/-(5.0% + 3.0 in)"
-  }
+  },
+  "zones": [
+   {
+    "room": "R6",
+    "fx": 1.0478,
+    "fy": 1.0194
+   }
+  ]
  },
  "rooms": [
   {
@@ -160,17 +167,17 @@
    "x1": 365.75,
    "y0": 30.0,
    "y1": 275.25,
-   "w_in": 196.5,
-   "d_in": 245.2,
-   "w_ft": "16 ft 4.5 in",
-   "d_ft": "20 ft 5.2 in",
-   "sqft": 324.6,
-   "sqft_err": 29.0,
-   "confidence": "medium",
+   "w_in": 205.9,
+   "d_in": 250.0,
+   "w_ft": "17 ft 1.9 in",
+   "d_ft": "20 ft 10 in",
+   "sqft": 346.7,
+   "sqft_err": 6.9,
+   "confidence": "high",
    "notes": [
-    "right edge = wall face beside closet (open to hall below)",
-    "bottom edge open to kitchen (nominal)",
-    "L-shaped: 172.8 in wide beside the closet at the north end, 196.5 in wide (to the TV wall) for the rest"
+    "Tape-measured. Drawing showed 172.8 x 245.2 in; the room is 4.8% wider and 1.9% deeper than drawn",
+    "Width to the TV wall 205.9 in is the drawn 196.5 in scaled by the same factor (not taped)",
+    "Drawing area 324.6 sq ft"
    ],
    "poly": [
     [
@@ -197,7 +204,8 @@
      169.25,
      275.25
     ]
-   ]
+   ],
+   "tape": true
   },
   {
    "id": "R6e",
@@ -1270,8 +1278,8 @@
    "id": "R6-N0",
    "room": "R6",
    "type": "wall",
-   "label": "Living / dining - N wall (inside face)",
-   "value_in": 172.8,
+   "label": "Living / dining - N wall (inside face) (scaled to your tape)",
+   "value_in": 181.0,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1285,15 +1293,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "14 ft 4.8 in",
-   "err_in": 7.9
+   "ft_in": "15 ft 1 in",
+   "err_in": 4.6
   },
   {
    "id": "R6-E1",
    "room": "R6",
    "type": "wall",
-   "label": "Living / dining - E (beside closet) wall (inside face)",
-   "value_in": 61.2,
+   "label": "Living / dining - E (beside closet) wall (inside face) (scaled to your tape)",
+   "value_in": 62.4,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1307,15 +1315,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "5 ft 1.2 in",
-   "err_in": 3.4
+   "ft_in": "5 ft 2.4 in",
+   "err_in": 2.2
   },
   {
    "id": "R6-N2",
    "room": "R6",
    "type": "wall",
-   "label": "Living / dining - N (step at closet) wall (inside face)",
-   "value_in": 23.8,
+   "label": "Living / dining - N (step at closet) wall (inside face) (scaled to your tape)",
+   "value_in": 24.9,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1329,15 +1337,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "1 ft 11.8 in",
-   "err_in": 2.0
+   "ft_in": "2 ft 0.9 in",
+   "err_in": 1.5
   },
   {
    "id": "R6-E3",
    "room": "R6",
    "type": "wall",
-   "label": "Living / dining - E (TV wall) wall (inside face)",
-   "value_in": 184.0,
+   "label": "Living / dining - E (TV wall) wall (inside face) (scaled to your tape)",
+   "value_in": 187.6,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1351,15 +1359,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "15 ft 4 in",
-   "err_in": 8.4
+   "ft_in": "15 ft 7.6 in",
+   "err_in": 4.8
   },
   {
    "id": "R6-S4",
    "room": "R6",
    "type": "wall",
-   "label": "Living / dining - S wall (inside face)",
-   "value_in": 196.5,
+   "label": "Living / dining - S wall (inside face) (scaled to your tape)",
+   "value_in": 205.9,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1373,15 +1381,15 @@
     ]
    },
    "verify": false,
-   "ft_in": "16 ft 4.5 in",
-   "err_in": 8.9
+   "ft_in": "17 ft 1.9 in",
+   "err_in": 5.1
   },
   {
    "id": "R6-W5",
    "room": "R6",
    "type": "wall",
-   "label": "Living / dining - W wall (inside face)",
-   "value_in": 245.2,
+   "label": "Living / dining - W wall (inside face) (scaled to your tape)",
+   "value_in": 250.0,
    "confidence": "medium",
    "geom": {
     "kind": "line",
@@ -1395,8 +1403,8 @@
     ]
    },
    "verify": false,
-   "ft_in": "20 ft 5.2 in",
-   "err_in": 10.8
+   "ft_in": "20 ft 10 in",
+   "err_in": 6.0
   },
   {
    "id": "R6e-N0",
@@ -3178,15 +3186,40 @@
    "note": "back counter front edge is hidden in the drawing; assumes a standard 25.5 in counter",
    "ft_in": "4 ft 5.5 in",
    "verify": true
+  },
+  {
+   "id": "R6-tapeD",
+   "room": "R6",
+   "type": "wall",
+   "label": "Living room depth, front windows to corner by kitchen arch - YOUR TAPE",
+   "value_in": 250.0,
+   "confidence": "high",
+   "err_in": 1.5,
+   "geom": null,
+   "ft_in": "20 ft 10 in",
+   "verify": false
+  },
+  {
+   "id": "R6-tapeW",
+   "room": "R6",
+   "type": "wall",
+   "label": "Living room width, side to side without TV nook - YOUR TAPE",
+   "value_in": 181.0,
+   "confidence": "high",
+   "err_in": 1.5,
+   "geom": null,
+   "ft_in": "15 ft 1 in",
+   "verify": false
   }
  ],
  "totals": {
-  "interior_rooms_sqft": 1183.5,
+  "interior_rooms_sqft": 1205.6,
   "footprint_living_sqft": 1286.8,
   "footprint_err_sqft": 24.9,
   "garage_sqft": 362.8,
   "garage_footprint_sqft": 392.2,
   "listed_sqft": "1,400-1,401",
-  "patio_sqft": 22.5
+  "patio_sqft": 22.5,
+  "projected_living_sqft": 1349.0
  }
 }
