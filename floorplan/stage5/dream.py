@@ -8,7 +8,7 @@ def ftin(x):
 rows=[]
 def row(group,item,measured,best,lo,hi,basis,conf,changed):
     rows.append(dict(group=group,item=item,measured=measured,best=best,best_ft=ftin(best) if isinstance(best,(int,float)) else '',
-                     range=f"{lo:g} - {hi:g} in" if lo is not None else '',basis=basis,confidence=conf,changed=changed))
+                     range=f"{lo:g} - {hi:g} in" if lo is not None else '',lo=lo,hi=hi,basis=basis,confidence=conf,changed=changed))
 # ---- primary bathroom: tape-anchored ----
 row('Primary bathroom','Back wall, side wall to shower glass','65.6 (plan)',66.0,64.5,67.5,'Your tape (A). Plan agrees within 0.4 in.','high',False)
 row('Primary bathroom','Shower width, glass to far wall','36.4 (plan)',36.0,34.5,37.5,'Your tape (B).','high',False)

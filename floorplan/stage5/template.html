@@ -53,7 +53,7 @@ aside{display:flex;flex-direction:column;gap:12px;min-width:0;max-height:calc(10
 .rooms button:hover,.rooms button[aria-current="true"]{background:var(--blue-soft)}
 .rooms .dot{width:10px;height:10px;border-radius:50%}
 .rooms .num{font-family:var(--font-mono);font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums;text-align:right}
-.detail dl{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;margin:0;font-size:14px}
+.detail dl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3px 10px;margin:0;font-size:14px}
 .detail dt{color:var(--ink-2)}.detail dd{margin:0;font-family:var(--font-mono);font-size:13px}
 .pill{display:inline-block;font-family:var(--font-display);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:12px;padding:1px 8px;border-radius:99px;color:var(--sheet)}
 .pill.high{background:var(--hi)}.pill.medium{background:var(--med)}.pill.low{background:var(--lo)}
@@ -116,6 +116,11 @@ svg .lab-room{font-family:var(--font-display);font-weight:700}
         <button id="f-walls" aria-pressed="false">Walls only</button><button id="f-fix" aria-pressed="false">Fixtures only</button><button id="f-both" aria-pressed="true">Both</button>
       </div>
       <button id="t-doors" aria-pressed="true">Door swings</button>
+    </div>
+    <div class="grp"><span class="lbl">Units</span>
+      <div class="seg" role="group" aria-label="Units">
+        <button id="u-ft" aria-pressed="true">Feet + in</button><button id="u-in" aria-pressed="false">Inches</button>
+      </div>
     </div>
     <div class="grp"><span class="lbl">Image</span>
       <div class="seg" role="group" aria-label="Image">
@@ -190,7 +195,12 @@ const $=s=>document.querySelector(s), NS='http://www.w3.org/2000/svg';
 const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const CONFC={high:'--hi',medium:'--med',low:'--lo'};
 function ftin(x){const s=x<0?'-':'';x=Math.abs(x);let f=Math.floor(x/12),i=Math.round((x-12*f)*10)/10;if(i>=12){f++;i-=12}return `${s}${f} ft ${i} in`}
-function fmt(x){return `${(Math.round(x*10)/10).toFixed(1)} in / ${ftin(x)}`}
+let units='ft';try{units=localStorage.getItem('units')||'ft'}catch(e){}
+function ftc(x){const s=x<0?'-':'';x=Math.abs(x);let f=Math.floor(x/12),i=Math.round((x-12*f)*10)/10;if(i>=12){f++;i-=12}return `${s}${f}′ ${i}″`}
+function inc(x){return `${(Math.round(x*10)/10).toFixed(1).replace(/\.0$/,'')}″`}
+function L(x){return units==='ft'?ftc(x):inc(x)}                       // compact, for the plan
+function LL(x){return units==='ft'?ftin(x):`${(Math.round(x*10)/10).toFixed(1).replace(/\.0$/,'')} in`}  // long, for panels
+function fmt(x){return units==='ft'?`${ftin(x)} (${(Math.round(x*10)/10).toFixed(1)} in)`:`${(Math.round(x*10)/10).toFixed(1)} in (${ftin(x)})`}
 // ---------- geometry: frame inches <-> view coords ----------
 const H=D.meta.H_frame_to_img;
 function inv3(m){const[a,b,c]=m[0],[d,e,f]=m[1],[g,h,i]=m[2];const A=e*i-f*h,B=-(d*i-f*g),C=d*h-e*g,det=a*A+b*B+c*C;
@@ -234,7 +244,7 @@ function draw(){
   p.addEventListener('click',e=>{if(measuring||dragging)return;selectRoom(r.id,false)});
   const cx=(r.x0+r.x1)/2, cy=(r.y0+r.y1)/2, small=r.w_in<30||r.d_in<30;
   text(cx,cy-(small?0:7),SHORT[r.id]||r.name,'lab-room',{fill:css('--ink'),'font-size':small?'1em':'1.15em'},gLab);
-  if(!small){text(cx,cy+7,`${r.scaled?'≈ ':''}${r.w_ft} × ${r.d_ft}`,'lab-sub',{fill:css('--ink-2')},gLab);text(cx,cy+19,`${r.sqft} sq ft`,'lab-sub',{fill:c},gLab)}
+  if(!small){text(cx,cy+7,`${r.scaled?'≈ ':''}${L(r.w_in)} × ${L(r.d_in)}`,'lab-sub',{fill:css('--ink-2')},gLab);text(cx,cy+19,`${r.sqft} sq ft`,'lab-sub',{fill:c},gLab)}
   if(showW&&!small){ // dimension lines inside room: width near north wall, depth near west wall
    const o=7;
    const wy=r.poly?r.y1-o:r.y0+o; dim([r.x0,wy],[r.x1,wy],r.w_in,c,gWalls,false,r.scaled);
@@ -243,18 +253,18 @@ function draw(){
  }
  if(showW) for(const it of D.items.filter(i=>i.type==='opening')){
   const g=it.geom; pline([g.a,g.b],{stroke:css('--open'),'stroke-width':5,'stroke-linecap':'round','vector-effect':'non-scaling-stroke','stroke-opacity':0.85},gWalls);
-  const m=[(g.a[0]+g.b[0])/2,(g.a[1]+g.b[1])/2]; text(m[0],m[1]-(g.a[1]===g.b[1]?8:0),`${it.value_in}"`,'lab-dim',{fill:css('--open')},gLab);
+  const m=[(g.a[0]+g.b[0])/2,(g.a[1]+g.b[1])/2]; text(m[0],m[1]-(g.a[1]===g.b[1]?8:0),L(it.value_in),'lab-dim',{fill:css('--open')},gLab);
  }
  if(showF){
   for(const f of D.fixtures){
    const c=color(f.confidence);
    poly([[f.x0,f.y0],[f.x1,f.y0],[f.x1,f.y1],[f.x0,f.y1]],{fill:c,'fill-opacity':0.12,stroke:c,'stroke-width':1.6,'stroke-dasharray':'4 3','vector-effect':'non-scaling-stroke'},gFx);
-   text((f.x0+f.x1)/2,f.y0+5,`${f.w_in}×${f.d_in}`,'lab-fx',{fill:c},gLab);
+   text((f.x0+f.x1)/2,f.y0+5,`${L(f.w_in)} × ${L(f.d_in)}`,'lab-fx',{fill:c},gLab);
   }
   for(const it of D.items.filter(i=>i.type==='clearance'&&i.geom)){
    const g=it.geom; pline([g.a,g.b],{stroke:css('--clear'),'stroke-width':2,'stroke-dasharray':'2 3','vector-effect':'non-scaling-stroke'},gFx);
    for(const q of [g.a,g.b]){const[u,v]=P(...q);el('circle',{cx:u,cy:v,r:2.2/ (k||1)+0.6,fill:css('--clear')},gFx)}
-   const m=[(g.a[0]+g.b[0])/2,(g.a[1]+g.b[1])/2]; text(m[0],m[1]-5,`${it.value_in}"`,'lab-fx',{fill:css('--clear')},gLab);
+   const m=[(g.a[0]+g.b[0])/2,(g.a[1]+g.b[1])/2]; text(m[0],m[1]-5,L(it.value_in),'lab-fx',{fill:css('--clear')},gLab);
   }
  }
  if(showDoors) for(const d of D.doors){
@@ -270,7 +280,7 @@ function draw(){
 function dim(a,b,val,c,parent,vert,approx){
  pline([a,b],{stroke:c,'stroke-width':1,'vector-effect':'non-scaling-stroke','stroke-opacity':0.75},parent);
  for(const q of [a,b]){const t=vert?[[q[0]-3,q[1]],[q[0]+3,q[1]]]:[[q[0],q[1]-3],[q[0],q[1]+3]];pline(t,{stroke:c,'stroke-width':1,'vector-effect':'non-scaling-stroke'},parent)}
- const m=[(a[0]+b[0])/2,(a[1]+b[1])/2];const t=text(m[0],m[1],`${approx?'≈':''}${val}"`,'lab-dim',{fill:c},parent);
+ const m=[(a[0]+b[0])/2,(a[1]+b[1])/2];const t=text(m[0],m[1],`${approx?'≈':''}${L(val)}`,'lab-dim',{fill:c},parent);
  if(vert){const[u,v]=P(...m);t.setAttribute('transform',`rotate(-90 ${u} ${v})`)}
 }
 // ---------- room list & detail ----------
@@ -284,12 +294,12 @@ function selectRoom(id,zoom){selRoom=id;const r=roomById[id];
  document.querySelectorAll('#roomlist button').forEach(b=>b.setAttribute('aria-current',b.dataset.id===id?'true':'false'));
  const items=D.items.filter(i=>i.room===id&&i.type!=='wall');
  const walls=D.items.filter(i=>i.room===id&&i.type==='wall');
- const rows=items.map(i=>`<dt>${i.label.replace(r.name+' - ','')}</dt><dd>${i.value_in}" ±${i.err_in} <span class="pill ${i.confidence}">${i.confidence}</span>${i.note?`<br><span class="small">${i.note}</span>`:''}</dd>`).join('');
+ const rows=items.map(i=>`<dt>${i.label.replace(r.name+' - ','')}</dt><dd>${LL(i.value_in)} ±${i.err_in} in <span class="pill ${i.confidence}">${i.confidence}</span>${i.note?`<br><span class="small">${i.note}</span>`:''}</dd>`).join('');
  $('#detail').innerHTML=`<h2>${r.name}</h2><dl>
   <dt>Width (E–W)</dt><dd>${fmt(r.w_in)}</dd><dt>Depth (N–S)</dt><dd>${fmt(r.d_in)}</dd>
   <dt>Area</dt><dd>${r.sqft} sq ft ±${r.sqft_err}</dd>${r.drawn?`<dt>Drawing showed</dt><dd>${r.drawn.w_in} × ${r.drawn.d_in} in · ${r.drawn.sqft} sq ft</dd>`:''}<dt>Source</dt><dd>${r.tape?'Your tape':r.scaled?'Estimate (scaled drawing)':'Drawing'}</dd><dt>Confidence</dt><dd><span class="pill ${r.confidence}">${r.confidence}</span> ±${walls[0]?walls[0].err_in:''}" on ${Math.round(Math.max(r.w_in,r.d_in))}"</dd>${rows}</dl>
   ${r.notes&&r.notes.length?`<p class="small" style="margin:8px 0 0">${r.notes.join('; ')}.</p>`:''}`;
- $('#readout').textContent=`${r.name}: ${ftin(r.w_in)} × ${ftin(r.d_in)} · ${r.sqft} sq ft`;
+ $('#readout').textContent=`${r.name}: ${LL(r.w_in)} × ${LL(r.d_in)} · ${r.sqft} sq ft`;
  if(zoom)fitInches(r.x0,r.y0,r.x1,r.y1,24); draw()}
 // ---------- totals, legend ----------
 function buildSide(){const t=D.totals;
@@ -327,7 +337,7 @@ function zoneAt(x,y){for(const z of (D.meta.zones||[])){const r=roomById[z.room]
 function drawMeasure(){gM.replaceChildren();const c=css('--tool');
  for(const q of mpts){const[u,v]=P(...q);el('circle',{cx:u,cy:v,r:4/k,fill:c,stroke:css('--sheet'),'stroke-width':1.5/k},gM)}
  if(mpts.length===2){const[a,b]=mpts;pline([a,b],{stroke:c,'stroke-width':2.5,'vector-effect':'non-scaling-stroke'},gM);
-  const za=zoneAt(...a),zb=zoneAt(...b),fx=(za.fx+zb.fx)/2,fy=(za.fy+zb.fy)/2;const d=Math.hypot((b[0]-a[0])*fx,(b[1]-a[1])*fy);text((a[0]+b[0])/2,(a[1]+b[1])/2-6,`${d.toFixed(1)}" · ${ftin(d)}`,'',{fill:c,'font-weight':'600'},gM);
+  const za=zoneAt(...a),zb=zoneAt(...b),fx=(za.fx+zb.fx)/2,fy=(za.fy+zb.fy)/2;const d=Math.hypot((b[0]-a[0])*fx,(b[1]-a[1])*fy);text((a[0]+b[0])/2,(a[1]+b[1])/2-6,L(d),'',{fill:c,'font-weight':'600'},gM);
   $('#readout').textContent=`Measured: ${fmt(d)} (±${(d*0.02+1).toFixed(1)} in)`}
  else if(mpts.length===1)$('#readout').textContent='Tap the second point'}
 $('#t-measure').onclick=()=>{measuring=!measuring;$('#t-measure').setAttribute('aria-pressed',measuring);svg.classList.toggle('measuring',measuring);
@@ -347,7 +357,7 @@ function drawFurn(){gF.replaceChildren();const c=css('--furn');
  for(const f of furn){const cs=corners(f);const g=el('g',{'data-furn':f.id,style:'cursor:move'},gF);
   poly(cs,{fill:c,'fill-opacity':f.id===activeF?0.3:0.18,stroke:c,'stroke-width':f.id===activeF?3:2,'vector-effect':'non-scaling-stroke'},g);
   pline([cs[0],cs[1]],{stroke:c,'stroke-width':5,'vector-effect':'non-scaling-stroke'},g);
-  text(f.x,f.y,`${ftin(f.w)} × ${ftin(f.d)}`,'',{fill:c,'font-weight':'600','pointer-events':'none'},g)}
+  text(f.x,f.y,`${L(f.w)} × ${L(f.d)}`,'',{fill:c,'font-weight':'600','pointer-events':'none'},g)}
  fitCheck()}
 function rpoly(r){return r.poly||[[r.x0,r.y0],[r.x1,r.y0],[r.x1,r.y1],[r.x0,r.y1]]}
 function inRoom(r,x,y){const P=rpoly(r);let c=false;for(let i=0,j=P.length-1;i<P.length;j=i++){const[xi,yi]=P[i],[xj,yj]=P[j];if((yi>y)!==(yj>y)&&x<(xj-xi)*(y-yi)/(yj-yi)+xi)c=!c}return c}
@@ -357,8 +367,8 @@ function fitCheck(){const f=furn.find(z=>z.id===activeF);const m=$('#fitmsg');if
  if(!room){m.className='fitmsg bad';m.textContent='Center is outside every room.';return}
  let minc=Infinity;for(const[x,y]of corners(f)){const d=edgeDist(room,x,y);minc=Math.min(minc,inRoom(room,x,y)?d:-d)}
  const zf=zoneAt(f.x,f.y);minc*=(zf.fx+zf.fy)/2;
- if(minc>=0){m.className='fitmsg ok';m.textContent=`Fits in ${room.name}: ${minc.toFixed(1)} in to the nearest wall. Check doors, fixtures and swings too.`}
- else{m.className='fitmsg bad';m.textContent=`Too big here: crosses a ${room.name} wall by ${(-minc).toFixed(1)} in.`}}
+ if(minc>=0){m.className='fitmsg ok';m.textContent=`Fits in ${room.name}: ${LL(minc)} to the nearest wall. Check doors, fixtures and swings too.`}
+ else{m.className='fitmsg bad';m.textContent=`Too big here: crosses a ${room.name} wall by ${LL(-minc)}.`}}
 const rot=d=>{const f=furn.find(z=>z.id===activeF);if(f){f.a=(f.a+d+360)%360;drawFurn()}};
 $('#fr-l').onclick=()=>rot(-15);$('#fr-r').onclick=()=>rot(15);$('#fr-90').onclick=()=>rot(90);
 $('#fr-del').onclick=()=>{furn=furn.filter(z=>z.id!==activeF);activeF=furn.length?furn[furn.length-1].id:null;drawFurn()};
@@ -367,6 +377,10 @@ function setFilter(f){filter=f;for(const[id,v]of[['#f-walls','walls'],['#f-fix',
 $('#f-walls').onclick=()=>setFilter('walls');$('#f-fix').onclick=()=>setFilter('fix');$('#f-both').onclick=()=>setFilter('both');
 $('#t-doors').onclick=()=>{showDoors=!showDoors;$('#t-doors').setAttribute('aria-pressed',showDoors);draw()};
 function setMode(m){mode=m;$('#v-orig').setAttribute('aria-pressed',m==='orig');$('#v-str').setAttribute('aria-pressed',m==='straight');draw();drawMeasure();if(selRoom){const r=roomById[selRoom];fitInches(r.x0,r.y0,r.x1,r.y1,24)}else fitAll()}
+function setUnits(u){units=u;try{localStorage.setItem('units',u)}catch(e){}
+ $('#u-ft').setAttribute('aria-pressed',u==='ft');$('#u-in').setAttribute('aria-pressed',u==='in');
+ draw();drawMeasure();buildDream();if(selRoom)selectRoom(selRoom,false)}
+$('#u-ft').onclick=()=>setUnits('ft');$('#u-in').onclick=()=>setUnits('in');
 $('#v-orig').onclick=()=>setMode('orig');$('#v-str').onclick=()=>setMode('straight');
 // ---------- CSV ----------
 const TYPE_ORDER={room:0,wall:1,opening:2,door:3,fixture:4,clearance:5};
@@ -391,8 +405,8 @@ if(OFFLINE){document.querySelectorAll('.offline-only').forEach(b=>b.hidden=false
 function buildDream(){$('#corrections').innerHTML=DREAM.corrections.map(c=>`<div class="card"><h3>${c.title}</h3><p>${c.detail}</p></div>`).join('');
  const tb=$('#dreamtable tbody');let g=null,h='';
  for(const r of DREAM.rows){if(r.group!==g){g=r.group;h+=`<tr class="sect"><td colspan="6">${g}</td></tr>`}
-  const best=typeof r.best==='number'?`${r.best.toFixed(1)} in${r.best_ft?` / ${r.best_ft}`:''}`:r.best;
-  h+=`<tr class="${r.changed?'chg':''}"><td>${r.item}</td><td class="n">${r.measured}</td><td class="n best">${best}</td><td class="n">${r.range}</td><td>${r.basis}</td><td><span class="pill ${r.confidence}">${r.confidence}</span></td></tr>`}
+  const best=typeof r.best==='number'?LL(r.best):r.best;const meas=String(r.measured).replace(/^(\d+(?:\.\d+)?)/,(m0)=>LL(parseFloat(m0)));const rng=(r.lo!=null&&r.lo!=='')?`${LL(r.lo)} – ${LL(r.hi)}`:r.range;
+  h+=`<tr class="${r.changed?'chg':''}"><td>${r.item}</td><td class="n">${meas}</td><td class="n best">${best}</td><td class="n">${rng}</td><td>${r.basis}</td><td><span class="pill ${r.confidence}">${r.confidence}</span></td></tr>`}
  tb.innerHTML=h}
 function buildNotes(){const m=D.meta,t=D.totals;
  $('#notes-scale').innerHTML=`<div class="tablebox"><table><tbody>
@@ -416,7 +430,7 @@ function route(){const p=(location.hash||'#plan').slice(1);const page=['plan','d
  if(page==='plan')requestAnimationFrame(()=>{if(!k||k===1)fitAll()})}
 window.addEventListener('hashchange',route);
 window.addEventListener('resize',()=>{if(!$('#pg-plan').hidden)applyT()});
-buildSide();buildList();buildDream();buildNotes();draw();route();requestAnimationFrame(fitAll);
+buildSide();buildList();buildDream();buildNotes();setUnits(units);route();requestAnimationFrame(fitAll);
 // sample furniture so the tool is visible at rest: an 84 x 36 in sofa in the living room
 (function(){const r=roomById['R6'];furn.push({id:'f0',x:(r.x0+r.x1)/2,y:r.y0+60,w:84,d:36,a:0});activeF='f0';drawFurn()})();
 </script>
