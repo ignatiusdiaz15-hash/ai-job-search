@@ -146,10 +146,10 @@
   {
    "group": "Living / dining",
    "item": "width (E-W)",
-   "measured": "172.8 (plan)",
-   "best": 172.8,
-   "best_ft": "14 ft 4.8 in",
-   "range": "169.7 - 180.7 in",
+   "measured": "196.5 (plan)",
+   "best": 196.5,
+   "best_ft": "16 ft 4.5 in",
+   "range": "193.1 - 205.4 in",
    "basis": "Plan value. Range is skewed upward because the plan's total area is 8% under the listed 1,400 sq ft.",
    "confidence": "medium",
    "changed": false

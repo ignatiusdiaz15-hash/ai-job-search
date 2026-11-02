@@ -19,17 +19,31 @@ def add(**k):
     k['value_in']=round(k['value_in'],1); k['ft_in']=ftin(k['value_in']); k['err_in']=k.get('err_in',err(k['value_in'],k['confidence']))
     k.setdefault('verify',k['confidence']=='low'); items.append(k)
 # ---- rooms & their walls ----
+# ---- living room is one L-shaped room: merge the open east strip (TV wall) into it ----
+L6,T6=R['R6'],R['R6h']
+L6['poly']=[(L6['x0'],L6['y0']),(L6['x1'],L6['y0']),(L6['x1'],T6['y0']),(T6['x1'],T6['y0']),(T6['x1'],L6['y1']),(L6['x0'],L6['y1'])]
+L6['name']='Living / dining'
+L6.setdefault('notes',[]).append(f"L-shaped: {L6['x1']-L6['x0']:.1f} in wide beside the closet at the north end, {T6['x1']-L6['x0']:.1f} in wide (to the TV wall) for the rest")
+L6['x1']=T6['x1']; L6['w']=L6['x1']-L6['x0']
+rooms=[r for r in rooms if r['id']!='R6h']
+def polyarea(P): return abs(sum(P[i][0]*P[(i+1)%len(P)][1]-P[(i+1)%len(P)][0]*P[i][1] for i in range(len(P))))/2
 room_out=[]
 for r in rooms:
     c='high' if r['id'] in HIGH else ('low' if r['id']=='P' else 'medium')
-    sq=r['w']*r['d']/144; pe,_=ERR[c]
-    room_out.append(dict(id=r['id'],name=r['name'],x0=r['x0'],x1=r['x1'],y0=r['y0'],y1=r['y1'],w_in=round(r['w'],1),d_in=round(r['d'],1),
-        w_ft=ftin(r['w']),d_ft=ftin(r['d']),sqft=round(sq,1),sqft_err=round(sq*2*pe+ (r['w']+r['d'])*ERR[c][1]/144,1),confidence=c,notes=r.get('notes',[])))
-    sides={'N':((r['x0'],r['y0']),(r['x1'],r['y0'])),'S':((r['x0'],r['y1']),(r['x1'],r['y1'])),
+    sq=(polyarea(r['poly']) if 'poly' in r else r['w']*r['d'])/144; pe,_=ERR[c]
+    ro=dict(id=r['id'],name=r['name'],x0=r['x0'],x1=r['x1'],y0=r['y0'],y1=r['y1'],w_in=round(r['w'],1),d_in=round(r['d'],1),
+        w_ft=ftin(r['w']),d_ft=ftin(r['d']),sqft=round(sq,1),sqft_err=round(sq*2*pe+ (r['w']+r['d'])*ERR[c][1]/144,1),confidence=c,notes=r.get('notes',[]))
+    if 'poly' in r: ro['poly']=[[round(x,2),round(y,2)] for x,y in r['poly']]
+    room_out.append(ro)
+    if 'poly' in r:
+        P=r['poly']; names=['N','E (beside closet)','N (step at closet)','E (TV wall)','S','W']
+        sides={names[i]:(P[i],P[(i+1)%len(P)]) for i in range(len(P))}
+    else:
+        sides={'N':((r['x0'],r['y0']),(r['x1'],r['y0'])),'S':((r['x0'],r['y1']),(r['x1'],r['y1'])),
            'W':((r['x0'],r['y0']),(r['x0'],r['y1'])),'E':((r['x1'],r['y0']),(r['x1'],r['y1']))}
     for s,(a,b) in sides.items():
         L=math.dist(a,b)
-        add(id=f"{r['id']}-{s}",room=r['id'],type='wall',label=f"{r['name']} - {s} wall (inside face)",value_in=L,confidence=c,
+        add(id=f"{r['id']}-{s.split()[0]}{list(sides).index(s)}",room=r['id'],type='wall',label=f"{r['name']} - {s} wall (inside face)",value_in=L,confidence=c,
             geom=dict(kind='line',a=a,b=b),verify=False)
 # ---- primary bedroom reach-in closet (inside R1's wall-to-wall box) ----
 add(id='R1-closet',room='R1',type='fixture',label='Primary bedroom reach-in closet depth (included in room depth above)',value_in=30.0,confidence='low',err_in=7.0,

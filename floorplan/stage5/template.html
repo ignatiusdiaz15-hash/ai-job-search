@@ -230,14 +230,14 @@ function draw(){
  const showW=filter!=='fix', showF=filter!=='walls';
  for(const r of D.rooms){
   const c=color(r.confidence), sel=selRoom===r.id;
-  const p=poly([[r.x0,r.y0],[r.x1,r.y0],[r.x1,r.y1],[r.x0,r.y1]],{fill:c,'fill-opacity':sel?0.22:0.07,stroke:c,'stroke-width':sel?3:1.6,'vector-effect':'non-scaling-stroke','stroke-dasharray':r.id==='P'?'6 4':'none',style:'cursor:pointer'},gRooms);
+  const p=poly(r.poly||[[r.x0,r.y0],[r.x1,r.y0],[r.x1,r.y1],[r.x0,r.y1]],{fill:c,'fill-opacity':sel?0.22:0.07,stroke:c,'stroke-width':sel?3:1.6,'vector-effect':'non-scaling-stroke','stroke-dasharray':r.id==='P'?'6 4':'none',style:'cursor:pointer'},gRooms);
   p.addEventListener('click',e=>{if(measuring||dragging)return;selectRoom(r.id,false)});
   const cx=(r.x0+r.x1)/2, cy=(r.y0+r.y1)/2, small=r.w_in<30||r.d_in<30;
   text(cx,cy-(small?0:7),SHORT[r.id]||r.name,'lab-room',{fill:css('--ink'),'font-size':small?'1em':'1.15em'},gLab);
   if(!small){text(cx,cy+7,`${r.w_ft} × ${r.d_ft}`,'lab-sub',{fill:css('--ink-2')},gLab);text(cx,cy+19,`${r.sqft} sq ft`,'lab-sub',{fill:c},gLab)}
   if(showW&&!small){ // dimension lines inside room: width near north wall, depth near west wall
    const o=7;
-   dim([r.x0,r.y0+o],[r.x1,r.y0+o],r.w_in,c,gWalls);
+   const wy=r.poly?r.y1-o:r.y0+o; dim([r.x0,wy],[r.x1,wy],r.w_in,c,gWalls);
    dim([r.x0+o,r.y0],[r.x0+o,r.y1],r.d_in,c,gWalls,true);
   }
  }
@@ -348,10 +348,13 @@ function drawFurn(){gF.replaceChildren();const c=css('--furn');
   pline([cs[0],cs[1]],{stroke:c,'stroke-width':5,'vector-effect':'non-scaling-stroke'},g);
   text(f.x,f.y,`${ftin(f.w)} × ${ftin(f.d)}`,'',{fill:c,'font-weight':'600','pointer-events':'none'},g)}
  fitCheck()}
+function rpoly(r){return r.poly||[[r.x0,r.y0],[r.x1,r.y0],[r.x1,r.y1],[r.x0,r.y1]]}
+function inRoom(r,x,y){const P=rpoly(r);let c=false;for(let i=0,j=P.length-1;i<P.length;j=i++){const[xi,yi]=P[i],[xj,yj]=P[j];if((yi>y)!==(yj>y)&&x<(xj-xi)*(y-yi)/(yj-yi)+xi)c=!c}return c}
+function edgeDist(r,x,y){const P=rpoly(r);let d=Infinity;for(let i=0;i<P.length;i++){const[a,b]=P[i],[c2,e]=P[(i+1)%P.length];const dx=c2-a,dy=e-b,L=dx*dx+dy*dy;let t=L?((x-a)*dx+(y-b)*dy)/L:0;t=Math.max(0,Math.min(1,t));d=Math.min(d,Math.hypot(x-(a+t*dx),y-(b+t*dy)))}return d}
 function fitCheck(){const f=furn.find(z=>z.id===activeF);const m=$('#fitmsg');if(!f){m.textContent='';return}
- const room=D.rooms.find(r=>r.id!=='P'&&f.x>=r.x0&&f.x<=r.x1&&f.y>=r.y0&&f.y<=r.y1);
+ const room=D.rooms.find(r=>r.id!=='P'&&inRoom(r,f.x,f.y));
  if(!room){m.className='fitmsg bad';m.textContent='Center is outside every room.';return}
- let minc=Infinity;for(const[x,y]of corners(f)){minc=Math.min(minc,x-room.x0,room.x1-x,y-room.y0,room.y1-y)}
+ let minc=Infinity;for(const[x,y]of corners(f)){const d=edgeDist(room,x,y);minc=Math.min(minc,inRoom(room,x,y)?d:-d)}
  if(minc>=0){m.className='fitmsg ok';m.textContent=`Fits in ${room.name}: ${minc.toFixed(1)} in to the nearest wall. Check doors, fixtures and swings too.`}
  else{m.className='fitmsg bad';m.textContent=`Too big here: crosses a ${room.name} wall by ${(-minc).toFixed(1)} in.`}}
 const rot=d=>{const f=furn.find(z=>z.id===activeF);if(f){f.a=(f.a+d+360)%360;drawFurn()}};

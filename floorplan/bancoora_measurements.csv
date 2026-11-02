@@ -20,15 +20,12 @@ R4,Laundry,room,R4,Area (sq ft),35.4,,1.6,high,False
 R5,Kitchen,room,R5,Width (E-W),129.8,10 ft 9.8 in,,medium,False
 R5,Kitchen,room,R5,Depth (N-S),118.2,9 ft 10.2 in,,medium,False
 R5,Kitchen,room,R5,Area (sq ft),106.5,,10.2,medium,False
-R6,Living / dining,room,R6,Width (E-W),172.8,14 ft 4.8 in,,medium,False
+R6,Living / dining,room,R6,Width (E-W),196.5,16 ft 4.5 in,,medium,False
 R6,Living / dining,room,R6,Depth (N-S),245.2,20 ft 5.2 in,,medium,False
-R6,Living / dining,room,R6,Area (sq ft),294.2,,26.4,medium,False
+R6,Living / dining,room,R6,Area (sq ft),324.6,,29.0,medium,False
 R6e,Entry closet / nook (walled in drawing),room,R6e,Width (E-W),42.2,3 ft 6.2 in,,medium,False
 R6e,Entry closet / nook (walled in drawing),room,R6e,Depth (N-S),71.2,5 ft 11.2 in,,medium,False
 R6e,Entry closet / nook (walled in drawing),room,R6e,Area (sq ft),20.9,,2.5,medium,False
-R6h,"Living room - east side (open, TV wall)",room,R6h,Width (E-W),23.8,1 ft 11.8 in,,medium,False
-R6h,"Living room - east side (open, TV wall)",room,R6h,Depth (N-S),184.0,15 ft 4 in,,medium,False
-R6h,"Living room - east side (open, TV wall)",room,R6h,Area (sq ft),30.3,,3.9,medium,False
 R7,Bedroom 2,room,R7,Width (E-W),138.5,11 ft 6.5 in,,medium,False
 R7,Bedroom 2,room,R7,Depth (N-S),158.5,13 ft 2.5 in,,medium,False
 R7,Bedroom 2,room,R7,Area (sq ft),152.4,,14.3,medium,False
@@ -56,40 +53,40 @@ G,Garage,room,G,Area (sq ft),362.8,,32.2,medium,False
 P,Patio / balcony,room,P,Width (E-W),87.0,7 ft 3 in,,low,True
 P,Patio / balcony,room,P,Depth (N-S),37.2,3 ft 1.2 in,,low,True
 P,Patio / balcony,room,P,Area (sq ft),22.5,,4.8,low,True
-G,Garage,wall,G-N,Garage - N wall (inside face),204.2,17 ft 0.2 in,9.2,medium,False
-G,Garage,wall,G-S,Garage - S wall (inside face),204.2,17 ft 0.2 in,9.2,medium,False
-G,Garage,wall,G-W,Garage - W wall (inside face),255.8,21 ft 3.8 in,11.2,medium,False
-G,Garage,wall,G-E,Garage - E wall (inside face),255.8,21 ft 3.8 in,11.2,medium,False
+G,Garage,wall,G-N0,Garage - N wall (inside face),204.2,17 ft 0.2 in,9.2,medium,False
+G,Garage,wall,G-S1,Garage - S wall (inside face),204.2,17 ft 0.2 in,9.2,medium,False
+G,Garage,wall,G-W2,Garage - W wall (inside face),255.8,21 ft 3.8 in,11.2,medium,False
+G,Garage,wall,G-E3,Garage - E wall (inside face),255.8,21 ft 3.8 in,11.2,medium,False
 G,Garage,opening,O6,Garage overhead door opening,174.0,14 ft 6 in,8.0,medium,True
 G,Garage,opening,O7,Garage side opening to entry landing,36.6,3 ft 0.6 in,2.5,medium,False
 G,Garage,fixture,F9-W,"Water heater (round) - width (E-W), as drawn",21,1 ft 9 in,4.0,low,True
 G,Garage,fixture,F9-D,"Water heater (round) - depth (N-S), as drawn",23,1 ft 11 in,4.2,low,True
-P,Patio / balcony,wall,P-N,Patio / balcony - N wall (inside face),87.0,7 ft 3 in,7.4,low,False
-P,Patio / balcony,wall,P-S,Patio / balcony - S wall (inside face),87.0,7 ft 3 in,7.4,low,False
-P,Patio / balcony,wall,P-W,Patio / balcony - W wall (inside face),37.2,3 ft 1.2 in,4.9,low,False
-P,Patio / balcony,wall,P-E,Patio / balcony - E wall (inside face),37.2,3 ft 1.2 in,4.9,low,False
-R1,Primary bedroom,wall,R1-N,Primary bedroom - N wall (inside face),160.8,13 ft 4.8 in,2.9,high,False
-R1,Primary bedroom,wall,R1-S,Primary bedroom - S wall (inside face),160.8,13 ft 4.8 in,2.9,high,False
-R1,Primary bedroom,wall,R1-W,Primary bedroom - W wall (inside face),166.2,13 ft 10.2 in,3.0,high,False
-R1,Primary bedroom,wall,R1-E,Primary bedroom - E wall (inside face),166.2,13 ft 10.2 in,3.0,high,False
+P,Patio / balcony,wall,P-N0,Patio / balcony - N wall (inside face),87.0,7 ft 3 in,7.4,low,False
+P,Patio / balcony,wall,P-S1,Patio / balcony - S wall (inside face),87.0,7 ft 3 in,7.4,low,False
+P,Patio / balcony,wall,P-W2,Patio / balcony - W wall (inside face),37.2,3 ft 1.2 in,4.9,low,False
+P,Patio / balcony,wall,P-E3,Patio / balcony - E wall (inside face),37.2,3 ft 1.2 in,4.9,low,False
+R1,Primary bedroom,wall,R1-N0,Primary bedroom - N wall (inside face),160.8,13 ft 4.8 in,2.9,high,False
+R1,Primary bedroom,wall,R1-S1,Primary bedroom - S wall (inside face),160.8,13 ft 4.8 in,2.9,high,False
+R1,Primary bedroom,wall,R1-W2,Primary bedroom - W wall (inside face),166.2,13 ft 10.2 in,3.0,high,False
+R1,Primary bedroom,wall,R1-E3,Primary bedroom - E wall (inside face),166.2,13 ft 10.2 in,3.0,high,False
 R1,Primary bedroom,wall,R1-sleep,Primary bedroom depth excluding reach-in closet,136.2,11 ft 4.2 in,7.0,medium,False
 R1,Primary bedroom,door,D2,Primary bedroom door - ASSUMED standard width (not measured),32,2 ft 8 in,4.0,low,True
 R1,Primary bedroom,fixture,R1-closet,Primary bedroom reach-in closet depth (included in room depth above),30.0,2 ft 6 in,7.0,low,True
 R1,Primary bedroom,fixture,F10-W,"Primary bedroom reach-in closet zone (louvered doors) - width (E-W), as drawn",95,7 ft 11 in,7.8,low,True
 R1,Primary bedroom,fixture,F10-D,"Primary bedroom reach-in closet zone (louvered doors) - depth (N-S), as drawn",36.8,3 ft 0.8 in,4.8,low,True
-R10,Storage / pantry hall,wall,R10-N,Storage / pantry hall - N wall (inside face),40.0,3 ft 4 in,2.6,medium,False
-R10,Storage / pantry hall,wall,R10-S,Storage / pantry hall - S wall (inside face),40.0,3 ft 4 in,2.6,medium,False
-R10,Storage / pantry hall,wall,R10-W,Storage / pantry hall - W wall (inside face),119.0,9 ft 11 in,5.8,medium,False
-R10,Storage / pantry hall,wall,R10-E,Storage / pantry hall - E wall (inside face),119.0,9 ft 11 in,5.8,medium,False
+R10,Storage / pantry hall,wall,R10-N0,Storage / pantry hall - N wall (inside face),40.0,3 ft 4 in,2.6,medium,False
+R10,Storage / pantry hall,wall,R10-S1,Storage / pantry hall - S wall (inside face),40.0,3 ft 4 in,2.6,medium,False
+R10,Storage / pantry hall,wall,R10-W2,Storage / pantry hall - W wall (inside face),119.0,9 ft 11 in,5.8,medium,False
+R10,Storage / pantry hall,wall,R10-E3,Storage / pantry hall - E wall (inside face),119.0,9 ft 11 in,5.8,medium,False
 R10,Storage / pantry hall,opening,O5,Storage hall to lower storage closet,40.4,3 ft 4.4 in,2.6,medium,False
-R10b,Storage closet (lower right),wall,R10b-N,Storage closet (lower right) - N wall (inside face),80.2,6 ft 8.2 in,4.2,medium,False
-R10b,Storage closet (lower right),wall,R10b-S,Storage closet (lower right) - S wall (inside face),80.2,6 ft 8.2 in,4.2,medium,False
-R10b,Storage closet (lower right),wall,R10b-W,Storage closet (lower right) - W wall (inside face),38.2,3 ft 2.2 in,2.5,medium,False
-R10b,Storage closet (lower right),wall,R10b-E,Storage closet (lower right) - E wall (inside face),38.2,3 ft 2.2 in,2.5,medium,False
-R2,Primary bathroom,wall,R2-N,Primary bathroom - N wall (inside face),61.0,5 ft 1 in,1.4,high,False
-R2,Primary bathroom,wall,R2-S,Primary bathroom - S wall (inside face),61.0,5 ft 1 in,1.4,high,False
-R2,Primary bathroom,wall,R2-W,Primary bathroom - W wall (inside face),119.0,9 ft 11 in,2.3,high,False
-R2,Primary bathroom,wall,R2-E,Primary bathroom - E wall (inside face),119.0,9 ft 11 in,2.3,high,False
+R10b,Storage closet (lower right),wall,R10b-N0,Storage closet (lower right) - N wall (inside face),80.2,6 ft 8.2 in,4.2,medium,False
+R10b,Storage closet (lower right),wall,R10b-S1,Storage closet (lower right) - S wall (inside face),80.2,6 ft 8.2 in,4.2,medium,False
+R10b,Storage closet (lower right),wall,R10b-W2,Storage closet (lower right) - W wall (inside face),38.2,3 ft 2.2 in,2.5,medium,False
+R10b,Storage closet (lower right),wall,R10b-E3,Storage closet (lower right) - E wall (inside face),38.2,3 ft 2.2 in,2.5,medium,False
+R2,Primary bathroom,wall,R2-N0,Primary bathroom - N wall (inside face),61.0,5 ft 1 in,1.4,high,False
+R2,Primary bathroom,wall,R2-S1,Primary bathroom - S wall (inside face),61.0,5 ft 1 in,1.4,high,False
+R2,Primary bathroom,wall,R2-W2,Primary bathroom - W wall (inside face),119.0,9 ft 11 in,2.3,high,False
+R2,Primary bathroom,wall,R2-E3,Primary bathroom - E wall (inside face),119.0,9 ft 11 in,2.3,high,False
 R2,Primary bathroom,door,D3,Primary bathroom door - ASSUMED standard width (not measured),30,2 ft 6 in,4.0,low,True
 R2,Primary bathroom,fixture,F1-W,"Primary bath double vanity (top incl. visible front face) - width (E-W), as drawn",33,2 ft 9 in,4.7,low,True
 R2,Primary bathroom,fixture,F1-D,"Primary bath double vanity (top incl. visible front face) - depth (N-S), as drawn",70,5 ft 10 in,6.5,low,True
@@ -99,24 +96,24 @@ R2,Primary bathroom,clearance,C1,Toilet front to shower glass - estimate (drawin
 R2,Primary bathroom,clearance,C2,Vanity front to shower glass (walkway) - estimate (drawing shows 25.0 in),44.0,3 ft 8 in,6.0,low,True
 R2,Primary bathroom,clearance,C3,Toilet centerline to back wall (side clearance) - estimate (drawing shows 10.8 in),18.0,1 ft 6 in,6.0,low,True
 R2,Primary bathroom,clearance,C4,Toilet centerline to end of vanity - estimate (drawing shows 21.5 in),21.5,1 ft 9.5 in,6.0,low,True
-R2s,Primary shower,wall,R2s-N,Primary shower - N wall (inside face),36.4,3 ft 0.4 in,1.0,high,False
-R2s,Primary shower,wall,R2s-S,Primary shower - S wall (inside face),36.4,3 ft 0.4 in,1.0,high,False
-R2s,Primary shower,wall,R2s-W,Primary shower - W wall (inside face),65.7,5 ft 5.7 in,1.5,high,False
-R2s,Primary shower,wall,R2s-E,Primary shower - E wall (inside face),65.7,5 ft 5.7 in,1.5,high,False
-R3,Primary walk-in closet,wall,R3-N,Primary walk-in closet - N wall (inside face),95.8,7 ft 11.8 in,1.9,high,False
-R3,Primary walk-in closet,wall,R3-S,Primary walk-in closet - S wall (inside face),95.8,7 ft 11.8 in,1.9,high,False
-R3,Primary walk-in closet,wall,R3-W,Primary walk-in closet - W wall (inside face),49.0,4 ft 1 in,1.2,high,False
-R3,Primary walk-in closet,wall,R3-E,Primary walk-in closet - E wall (inside face),49.0,4 ft 1 in,1.2,high,False
+R2s,Primary shower,wall,R2s-N0,Primary shower - N wall (inside face),36.4,3 ft 0.4 in,1.0,high,False
+R2s,Primary shower,wall,R2s-S1,Primary shower - S wall (inside face),36.4,3 ft 0.4 in,1.0,high,False
+R2s,Primary shower,wall,R2s-W2,Primary shower - W wall (inside face),65.7,5 ft 5.7 in,1.5,high,False
+R2s,Primary shower,wall,R2s-E3,Primary shower - E wall (inside face),65.7,5 ft 5.7 in,1.5,high,False
+R3,Primary walk-in closet,wall,R3-N0,Primary walk-in closet - N wall (inside face),95.8,7 ft 11.8 in,1.9,high,False
+R3,Primary walk-in closet,wall,R3-S1,Primary walk-in closet - S wall (inside face),95.8,7 ft 11.8 in,1.9,high,False
+R3,Primary walk-in closet,wall,R3-W2,Primary walk-in closet - W wall (inside face),49.0,4 ft 1 in,1.2,high,False
+R3,Primary walk-in closet,wall,R3-E3,Primary walk-in closet - E wall (inside face),49.0,4 ft 1 in,1.2,high,False
 R3,Primary walk-in closet,door,D4,Primary walk-in closet door - ASSUMED standard width (not measured),28,2 ft 4 in,4.0,low,True
-R3b,Linen closet (by kitchen),wall,R3b-N,Linen closet (by kitchen) - N wall (inside face),19.2,1 ft 7.2 in,0.8,high,False
-R3b,Linen closet (by kitchen),wall,R3b-S,Linen closet (by kitchen) - S wall (inside face),19.2,1 ft 7.2 in,0.8,high,False
-R3b,Linen closet (by kitchen),wall,R3b-W,Linen closet (by kitchen) - W wall (inside face),49.0,4 ft 1 in,1.2,high,False
-R3b,Linen closet (by kitchen),wall,R3b-E,Linen closet (by kitchen) - E wall (inside face),49.0,4 ft 1 in,1.2,high,False
+R3b,Linen closet (by kitchen),wall,R3b-N0,Linen closet (by kitchen) - N wall (inside face),19.2,1 ft 7.2 in,0.8,high,False
+R3b,Linen closet (by kitchen),wall,R3b-S1,Linen closet (by kitchen) - S wall (inside face),19.2,1 ft 7.2 in,0.8,high,False
+R3b,Linen closet (by kitchen),wall,R3b-W2,Linen closet (by kitchen) - W wall (inside face),49.0,4 ft 1 in,1.2,high,False
+R3b,Linen closet (by kitchen),wall,R3b-E3,Linen closet (by kitchen) - E wall (inside face),49.0,4 ft 1 in,1.2,high,False
 R3b,Linen closet (by kitchen),door,D10,Linen closet door (leaf drawn swinging into kitchen) - ASSUMED standard width (not measured),24,2 ft 0 in,4.0,low,True
-R4,Laundry,wall,R4-N,Laundry - N wall (inside face),77.8,6 ft 5.8 in,1.7,high,False
-R4,Laundry,wall,R4-S,Laundry - S wall (inside face),77.8,6 ft 5.8 in,1.7,high,False
-R4,Laundry,wall,R4-W,Laundry - W wall (inside face),65.5,5 ft 5.5 in,1.5,high,False
-R4,Laundry,wall,R4-E,Laundry - E wall (inside face),65.5,5 ft 5.5 in,1.5,high,False
+R4,Laundry,wall,R4-N0,Laundry - N wall (inside face),77.8,6 ft 5.8 in,1.7,high,False
+R4,Laundry,wall,R4-S1,Laundry - S wall (inside face),77.8,6 ft 5.8 in,1.7,high,False
+R4,Laundry,wall,R4-W2,Laundry - W wall (inside face),65.5,5 ft 5.5 in,1.5,high,False
+R4,Laundry,wall,R4-E3,Laundry - E wall (inside face),65.5,5 ft 5.5 in,1.5,high,False
 R4,Laundry,door,D5,Laundry door (kitchen side) - ASSUMED standard width (not measured),30,2 ft 6 in,4.0,low,True
 R4,Laundry,door,D6,Laundry to garage door - ASSUMED standard width (not measured),32,2 ft 8 in,4.0,low,True
 R4,Laundry,fixture,F3a-W,"Washer (stock symbol) - width (E-W), as drawn",16,1 ft 4 in,3.8,low,True
@@ -124,10 +121,10 @@ R4,Laundry,fixture,F3a-D,"Washer (stock symbol) - depth (N-S), as drawn",22,1 ft
 R4,Laundry,fixture,F3b-W,"Dryer (stock symbol) - width (E-W), as drawn",16,1 ft 4 in,3.8,low,True
 R4,Laundry,fixture,F3b-D,"Dryer (stock symbol) - depth (N-S), as drawn",23,1 ft 11 in,4.2,low,True
 R4,Laundry,clearance,C5,Washer/dryer front to opposite wall - estimate (drawing shows 42.2 in),48.0,4 ft 0 in,6.0,low,True
-R5,Kitchen,wall,R5-N,Kitchen - N wall (inside face),129.8,10 ft 9.8 in,6.2,medium,False
-R5,Kitchen,wall,R5-S,Kitchen - S wall (inside face),129.8,10 ft 9.8 in,6.2,medium,False
-R5,Kitchen,wall,R5-W,Kitchen - W wall (inside face),118.2,9 ft 10.2 in,5.7,medium,False
-R5,Kitchen,wall,R5-E,Kitchen - E wall (inside face),118.2,9 ft 10.2 in,5.7,medium,False
+R5,Kitchen,wall,R5-N0,Kitchen - N wall (inside face),129.8,10 ft 9.8 in,6.2,medium,False
+R5,Kitchen,wall,R5-S1,Kitchen - S wall (inside face),129.8,10 ft 9.8 in,6.2,medium,False
+R5,Kitchen,wall,R5-W2,Kitchen - W wall (inside face),118.2,9 ft 10.2 in,5.7,medium,False
+R5,Kitchen,wall,R5-E3,Kitchen - E wall (inside face),118.2,9 ft 10.2 in,5.7,medium,False
 R5,Kitchen,opening,O2,"Kitchen walkway, left of peninsula (peninsula meets right counter, so no walkway on the right)",42.9,3 ft 6.9 in,5.1,low,False
 R5,Kitchen,fixture,F4-W,"Kitchen peninsula (dark top, sink + dishwasher) - width (E-W), as drawn",68,5 ft 8 in,6.4,low,True
 R5,Kitchen,fixture,F4-D,"Kitchen peninsula (dark top, sink + dishwasher) - depth (N-S), as drawn",38,3 ft 2 in,4.9,low,True
@@ -138,41 +135,39 @@ R5,Kitchen,fixture,F6-D,"Kitchen counter run - back wall (front edge partly hidd
 R5,Kitchen,fixture,F7-W,"White appliance, back-left (range or fridge - drawing unclear) - width (E-W), as drawn",24,2 ft 0 in,4.2,low,True
 R5,Kitchen,fixture,F7-D,"White appliance, back-left (range or fridge - drawing unclear) - depth (N-S), as drawn",18,1 ft 6 in,3.9,low,True
 R5,Kitchen,clearance,C6,"Kitchen aisle, peninsula to back counter - estimate (drawing shows 65.0 in)",53.5,4 ft 5.5 in,6.0,low,True
-R6,Living / dining,wall,R6-N,Living / dining - N wall (inside face),172.8,14 ft 4.8 in,7.9,medium,False
-R6,Living / dining,wall,R6-S,Living / dining - S wall (inside face),172.8,14 ft 4.8 in,7.9,medium,False
-R6,Living / dining,wall,R6-W,Living / dining - W wall (inside face),245.2,20 ft 5.2 in,10.8,medium,False
-R6,Living / dining,wall,R6-E,Living / dining - E wall (inside face),245.2,20 ft 5.2 in,10.8,medium,False
-R6e,Entry closet / nook (walled in drawing),wall,R6e-N,Entry closet / nook (walled in drawing) - N wall (inside face),42.2,3 ft 6.2 in,2.7,medium,False
-R6e,Entry closet / nook (walled in drawing),wall,R6e-S,Entry closet / nook (walled in drawing) - S wall (inside face),42.2,3 ft 6.2 in,2.7,medium,False
-R6e,Entry closet / nook (walled in drawing),wall,R6e-W,Entry closet / nook (walled in drawing) - W wall (inside face),71.2,5 ft 11.2 in,3.8,medium,False
-R6e,Entry closet / nook (walled in drawing),wall,R6e-E,Entry closet / nook (walled in drawing) - E wall (inside face),71.2,5 ft 11.2 in,3.8,medium,False
-R6h,"Living room - east side (open, TV wall)",wall,R6h-N,"Living room - east side (open, TV wall) - N wall (inside face)",23.8,1 ft 11.8 in,2.0,medium,False
-R6h,"Living room - east side (open, TV wall)",wall,R6h-S,"Living room - east side (open, TV wall) - S wall (inside face)",23.8,1 ft 11.8 in,2.0,medium,False
-R6h,"Living room - east side (open, TV wall)",wall,R6h-W,"Living room - east side (open, TV wall) - W wall (inside face)",184.0,15 ft 4 in,8.4,medium,False
-R6h,"Living room - east side (open, TV wall)",wall,R6h-E,"Living room - east side (open, TV wall) - E wall (inside face)",184.0,15 ft 4 in,8.4,medium,False
-R7,Bedroom 2,wall,R7-N,Bedroom 2 - N wall (inside face),138.5,11 ft 6.5 in,6.5,medium,False
-R7,Bedroom 2,wall,R7-S,Bedroom 2 - S wall (inside face),138.5,11 ft 6.5 in,6.5,medium,False
-R7,Bedroom 2,wall,R7-W,Bedroom 2 - W wall (inside face),158.5,13 ft 2.5 in,7.3,medium,False
-R7,Bedroom 2,wall,R7-E,Bedroom 2 - E wall (inside face),158.5,13 ft 2.5 in,7.3,medium,False
+R6,Living / dining,wall,R6-N0,Living / dining - N wall (inside face),172.8,14 ft 4.8 in,7.9,medium,False
+R6,Living / dining,wall,R6-E1,Living / dining - E (beside closet) wall (inside face),61.2,5 ft 1.2 in,3.4,medium,False
+R6,Living / dining,wall,R6-N2,Living / dining - N (step at closet) wall (inside face),23.8,1 ft 11.8 in,2.0,medium,False
+R6,Living / dining,wall,R6-E3,Living / dining - E (TV wall) wall (inside face),184.0,15 ft 4 in,8.4,medium,False
+R6,Living / dining,wall,R6-S4,Living / dining - S wall (inside face),196.5,16 ft 4.5 in,8.9,medium,False
+R6,Living / dining,wall,R6-W5,Living / dining - W wall (inside face),245.2,20 ft 5.2 in,10.8,medium,False
+R6e,Entry closet / nook (walled in drawing),wall,R6e-N0,Entry closet / nook (walled in drawing) - N wall (inside face),42.2,3 ft 6.2 in,2.7,medium,False
+R6e,Entry closet / nook (walled in drawing),wall,R6e-S1,Entry closet / nook (walled in drawing) - S wall (inside face),42.2,3 ft 6.2 in,2.7,medium,False
+R6e,Entry closet / nook (walled in drawing),wall,R6e-W2,Entry closet / nook (walled in drawing) - W wall (inside face),71.2,5 ft 11.2 in,3.8,medium,False
+R6e,Entry closet / nook (walled in drawing),wall,R6e-E3,Entry closet / nook (walled in drawing) - E wall (inside face),71.2,5 ft 11.2 in,3.8,medium,False
+R7,Bedroom 2,wall,R7-N0,Bedroom 2 - N wall (inside face),138.5,11 ft 6.5 in,6.5,medium,False
+R7,Bedroom 2,wall,R7-S1,Bedroom 2 - S wall (inside face),138.5,11 ft 6.5 in,6.5,medium,False
+R7,Bedroom 2,wall,R7-W2,Bedroom 2 - W wall (inside face),158.5,13 ft 2.5 in,7.3,medium,False
+R7,Bedroom 2,wall,R7-E3,Bedroom 2 - E wall (inside face),158.5,13 ft 2.5 in,7.3,medium,False
 R7,Bedroom 2,door,D7,Bedroom 2 door - ASSUMED standard width (not measured),30,2 ft 6 in,4.0,low,True
-R7c,Closet (bedroom 2 side),wall,R7c-N,Closet (bedroom 2 side) - N wall (inside face),20.5,1 ft 8.5 in,1.8,medium,False
-R7c,Closet (bedroom 2 side),wall,R7c-S,Closet (bedroom 2 side) - S wall (inside face),20.5,1 ft 8.5 in,1.8,medium,False
-R7c,Closet (bedroom 2 side),wall,R7c-W,Closet (bedroom 2 side) - W wall (inside face),82.8,6 ft 10.8 in,4.3,medium,False
-R7c,Closet (bedroom 2 side),wall,R7c-E,Closet (bedroom 2 side) - E wall (inside face),82.8,6 ft 10.8 in,4.3,medium,False
-R8,Bathroom 2,wall,R8-N,Bathroom 2 - N wall (inside face),112.5,9 ft 4.5 in,5.5,medium,False
-R8,Bathroom 2,wall,R8-S,Bathroom 2 - S wall (inside face),112.5,9 ft 4.5 in,5.5,medium,False
-R8,Bathroom 2,wall,R8-W,Bathroom 2 - W wall (inside face),63.5,5 ft 3.5 in,3.5,medium,False
-R8,Bathroom 2,wall,R8-E,Bathroom 2 - E wall (inside face),63.5,5 ft 3.5 in,3.5,medium,False
+R7c,Closet (bedroom 2 side),wall,R7c-N0,Closet (bedroom 2 side) - N wall (inside face),20.5,1 ft 8.5 in,1.8,medium,False
+R7c,Closet (bedroom 2 side),wall,R7c-S1,Closet (bedroom 2 side) - S wall (inside face),20.5,1 ft 8.5 in,1.8,medium,False
+R7c,Closet (bedroom 2 side),wall,R7c-W2,Closet (bedroom 2 side) - W wall (inside face),82.8,6 ft 10.8 in,4.3,medium,False
+R7c,Closet (bedroom 2 side),wall,R7c-E3,Closet (bedroom 2 side) - E wall (inside face),82.8,6 ft 10.8 in,4.3,medium,False
+R8,Bathroom 2,wall,R8-N0,Bathroom 2 - N wall (inside face),112.5,9 ft 4.5 in,5.5,medium,False
+R8,Bathroom 2,wall,R8-S1,Bathroom 2 - S wall (inside face),112.5,9 ft 4.5 in,5.5,medium,False
+R8,Bathroom 2,wall,R8-W2,Bathroom 2 - W wall (inside face),63.5,5 ft 3.5 in,3.5,medium,False
+R8,Bathroom 2,wall,R8-E3,Bathroom 2 - E wall (inside face),63.5,5 ft 3.5 in,3.5,medium,False
 R8,Bathroom 2,door,D8,Bathroom 2 door - ASSUMED standard width (not measured),28,2 ft 4 in,4.0,low,True
 R8,Bathroom 2,fixture,F8-W,"Bath 2 tub (visible part; top hidden by wall face) - width (E-W), as drawn",47.8,3 ft 11.8 in,5.4,low,True
 R8,Bathroom 2,fixture,F8-D,"Bath 2 tub (visible part; top hidden by wall face) - depth (N-S), as drawn",36.0,3 ft 0 in,4.8,low,True
-R8v,Hall vestibule (bath 2),wall,R8v-N,Hall vestibule (bath 2) - N wall (inside face),49.5,4 ft 1.5 in,3.0,medium,False
-R8v,Hall vestibule (bath 2),wall,R8v-S,Hall vestibule (bath 2) - S wall (inside face),49.5,4 ft 1.5 in,3.0,medium,False
-R8v,Hall vestibule (bath 2),wall,R8v-W,Hall vestibule (bath 2) - W wall (inside face),63.5,5 ft 3.5 in,3.5,medium,False
-R8v,Hall vestibule (bath 2),wall,R8v-E,Hall vestibule (bath 2) - E wall (inside face),63.5,5 ft 3.5 in,3.5,medium,False
+R8v,Hall vestibule (bath 2),wall,R8v-N0,Hall vestibule (bath 2) - N wall (inside face),49.5,4 ft 1.5 in,3.0,medium,False
+R8v,Hall vestibule (bath 2),wall,R8v-S1,Hall vestibule (bath 2) - S wall (inside face),49.5,4 ft 1.5 in,3.0,medium,False
+R8v,Hall vestibule (bath 2),wall,R8v-W2,Hall vestibule (bath 2) - W wall (inside face),63.5,5 ft 3.5 in,3.5,medium,False
+R8v,Hall vestibule (bath 2),wall,R8v-E3,Hall vestibule (bath 2) - E wall (inside face),63.5,5 ft 3.5 in,3.5,medium,False
 R8v,Hall vestibule (bath 2),opening,O4,Hall opening to bedroom vestibule,36.0,3 ft 0 in,2.4,medium,False
-R9,Bedroom 3,wall,R9-N,Bedroom 3 - N wall (inside face),139.2,11 ft 7.2 in,6.6,medium,False
-R9,Bedroom 3,wall,R9-S,Bedroom 3 - S wall (inside face),139.2,11 ft 7.2 in,6.6,medium,False
-R9,Bedroom 3,wall,R9-W,Bedroom 3 - W wall (inside face),118.2,9 ft 10.2 in,5.7,medium,False
-R9,Bedroom 3,wall,R9-E,Bedroom 3 - E wall (inside face),118.2,9 ft 10.2 in,5.7,medium,False
+R9,Bedroom 3,wall,R9-N0,Bedroom 3 - N wall (inside face),139.2,11 ft 7.2 in,6.6,medium,False
+R9,Bedroom 3,wall,R9-S1,Bedroom 3 - S wall (inside face),139.2,11 ft 7.2 in,6.6,medium,False
+R9,Bedroom 3,wall,R9-W2,Bedroom 3 - W wall (inside face),118.2,9 ft 10.2 in,5.7,medium,False
+R9,Bedroom 3,wall,R9-E3,Bedroom 3 - E wall (inside face),118.2,9 ft 10.2 in,5.7,medium,False
 R9,Bedroom 3,door,D9,Bedroom 3 door - ASSUMED standard width (not measured),30,2 ft 6 in,4.0,low,True

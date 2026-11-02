@@ -157,19 +157,46 @@
    "id": "R6",
    "name": "Living / dining",
    "x0": 169.25,
-   "x1": 342.0,
+   "x1": 365.75,
    "y0": 30.0,
    "y1": 275.25,
-   "w_in": 172.8,
+   "w_in": 196.5,
    "d_in": 245.2,
-   "w_ft": "14 ft 4.8 in",
+   "w_ft": "16 ft 4.5 in",
    "d_ft": "20 ft 5.2 in",
-   "sqft": 294.2,
-   "sqft_err": 26.4,
+   "sqft": 324.6,
+   "sqft_err": 29.0,
    "confidence": "medium",
    "notes": [
     "right edge = wall face beside closet (open to hall below)",
-    "bottom edge open to kitchen (nominal)"
+    "bottom edge open to kitchen (nominal)",
+    "L-shaped: 172.8 in wide beside the closet at the north end, 196.5 in wide (to the TV wall) for the rest"
+   ],
+   "poly": [
+    [
+     169.25,
+     30.0
+    ],
+    [
+     342.0,
+     30.0
+    ],
+    [
+     342.0,
+     91.25
+    ],
+    [
+     365.75,
+     91.25
+    ],
+    [
+     365.75,
+     275.25
+    ],
+    [
+     169.25,
+     275.25
+    ]
    ]
   },
   {
@@ -189,25 +216,6 @@
    "notes": [
     "right edge = entry side of living-room wall (wall thickness assumed 4.3 in)",
     "drawing shows walls on all four sides; its door and use could not be identified"
-   ]
-  },
-  {
-   "id": "R6h",
-   "name": "Living room - east side (open, TV wall)",
-   "x0": 342.0,
-   "x1": 365.75,
-   "y0": 91.25,
-   "y1": 275.25,
-   "w_in": 23.8,
-   "d_in": 184.0,
-   "w_ft": "1 ft 11.8 in",
-   "d_ft": "15 ft 4 in",
-   "sqft": 30.3,
-   "sqft_err": 3.9,
-   "confidence": "medium",
-   "notes": [
-    "left edge open to living room (nominal line)",
-    "bottom edge nominal (open to storage hall)"
    ]
   },
   {
@@ -643,7 +651,7 @@
  ],
  "items": [
   {
-   "id": "R1-N",
+   "id": "R1-N0",
    "room": "R1",
    "type": "wall",
    "label": "Primary bedroom - N wall (inside face)",
@@ -665,7 +673,7 @@
    "err_in": 2.9
   },
   {
-   "id": "R1-S",
+   "id": "R1-S1",
    "room": "R1",
    "type": "wall",
    "label": "Primary bedroom - S wall (inside face)",
@@ -687,7 +695,7 @@
    "err_in": 2.9
   },
   {
-   "id": "R1-W",
+   "id": "R1-W2",
    "room": "R1",
    "type": "wall",
    "label": "Primary bedroom - W wall (inside face)",
@@ -709,7 +717,7 @@
    "err_in": 3.0
   },
   {
-   "id": "R1-E",
+   "id": "R1-E3",
    "room": "R1",
    "type": "wall",
    "label": "Primary bedroom - E wall (inside face)",
@@ -731,7 +739,7 @@
    "err_in": 3.0
   },
   {
-   "id": "R2-N",
+   "id": "R2-N0",
    "room": "R2",
    "type": "wall",
    "label": "Primary bathroom - N wall (inside face)",
@@ -753,7 +761,7 @@
    "err_in": 1.4
   },
   {
-   "id": "R2-S",
+   "id": "R2-S1",
    "room": "R2",
    "type": "wall",
    "label": "Primary bathroom - S wall (inside face)",
@@ -775,7 +783,7 @@
    "err_in": 1.4
   },
   {
-   "id": "R2-W",
+   "id": "R2-W2",
    "room": "R2",
    "type": "wall",
    "label": "Primary bathroom - W wall (inside face)",
@@ -797,7 +805,7 @@
    "err_in": 2.3
   },
   {
-   "id": "R2-E",
+   "id": "R2-E3",
    "room": "R2",
    "type": "wall",
    "label": "Primary bathroom - E wall (inside face)",
@@ -819,7 +827,7 @@
    "err_in": 2.3
   },
   {
-   "id": "R2s-N",
+   "id": "R2s-N0",
    "room": "R2s",
    "type": "wall",
    "label": "Primary shower - N wall (inside face)",
@@ -841,7 +849,7 @@
    "err_in": 1.0
   },
   {
-   "id": "R2s-S",
+   "id": "R2s-S1",
    "room": "R2s",
    "type": "wall",
    "label": "Primary shower - S wall (inside face)",
@@ -863,7 +871,7 @@
    "err_in": 1.0
   },
   {
-   "id": "R2s-W",
+   "id": "R2s-W2",
    "room": "R2s",
    "type": "wall",
    "label": "Primary shower - W wall (inside face)",
@@ -885,7 +893,7 @@
    "err_in": 1.5
   },
   {
-   "id": "R2s-E",
+   "id": "R2s-E3",
    "room": "R2s",
    "type": "wall",
    "label": "Primary shower - E wall (inside face)",
@@ -907,7 +915,7 @@
    "err_in": 1.5
   },
   {
-   "id": "R3-N",
+   "id": "R3-N0",
    "room": "R3",
    "type": "wall",
    "label": "Primary walk-in closet - N wall (inside face)",
@@ -929,7 +937,7 @@
    "err_in": 1.9
   },
   {
-   "id": "R3-S",
+   "id": "R3-S1",
    "room": "R3",
    "type": "wall",
    "label": "Primary walk-in closet - S wall (inside face)",
@@ -951,7 +959,7 @@
    "err_in": 1.9
   },
   {
-   "id": "R3-W",
+   "id": "R3-W2",
    "room": "R3",
    "type": "wall",
    "label": "Primary walk-in closet - W wall (inside face)",
@@ -973,7 +981,7 @@
    "err_in": 1.2
   },
   {
-   "id": "R3-E",
+   "id": "R3-E3",
    "room": "R3",
    "type": "wall",
    "label": "Primary walk-in closet - E wall (inside face)",
@@ -995,7 +1003,7 @@
    "err_in": 1.2
   },
   {
-   "id": "R3b-N",
+   "id": "R3b-N0",
    "room": "R3b",
    "type": "wall",
    "label": "Linen closet (by kitchen) - N wall (inside face)",
@@ -1017,7 +1025,7 @@
    "err_in": 0.8
   },
   {
-   "id": "R3b-S",
+   "id": "R3b-S1",
    "room": "R3b",
    "type": "wall",
    "label": "Linen closet (by kitchen) - S wall (inside face)",
@@ -1039,7 +1047,7 @@
    "err_in": 0.8
   },
   {
-   "id": "R3b-W",
+   "id": "R3b-W2",
    "room": "R3b",
    "type": "wall",
    "label": "Linen closet (by kitchen) - W wall (inside face)",
@@ -1061,7 +1069,7 @@
    "err_in": 1.2
   },
   {
-   "id": "R3b-E",
+   "id": "R3b-E3",
    "room": "R3b",
    "type": "wall",
    "label": "Linen closet (by kitchen) - E wall (inside face)",
@@ -1083,7 +1091,7 @@
    "err_in": 1.2
   },
   {
-   "id": "R4-N",
+   "id": "R4-N0",
    "room": "R4",
    "type": "wall",
    "label": "Laundry - N wall (inside face)",
@@ -1105,7 +1113,7 @@
    "err_in": 1.7
   },
   {
-   "id": "R4-S",
+   "id": "R4-S1",
    "room": "R4",
    "type": "wall",
    "label": "Laundry - S wall (inside face)",
@@ -1127,7 +1135,7 @@
    "err_in": 1.7
   },
   {
-   "id": "R4-W",
+   "id": "R4-W2",
    "room": "R4",
    "type": "wall",
    "label": "Laundry - W wall (inside face)",
@@ -1149,7 +1157,7 @@
    "err_in": 1.5
   },
   {
-   "id": "R4-E",
+   "id": "R4-E3",
    "room": "R4",
    "type": "wall",
    "label": "Laundry - E wall (inside face)",
@@ -1171,7 +1179,7 @@
    "err_in": 1.5
   },
   {
-   "id": "R5-N",
+   "id": "R5-N0",
    "room": "R5",
    "type": "wall",
    "label": "Kitchen - N wall (inside face)",
@@ -1193,7 +1201,7 @@
    "err_in": 6.2
   },
   {
-   "id": "R5-S",
+   "id": "R5-S1",
    "room": "R5",
    "type": "wall",
    "label": "Kitchen - S wall (inside face)",
@@ -1215,7 +1223,7 @@
    "err_in": 6.2
   },
   {
-   "id": "R5-W",
+   "id": "R5-W2",
    "room": "R5",
    "type": "wall",
    "label": "Kitchen - W wall (inside face)",
@@ -1237,7 +1245,7 @@
    "err_in": 5.7
   },
   {
-   "id": "R5-E",
+   "id": "R5-E3",
    "room": "R5",
    "type": "wall",
    "label": "Kitchen - E wall (inside face)",
@@ -1259,7 +1267,7 @@
    "err_in": 5.7
   },
   {
-   "id": "R6-N",
+   "id": "R6-N0",
    "room": "R6",
    "type": "wall",
    "label": "Living / dining - N wall (inside face)",
@@ -1281,29 +1289,95 @@
    "err_in": 7.9
   },
   {
-   "id": "R6-S",
+   "id": "R6-E1",
    "room": "R6",
    "type": "wall",
-   "label": "Living / dining - S wall (inside face)",
-   "value_in": 172.8,
+   "label": "Living / dining - E (beside closet) wall (inside face)",
+   "value_in": 61.2,
    "confidence": "medium",
    "geom": {
     "kind": "line",
     "a": [
-     169.25,
-     275.25
+     342.0,
+     30.0
     ],
     "b": [
      342.0,
+     91.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "5 ft 1.2 in",
+   "err_in": 3.4
+  },
+  {
+   "id": "R6-N2",
+   "room": "R6",
+   "type": "wall",
+   "label": "Living / dining - N (step at closet) wall (inside face)",
+   "value_in": 23.8,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     342.0,
+     91.25
+    ],
+    "b": [
+     365.75,
+     91.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "1 ft 11.8 in",
+   "err_in": 2.0
+  },
+  {
+   "id": "R6-E3",
+   "room": "R6",
+   "type": "wall",
+   "label": "Living / dining - E (TV wall) wall (inside face)",
+   "value_in": 184.0,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     365.75,
+     91.25
+    ],
+    "b": [
+     365.75,
      275.25
     ]
    },
    "verify": false,
-   "ft_in": "14 ft 4.8 in",
-   "err_in": 7.9
+   "ft_in": "15 ft 4 in",
+   "err_in": 8.4
   },
   {
-   "id": "R6-W",
+   "id": "R6-S4",
+   "room": "R6",
+   "type": "wall",
+   "label": "Living / dining - S wall (inside face)",
+   "value_in": 196.5,
+   "confidence": "medium",
+   "geom": {
+    "kind": "line",
+    "a": [
+     365.75,
+     275.25
+    ],
+    "b": [
+     169.25,
+     275.25
+    ]
+   },
+   "verify": false,
+   "ft_in": "16 ft 4.5 in",
+   "err_in": 8.9
+  },
+  {
+   "id": "R6-W5",
    "room": "R6",
    "type": "wall",
    "label": "Living / dining - W wall (inside face)",
@@ -1313,33 +1387,11 @@
     "kind": "line",
     "a": [
      169.25,
-     30.0
+     275.25
     ],
     "b": [
      169.25,
-     275.25
-    ]
-   },
-   "verify": false,
-   "ft_in": "20 ft 5.2 in",
-   "err_in": 10.8
-  },
-  {
-   "id": "R6-E",
-   "room": "R6",
-   "type": "wall",
-   "label": "Living / dining - E wall (inside face)",
-   "value_in": 245.2,
-   "confidence": "medium",
-   "geom": {
-    "kind": "line",
-    "a": [
-     342.0,
      30.0
-    ],
-    "b": [
-     342.0,
-     275.25
     ]
    },
    "verify": false,
@@ -1347,7 +1399,7 @@
    "err_in": 10.8
   },
   {
-   "id": "R6e-N",
+   "id": "R6e-N0",
    "room": "R6e",
    "type": "wall",
    "label": "Entry closet / nook (walled in drawing) - N wall (inside face)",
@@ -1369,7 +1421,7 @@
    "err_in": 2.7
   },
   {
-   "id": "R6e-S",
+   "id": "R6e-S1",
    "room": "R6e",
    "type": "wall",
    "label": "Entry closet / nook (walled in drawing) - S wall (inside face)",
@@ -1391,7 +1443,7 @@
    "err_in": 2.7
   },
   {
-   "id": "R6e-W",
+   "id": "R6e-W2",
    "room": "R6e",
    "type": "wall",
    "label": "Entry closet / nook (walled in drawing) - W wall (inside face)",
@@ -1413,7 +1465,7 @@
    "err_in": 3.8
   },
   {
-   "id": "R6e-E",
+   "id": "R6e-E3",
    "room": "R6e",
    "type": "wall",
    "label": "Entry closet / nook (walled in drawing) - E wall (inside face)",
@@ -1435,95 +1487,7 @@
    "err_in": 3.8
   },
   {
-   "id": "R6h-N",
-   "room": "R6h",
-   "type": "wall",
-   "label": "Living room - east side (open, TV wall) - N wall (inside face)",
-   "value_in": 23.8,
-   "confidence": "medium",
-   "geom": {
-    "kind": "line",
-    "a": [
-     342.0,
-     91.25
-    ],
-    "b": [
-     365.75,
-     91.25
-    ]
-   },
-   "verify": false,
-   "ft_in": "1 ft 11.8 in",
-   "err_in": 2.0
-  },
-  {
-   "id": "R6h-S",
-   "room": "R6h",
-   "type": "wall",
-   "label": "Living room - east side (open, TV wall) - S wall (inside face)",
-   "value_in": 23.8,
-   "confidence": "medium",
-   "geom": {
-    "kind": "line",
-    "a": [
-     342.0,
-     275.25
-    ],
-    "b": [
-     365.75,
-     275.25
-    ]
-   },
-   "verify": false,
-   "ft_in": "1 ft 11.8 in",
-   "err_in": 2.0
-  },
-  {
-   "id": "R6h-W",
-   "room": "R6h",
-   "type": "wall",
-   "label": "Living room - east side (open, TV wall) - W wall (inside face)",
-   "value_in": 184.0,
-   "confidence": "medium",
-   "geom": {
-    "kind": "line",
-    "a": [
-     342.0,
-     91.25
-    ],
-    "b": [
-     342.0,
-     275.25
-    ]
-   },
-   "verify": false,
-   "ft_in": "15 ft 4 in",
-   "err_in": 8.4
-  },
-  {
-   "id": "R6h-E",
-   "room": "R6h",
-   "type": "wall",
-   "label": "Living room - east side (open, TV wall) - E wall (inside face)",
-   "value_in": 184.0,
-   "confidence": "medium",
-   "geom": {
-    "kind": "line",
-    "a": [
-     365.75,
-     91.25
-    ],
-    "b": [
-     365.75,
-     275.25
-    ]
-   },
-   "verify": false,
-   "ft_in": "15 ft 4 in",
-   "err_in": 8.4
-  },
-  {
-   "id": "R7-N",
+   "id": "R7-N0",
    "room": "R7",
    "type": "wall",
    "label": "Bedroom 2 - N wall (inside face)",
@@ -1545,7 +1509,7 @@
    "err_in": 6.5
   },
   {
-   "id": "R7-S",
+   "id": "R7-S1",
    "room": "R7",
    "type": "wall",
    "label": "Bedroom 2 - S wall (inside face)",
@@ -1567,7 +1531,7 @@
    "err_in": 6.5
   },
   {
-   "id": "R7-W",
+   "id": "R7-W2",
    "room": "R7",
    "type": "wall",
    "label": "Bedroom 2 - W wall (inside face)",
@@ -1589,7 +1553,7 @@
    "err_in": 7.3
   },
   {
-   "id": "R7-E",
+   "id": "R7-E3",
    "room": "R7",
    "type": "wall",
    "label": "Bedroom 2 - E wall (inside face)",
@@ -1611,7 +1575,7 @@
    "err_in": 7.3
   },
   {
-   "id": "R7c-N",
+   "id": "R7c-N0",
    "room": "R7c",
    "type": "wall",
    "label": "Closet (bedroom 2 side) - N wall (inside face)",
@@ -1633,7 +1597,7 @@
    "err_in": 1.8
   },
   {
-   "id": "R7c-S",
+   "id": "R7c-S1",
    "room": "R7c",
    "type": "wall",
    "label": "Closet (bedroom 2 side) - S wall (inside face)",
@@ -1655,7 +1619,7 @@
    "err_in": 1.8
   },
   {
-   "id": "R7c-W",
+   "id": "R7c-W2",
    "room": "R7c",
    "type": "wall",
    "label": "Closet (bedroom 2 side) - W wall (inside face)",
@@ -1677,7 +1641,7 @@
    "err_in": 4.3
   },
   {
-   "id": "R7c-E",
+   "id": "R7c-E3",
    "room": "R7c",
    "type": "wall",
    "label": "Closet (bedroom 2 side) - E wall (inside face)",
@@ -1699,7 +1663,7 @@
    "err_in": 4.3
   },
   {
-   "id": "R8-N",
+   "id": "R8-N0",
    "room": "R8",
    "type": "wall",
    "label": "Bathroom 2 - N wall (inside face)",
@@ -1721,7 +1685,7 @@
    "err_in": 5.5
   },
   {
-   "id": "R8-S",
+   "id": "R8-S1",
    "room": "R8",
    "type": "wall",
    "label": "Bathroom 2 - S wall (inside face)",
@@ -1743,7 +1707,7 @@
    "err_in": 5.5
   },
   {
-   "id": "R8-W",
+   "id": "R8-W2",
    "room": "R8",
    "type": "wall",
    "label": "Bathroom 2 - W wall (inside face)",
@@ -1765,7 +1729,7 @@
    "err_in": 3.5
   },
   {
-   "id": "R8-E",
+   "id": "R8-E3",
    "room": "R8",
    "type": "wall",
    "label": "Bathroom 2 - E wall (inside face)",
@@ -1787,7 +1751,7 @@
    "err_in": 3.5
   },
   {
-   "id": "R8v-N",
+   "id": "R8v-N0",
    "room": "R8v",
    "type": "wall",
    "label": "Hall vestibule (bath 2) - N wall (inside face)",
@@ -1809,7 +1773,7 @@
    "err_in": 3.0
   },
   {
-   "id": "R8v-S",
+   "id": "R8v-S1",
    "room": "R8v",
    "type": "wall",
    "label": "Hall vestibule (bath 2) - S wall (inside face)",
@@ -1831,7 +1795,7 @@
    "err_in": 3.0
   },
   {
-   "id": "R8v-W",
+   "id": "R8v-W2",
    "room": "R8v",
    "type": "wall",
    "label": "Hall vestibule (bath 2) - W wall (inside face)",
@@ -1853,7 +1817,7 @@
    "err_in": 3.5
   },
   {
-   "id": "R8v-E",
+   "id": "R8v-E3",
    "room": "R8v",
    "type": "wall",
    "label": "Hall vestibule (bath 2) - E wall (inside face)",
@@ -1875,7 +1839,7 @@
    "err_in": 3.5
   },
   {
-   "id": "R9-N",
+   "id": "R9-N0",
    "room": "R9",
    "type": "wall",
    "label": "Bedroom 3 - N wall (inside face)",
@@ -1897,7 +1861,7 @@
    "err_in": 6.6
   },
   {
-   "id": "R9-S",
+   "id": "R9-S1",
    "room": "R9",
    "type": "wall",
    "label": "Bedroom 3 - S wall (inside face)",
@@ -1919,7 +1883,7 @@
    "err_in": 6.6
   },
   {
-   "id": "R9-W",
+   "id": "R9-W2",
    "room": "R9",
    "type": "wall",
    "label": "Bedroom 3 - W wall (inside face)",
@@ -1941,7 +1905,7 @@
    "err_in": 5.7
   },
   {
-   "id": "R9-E",
+   "id": "R9-E3",
    "room": "R9",
    "type": "wall",
    "label": "Bedroom 3 - E wall (inside face)",
@@ -1963,7 +1927,7 @@
    "err_in": 5.7
   },
   {
-   "id": "R10-N",
+   "id": "R10-N0",
    "room": "R10",
    "type": "wall",
    "label": "Storage / pantry hall - N wall (inside face)",
@@ -1985,7 +1949,7 @@
    "err_in": 2.6
   },
   {
-   "id": "R10-S",
+   "id": "R10-S1",
    "room": "R10",
    "type": "wall",
    "label": "Storage / pantry hall - S wall (inside face)",
@@ -2007,7 +1971,7 @@
    "err_in": 2.6
   },
   {
-   "id": "R10-W",
+   "id": "R10-W2",
    "room": "R10",
    "type": "wall",
    "label": "Storage / pantry hall - W wall (inside face)",
@@ -2029,7 +1993,7 @@
    "err_in": 5.8
   },
   {
-   "id": "R10-E",
+   "id": "R10-E3",
    "room": "R10",
    "type": "wall",
    "label": "Storage / pantry hall - E wall (inside face)",
@@ -2051,7 +2015,7 @@
    "err_in": 5.8
   },
   {
-   "id": "R10b-N",
+   "id": "R10b-N0",
    "room": "R10b",
    "type": "wall",
    "label": "Storage closet (lower right) - N wall (inside face)",
@@ -2073,7 +2037,7 @@
    "err_in": 4.2
   },
   {
-   "id": "R10b-S",
+   "id": "R10b-S1",
    "room": "R10b",
    "type": "wall",
    "label": "Storage closet (lower right) - S wall (inside face)",
@@ -2095,7 +2059,7 @@
    "err_in": 4.2
   },
   {
-   "id": "R10b-W",
+   "id": "R10b-W2",
    "room": "R10b",
    "type": "wall",
    "label": "Storage closet (lower right) - W wall (inside face)",
@@ -2117,7 +2081,7 @@
    "err_in": 2.5
   },
   {
-   "id": "R10b-E",
+   "id": "R10b-E3",
    "room": "R10b",
    "type": "wall",
    "label": "Storage closet (lower right) - E wall (inside face)",
@@ -2139,7 +2103,7 @@
    "err_in": 2.5
   },
   {
-   "id": "G-N",
+   "id": "G-N0",
    "room": "G",
    "type": "wall",
    "label": "Garage - N wall (inside face)",
@@ -2161,7 +2125,7 @@
    "err_in": 9.2
   },
   {
-   "id": "G-S",
+   "id": "G-S1",
    "room": "G",
    "type": "wall",
    "label": "Garage - S wall (inside face)",
@@ -2183,7 +2147,7 @@
    "err_in": 9.2
   },
   {
-   "id": "G-W",
+   "id": "G-W2",
    "room": "G",
    "type": "wall",
    "label": "Garage - W wall (inside face)",
@@ -2205,7 +2169,7 @@
    "err_in": 11.2
   },
   {
-   "id": "G-E",
+   "id": "G-E3",
    "room": "G",
    "type": "wall",
    "label": "Garage - E wall (inside face)",
@@ -2227,7 +2191,7 @@
    "err_in": 11.2
   },
   {
-   "id": "P-N",
+   "id": "P-N0",
    "room": "P",
    "type": "wall",
    "label": "Patio / balcony - N wall (inside face)",
@@ -2249,7 +2213,7 @@
    "err_in": 7.4
   },
   {
-   "id": "P-S",
+   "id": "P-S1",
    "room": "P",
    "type": "wall",
    "label": "Patio / balcony - S wall (inside face)",
@@ -2271,7 +2235,7 @@
    "err_in": 7.4
   },
   {
-   "id": "P-W",
+   "id": "P-W2",
    "room": "P",
    "type": "wall",
    "label": "Patio / balcony - W wall (inside face)",
@@ -2293,7 +2257,7 @@
    "err_in": 4.9
   },
   {
-   "id": "P-E",
+   "id": "P-E3",
    "room": "P",
    "type": "wall",
    "label": "Patio / balcony - E wall (inside face)",
@@ -3217,7 +3181,7 @@
   }
  ],
  "totals": {
-  "interior_rooms_sqft": 1183.4,
+  "interior_rooms_sqft": 1183.5,
   "footprint_living_sqft": 1286.8,
   "footprint_err_sqft": 24.9,
   "garage_sqft": 362.8,
